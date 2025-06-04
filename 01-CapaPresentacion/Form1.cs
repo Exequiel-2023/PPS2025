@@ -16,5 +16,17 @@ namespace _01_CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_Ingresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Socios socios = new Socios();
+            socios.Show();
+        }
     }
 }
