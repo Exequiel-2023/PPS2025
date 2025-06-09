@@ -55,8 +55,10 @@
             this.dgv_Socios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Socios.Location = new System.Drawing.Point(24, 74);
             this.dgv_Socios.Name = "dgv_Socios";
+            this.dgv_Socios.ReadOnly = true;
             this.dgv_Socios.RowHeadersWidth = 51;
             this.dgv_Socios.RowTemplate.Height = 24;
+            this.dgv_Socios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Socios.Size = new System.Drawing.Size(749, 427);
             this.dgv_Socios.TabIndex = 0;
             // 
@@ -68,6 +70,7 @@
             this.btn_EliminarFisico.TabIndex = 1;
             this.btn_EliminarFisico.Text = "Eliminar Fisico";
             this.btn_EliminarFisico.UseVisualStyleBackColor = true;
+            this.btn_EliminarFisico.Click += new System.EventHandler(this.btn_EliminarFisico_Click);
             // 
             // btn_EliminarLogico
             // 
@@ -77,6 +80,7 @@
             this.btn_EliminarLogico.TabIndex = 2;
             this.btn_EliminarLogico.Text = "Eliminar Logico";
             this.btn_EliminarLogico.UseVisualStyleBackColor = true;
+            this.btn_EliminarLogico.Click += new System.EventHandler(this.btn_EliminarLogico_Click);
             // 
             // btn_Editar
             // 
@@ -86,6 +90,7 @@
             this.btn_Editar.TabIndex = 3;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Agregar
             // 
@@ -95,6 +100,7 @@
             this.btn_Agregar.TabIndex = 4;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // btn_Actualizar
             // 
@@ -104,6 +110,7 @@
             this.btn_Actualizar.TabIndex = 5;
             this.btn_Actualizar.Text = "Actualizar";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // lbl_Nombre
             // 
@@ -122,6 +129,7 @@
             this.btn_Atras.TabIndex = 7;
             this.btn_Atras.Text = "Atras";
             this.btn_Atras.UseVisualStyleBackColor = true;
+            this.btn_Atras.Click += new System.EventHandler(this.btn_Atras_Click);
             // 
             // gb_Socios
             // 
@@ -228,6 +236,7 @@
             this.Controls.Add(this.dgv_Socios);
             this.Name = "Socios";
             this.Text = "Socios";
+            this.Load += new System.EventHandler(this.Socios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Socios)).EndInit();
             this.gb_Socios.ResumeLayout(false);
             this.gb_Socios.PerformLayout();

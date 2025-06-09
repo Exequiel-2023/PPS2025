@@ -25,8 +25,8 @@ namespace _01_CapaPresentacion
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Socios socios = new Socios();
-            socios.Show();
+            VentanaPrincipal VP = new VentanaPrincipal();
+            VP.ShowDialog();
         }
     }
 }

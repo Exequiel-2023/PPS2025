@@ -1,45 +1,33 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace _03_CapaDatos.BaseDatos
 {
     public class ConexionDB
     {
-        SqlConnection conexion = new SqlConnection(DatosDB.CadenaConexionSinSa);
+        private SqlConnection conexion = new SqlConnection(DatosDB.CadenaConexionSinSa);
+
 
         public SqlConnection OpenConexion()
         {
-            try
+            if (conexion.State == System.Data.ConnectionState.Closed)
             {
-                if (conexion.State == System.Data.ConnectionState.Closed)
-                {
-                    conexion.Open();
-                    
-                }
-                return conexion;
+                conexion.Open();   
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            return conexion;
         }
 
         public SqlConnection CloseConexion()
         {
-            try
-            {
+            
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
                 }
                 return conexion;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            
         }
 
     }
