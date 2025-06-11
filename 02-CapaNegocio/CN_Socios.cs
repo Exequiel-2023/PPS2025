@@ -43,9 +43,9 @@ namespace _02_CapaNegocio
             socio.EditarSocio(nombre, apellido, dni, telefono, fechaIngreso, int.Parse(id));
         }
 
-        public void ActualizarSocio ()
+        public void DarAltaSocio(string fechaAlta, string Activo, string id)
         {
-
+            socio.DarAltaSocio(fechaAlta,Activo,int.Parse(id));
         }
     }
 }

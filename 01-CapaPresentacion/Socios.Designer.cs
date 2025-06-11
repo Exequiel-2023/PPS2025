@@ -235,7 +235,7 @@
             this.Controls.Add(this.btn_EliminarFisico);
             this.Controls.Add(this.dgv_Socios);
             this.Name = "Socios";
-            this.Text = "Socios";
+            this.Text = "SOCIOS ACTIVO";
             this.Load += new System.EventHandler(this.Socios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Socios)).EndInit();
             this.gb_Socios.ResumeLayout(false);

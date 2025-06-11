@@ -109,9 +109,12 @@ namespace _03_CapaDatos.BaseDatos
             comando.ExecuteNonQuery();
         }
 
-        public void ActualizarSocio()
+        public void DarAltaSocio(string fechaAlta, string Activo, int id)
         {
-
+            comando.Connection = conexion.OpenConexion();
+            string query = "UPDATE Socios set Activo = "+Activo+", FechaIngreso = '"+fechaAlta+"' where Id_Socio = "+id+";";
+            comando.CommandText = query;
+            comando.ExecuteNonQuery();
         }
     }
 }
