@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDatos\CD_Socios.cs" />
+    <Compile Include="CD_Entrenadores.cs" />
+    <Compile Include="CD_Socios.cs" />
     <Compile Include="BaseDatos\ConexionDB.cs" />
     <Compile Include="BaseDatos\DatosDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

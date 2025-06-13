@@ -31,9 +31,20 @@ namespace _01_CapaPresentacion
             socioInactivo.ShowDialog();
         }
 
-        private void VentanaPrincipal_Load(object sender, EventArgs e)
-        {
+      
 
+        private void visualizarEntrenadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEntrenadores frmEntrenadores = new frmEntrenadores();
+            frmEntrenadores.ShowDialog();
+        }
+
+        private void registrarNuevoEntrenadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EntrenadorInactivo EntrenadorInactivo = new EntrenadorInactivo();
+            EntrenadorInactivo.ShowDialog();
         }
     }
 }

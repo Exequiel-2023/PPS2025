@@ -85,14 +85,16 @@
             // visualizarEntrenadoresToolStripMenuItem
             // 
             this.visualizarEntrenadoresToolStripMenuItem.Name = "visualizarEntrenadoresToolStripMenuItem";
-            this.visualizarEntrenadoresToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.visualizarEntrenadoresToolStripMenuItem.Text = "Visualizar entrenadores";
+            this.visualizarEntrenadoresToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.visualizarEntrenadoresToolStripMenuItem.Text = "Entrenadores Activos";
+            this.visualizarEntrenadoresToolStripMenuItem.Click += new System.EventHandler(this.visualizarEntrenadoresToolStripMenuItem_Click);
             // 
             // registrarNuevoEntrenadorToolStripMenuItem
             // 
             this.registrarNuevoEntrenadorToolStripMenuItem.Name = "registrarNuevoEntrenadorToolStripMenuItem";
-            this.registrarNuevoEntrenadorToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.registrarNuevoEntrenadorToolStripMenuItem.Text = "Registrar nuevo entrenador";
+            this.registrarNuevoEntrenadorToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.registrarNuevoEntrenadorToolStripMenuItem.Text = "Entrenadores Inactivos";
+            this.registrarNuevoEntrenadorToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoEntrenadorToolStripMenuItem_Click);
             // 
             // VentanaPrincipal
             // 
@@ -103,7 +105,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "VentanaPrincipal";
             this.Text = "VentanaPrincipal";
-            this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
