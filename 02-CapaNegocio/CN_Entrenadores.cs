@@ -44,9 +44,14 @@ namespace _02_CapaNegocio
             entrenador.EliminarLogico(int.Parse(id));
         }
 
-        public void EditarEntrenador()
+        public void EditarEntrenador(string nombre,string apellido,string dni, string domicilio, string telefono, string id)
         {
+            entrenador.EditarEntrenador(nombre,apellido,dni,domicilio,telefono,int.Parse(id));
+        }
 
+        public void DarAltaEntrenador(string domicilio, string tel,string activo, string id)
+        {
+            entrenador.DarAltaEntrenador(domicilio,tel,activo,int.Parse(id));
         }
     }
 }

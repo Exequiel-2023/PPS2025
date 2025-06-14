@@ -35,18 +35,18 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.gbEntrenadores = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.lblDomicilio = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblDomicilio = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenadores)).BeginInit();
             this.gbEntrenadores.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,7 @@
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -108,6 +109,7 @@
             this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // gbEntrenadores
             // 
@@ -130,41 +132,50 @@
             this.gbEntrenadores.TabStop = false;
             this.gbEntrenadores.Text = "Ingresa un entrenador";
             // 
-            // lblNombre
+            // btnConfirmar
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(7, 46);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
-            this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "Nombre";
+            this.btnConfirmar.Location = new System.Drawing.Point(25, 432);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.TabIndex = 17;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // lblApellido
+            // txtTelefono
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(7, 101);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(57, 16);
-            this.lblApellido.TabIndex = 7;
-            this.lblApellido.Text = "Apellido";
+            this.txtTelefono.Location = new System.Drawing.Point(110, 280);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(160, 22);
+            this.txtTelefono.TabIndex = 15;
             // 
-            // lblDni
+            // txtDomicilio
             // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(7, 164);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(27, 16);
-            this.lblDni.TabIndex = 8;
-            this.lblDni.Text = "Dni";
+            this.txtDomicilio.Location = new System.Drawing.Point(110, 219);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(160, 22);
+            this.txtDomicilio.TabIndex = 14;
             // 
-            // lblDomicilio
+            // txtDni
             // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(7, 225);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(63, 16);
-            this.lblDomicilio.TabIndex = 9;
-            this.lblDomicilio.Text = "Domicilio";
+            this.txtDni.Location = new System.Drawing.Point(110, 158);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(160, 22);
+            this.txtDni.TabIndex = 13;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(110, 95);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(160, 22);
+            this.txtApellido.TabIndex = 12;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(110, 43);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(160, 22);
+            this.txtNombre.TabIndex = 11;
             // 
             // lblTelefono
             // 
@@ -175,40 +186,41 @@
             this.lblTelefono.TabIndex = 10;
             this.lblTelefono.Text = "Telefono";
             // 
-            // txtNombre
+            // lblDomicilio
             // 
-            this.txtNombre.Location = new System.Drawing.Point(110, 43);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(160, 22);
-            this.txtNombre.TabIndex = 11;
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Location = new System.Drawing.Point(7, 225);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(63, 16);
+            this.lblDomicilio.TabIndex = 9;
+            this.lblDomicilio.Text = "Domicilio";
             // 
-            // txtApellido
+            // lblDni
             // 
-            this.txtApellido.Location = new System.Drawing.Point(110, 95);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(160, 22);
-            this.txtApellido.TabIndex = 12;
+            this.lblDni.AutoSize = true;
+            this.lblDni.Location = new System.Drawing.Point(7, 164);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(27, 16);
+            this.lblDni.TabIndex = 8;
+            this.lblDni.Text = "Dni";
             // 
-            // txtDni
+            // lblApellido
             // 
-            this.txtDni.Location = new System.Drawing.Point(110, 158);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(160, 22);
-            this.txtDni.TabIndex = 13;
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(7, 101);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(57, 16);
+            this.lblApellido.TabIndex = 7;
+            this.lblApellido.Text = "Apellido";
             // 
-            // txtDomicilio
+            // lblNombre
             // 
-            this.txtDomicilio.Location = new System.Drawing.Point(110, 219);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(160, 22);
-            this.txtDomicilio.TabIndex = 14;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(110, 280);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(160, 22);
-            this.txtTelefono.TabIndex = 15;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(7, 46);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.TabIndex = 6;
+            this.lblNombre.Text = "Nombre";
             // 
             // btnAtras
             // 
@@ -219,16 +231,6 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(25, 432);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 17;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmEntrenadores
             // 

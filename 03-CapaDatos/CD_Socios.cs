@@ -19,7 +19,7 @@ namespace _03_CapaDatos.BaseDatos
 
         SqlDataReader lector;
 
-        public DataTable GetSocios()
+        public DataTable MostrarSociosActivos()
         {
             try
             {

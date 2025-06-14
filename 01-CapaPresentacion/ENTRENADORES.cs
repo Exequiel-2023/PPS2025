@@ -103,5 +103,44 @@ namespace _01_CapaPresentacion
             MessageBox.Show("Entrenador eliminado logicamente correctamente");
             ListarEntrenadores();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            gbEntrenadores.Enabled = true;
+            gbEntrenadores.Show();
+            btnEliminarFisico.Enabled = false;
+            btnEliminarFisico.Hide();
+            btnEliminarLogico.Enabled = false;
+            btnEliminarLogico.Hide();
+            btnAgregar.Enabled = false;
+            btnAgregar.Hide();
+            btnConfirmar.Enabled = false;
+            btnConfirmar.Hide();
+            txtNombre.Enabled = false;
+            txtApellido.Enabled = false;
+            txtDni.Enabled = false;
+            txtNombre.Text = dgvEntrenadores.CurrentRow.Cells["Nombre Entrenador"].Value.ToString();
+            txtApellido.Text = dgvEntrenadores.CurrentRow.Cells["Apellido"].Value.ToString();
+            txtDni.Text = dgvEntrenadores.CurrentRow.Cells["Dni"].Value.ToString();
+            txtDomicilio.Text = dgvEntrenadores.CurrentRow.Cells["Domicilio"].Value.ToString();
+            txtTelefono.Text = dgvEntrenadores.CurrentRow.Cells["Telefono"].Value.ToString();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string dni = txtDni.Text;
+            string domicilio = txtDomicilio.Text;
+            string telefono = txtTelefono.Text;            
+            string identificador = dgvEntrenadores.CurrentRow.Cells["Id_Entrenador"].Value.ToString();
+
+            entrenador.EditarEntrenador(nombre, apellido,dni,domicilio, telefono, identificador);
+
+            MessageBox.Show("Entrenador editado correctamente");
+
+            ListarEntrenadores();
+            BorrarInputs();
+        }
     }
 }

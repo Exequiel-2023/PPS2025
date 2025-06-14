@@ -37,6 +37,7 @@ namespace _01_CapaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            SocioInactivo socioInactivo = new SocioInactivo();
             
             string nombre = txtNombre.Text;
             string fechaIngreso = txtFechaAlta.Text;
@@ -48,7 +49,7 @@ namespace _01_CapaPresentacion
 
             MessageBox.Show($" {nombre} fue editado con exito");
 
-            socios.GetSocios();
+            socioInactivo.ShowDialog();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

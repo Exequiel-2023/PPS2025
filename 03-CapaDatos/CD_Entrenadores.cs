@@ -27,7 +27,7 @@ namespace _03_CapaDatos
             {
                 comando.Connection = conexion.OpenConexion();
 
-                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni from Entrenadores where Activo = 1;";
+                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni, Domicilio, Telefono from Entrenadores where Activo = 1;";
 
                 comando.CommandText = query;
 
@@ -53,7 +53,7 @@ namespace _03_CapaDatos
             {
                 comando.Connection = conexion.OpenConexion();
 
-                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni from Entrenadores where Activo = 0;";
+                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni,Domicilio,Telefono from Entrenadores where Activo = 0;";
 
                 comando.CommandText = query;
 
@@ -134,11 +134,44 @@ namespace _03_CapaDatos
             }
         }
 
-        public void EditarEntrenador()
+        public void EditarEntrenador(string nombre, string apellido, string dni, string domicilio, string telefono, int id)
         {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "UPDATE Entrenadores SET Nombre = '" + nombre + "',Apellido = '" + apellido + "',Dni = '" + dni + "',Domicilio = '" + domicilio + "',Telefono = '" + telefono + "' where Id_Entrenador = " + id + ";";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show("Error" + ex.Message);
+            }finally
+            {
+                conexion.CloseConexion();
+            }
         }
 
+        public void DarAltaEntrenador(string domicilio,string telefono, string Activo, int id)
+        {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "UPDATE Entrenadores set Activo = 1, Domicilio = '" + domicilio + "', Telefono = '" + telefono + "' where Id_Entrenador =  " + id + " ; ";
+            comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show("Error:" + ex);
+            }
+            finally
+            {
+                conexion.CloseConexion();
+            }
+            
+        }
     }
 }

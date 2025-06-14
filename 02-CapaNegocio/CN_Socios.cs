@@ -8,10 +8,10 @@ namespace _02_CapaNegocio
 
         CD_Socios socio = new CD_Socios();
 
-        public DataTable GetSocios ()
+        public DataTable MostrarSociosActivos ()
         {
             DataTable tabla = new DataTable();
-            tabla = socio.GetSocios();
+            tabla = socio.MostrarSociosActivos();
 
             return tabla;
         }

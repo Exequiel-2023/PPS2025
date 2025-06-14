@@ -15,6 +15,9 @@ namespace _01_CapaPresentacion
     {
         
         CN_Socios socio = new CN_Socios();
+
+        public MessageBoxButtons MessageBoxButton { get; private set; }
+
         public Socios()
         {
             InitializeComponent();
@@ -28,8 +31,6 @@ namespace _01_CapaPresentacion
 
             
         }
-
-      
 
         private void Socios_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace _01_CapaPresentacion
             string fechaIngreso = txt_FechaIngreso.Text;
 
             socio.InsertarSocio(nombre,apellido, dni, telefono, fechaIngreso);
-            MessageBox.Show($"{nombre} ah sido agregado correctamente");
+            MessageBox.Show($"{nombre} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarSocio();
             BorrarInputs();
 
@@ -60,7 +61,7 @@ namespace _01_CapaPresentacion
         {
             CN_Socios socio = new CN_Socios();
             dgv_Socios.DataSource = null;
-            dgv_Socios.DataSource = socio.GetSocios();
+            dgv_Socios.DataSource = socio.MostrarSociosActivos();
         }
 
         public void BorrarInputs()
