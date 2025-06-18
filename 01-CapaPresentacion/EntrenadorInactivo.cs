@@ -21,8 +21,9 @@ namespace _01_CapaPresentacion
 
         private void EntrenadorInactivo_Load(object sender, EventArgs e)
         {
-            dgvEntrenadorInactivo.DataSource = null;
-            dgvEntrenadorInactivo.DataSource = entrenador.MostrarEntrenadoresInactivos();
+            ListarEntrenadoresInactivos();
+            gbEntrenadorInactivo.Enabled = false;
+            gbEntrenadorInactivo.Hide();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -39,6 +40,8 @@ namespace _01_CapaPresentacion
             txtNombre.Enabled = false;
             txtApellido.Enabled = false;
             txtDni.Enabled = false;
+
+
             txtNombre.Text = dgvEntrenadorInactivo.CurrentRow.Cells["Nombre Entrenador"].Value.ToString();
             txtApellido.Text = dgvEntrenadorInactivo.CurrentRow.Cells["Apellido"].Value.ToString();
             txtDni.Text = dgvEntrenadorInactivo.CurrentRow.Cells["Dni"].Value.ToString();
@@ -48,27 +51,35 @@ namespace _01_CapaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            EntrenadorInactivo entrenadorInactivo = new EntrenadorInactivo();
-
-
-
+            
             string domicilio = txtDomicilio.Text;
             string telefono = txtTelefono.Text;
             string activo = txtActivo.Text;
-            
-
             string identificador = dgvEntrenadorInactivo.CurrentRow.Cells["Id_Entrenador"].Value.ToString();
+            if (domicilio == "" || telefono == "" || activo == "")
+            {
+                MessageBox.Show("Debes rellenar todos los campos");
+            }
+            else
+            {
+                entrenador.DarAltaEntrenador(domicilio, telefono, activo, identificador);
 
-            entrenador.DarAltaEntrenador(domicilio, telefono,activo,identificador);
+                MessageBox.Show("Entrenador editado correctamente");
 
-            MessageBox.Show("Entrenador editado correctamente");
+                ListarEntrenadoresInactivos();
 
-            entrenadorInactivo.ShowDialog();
+                gbEntrenadorInactivo.Enabled = false;
+                gbEntrenadorInactivo.Hide();
+            }
+ 
+        }
 
+        public void ListarEntrenadoresInactivos ()
+        {
+            CN_Entrenadores entrenador = new CN_Entrenadores();
 
-
-
-
+            dgvEntrenadorInactivo.DataSource = null;
+            dgvEntrenadorInactivo.DataSource = entrenador.MostrarEntrenadoresInactivos();
         }
     }
 }

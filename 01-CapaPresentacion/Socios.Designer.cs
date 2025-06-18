@@ -46,6 +46,7 @@
             this.lbl_Telefono = new System.Windows.Forms.Label();
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.lbl_Apellido = new System.Windows.Forms.Label();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Socios)).BeginInit();
             this.gb_Socios.SuspendLayout();
             this.SuspendLayout();
@@ -223,11 +224,22 @@
             this.lbl_Apellido.TabIndex = 7;
             this.lbl_Apellido.Text = "Apellido";
             // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(494, 571);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(75, 23);
+            this.btnVer.TabIndex = 9;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 699);
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.gb_Socios);
             this.Controls.Add(this.btn_Atras);
             this.Controls.Add(this.btn_Editar);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.Label lbl_Telefono;
         private System.Windows.Forms.Label lbl_Dni;
         private System.Windows.Forms.Label lbl_Apellido;
+        private System.Windows.Forms.Button btnVer;
     }
 }

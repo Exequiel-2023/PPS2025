@@ -21,13 +21,15 @@ namespace _01_CapaPresentacion
 
         private void SocioInactivo_Load(object sender, EventArgs e)
         {
-            CN_Socios socios = new CN_Socios();
-            dgv_SocioInactivo.DataSource = null;
-            dgv_SocioInactivo.DataSource = socios.SociosInactivos();
+            ListarSocioInactivo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            txtNombre.Enabled = false;
+            txtApellido.Enabled = false;
+            txtDni.Enabled = false;
+
             txtNombre.Text = dgv_SocioInactivo.CurrentRow.Cells["Nombre"].Value.ToString();
             txtApellido.Text = dgv_SocioInactivo.CurrentRow.Cells["Apellido"].Value.ToString();
             txtDni.Text = dgv_SocioInactivo.CurrentRow.Cells["Dni"].Value.ToString();
@@ -40,16 +42,26 @@ namespace _01_CapaPresentacion
             SocioInactivo socioInactivo = new SocioInactivo();
             
             string nombre = txtNombre.Text;
+            string telefono = txtTelefono.Text;
             string fechaIngreso = txtFechaAlta.Text;
             string Activo = txtActivo.Text;
 
             string id = dgv_SocioInactivo.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
-            socios.DarAltaSocio(fechaIngreso,Activo, id);
+            if (telefono == "" || fechaIngreso == "" || Activo == "")
+            {
+                MessageBox.Show("Debes rellenar todos los campos");
+            }
+            else
+            {
+                socios.DarAltaSocio(fechaIngreso, Activo, id);
 
-            MessageBox.Show($" {nombre} fue editado con exito");
+                MessageBox.Show($" {nombre} fue editado con exito");
 
-            socioInactivo.ShowDialog();
+                ListarSocioInactivo();
+            }
+
+            
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -57,6 +69,13 @@ namespace _01_CapaPresentacion
             this.Hide();
             VentanaPrincipal V1 = new VentanaPrincipal();
             V1.Show();
+        }
+
+        public void ListarSocioInactivo()
+        {
+            CN_Socios socios = new CN_Socios();
+            dgv_SocioInactivo.DataSource = null;
+            dgv_SocioInactivo.DataSource = socios.SociosInactivos();
         }
     }
 }

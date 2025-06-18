@@ -56,8 +56,10 @@
             this.dgvEntrenadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEntrenadores.Location = new System.Drawing.Point(12, 12);
             this.dgvEntrenadores.Name = "dgvEntrenadores";
+            this.dgvEntrenadores.ReadOnly = true;
             this.dgvEntrenadores.RowHeadersWidth = 51;
             this.dgvEntrenadores.RowTemplate.Height = 24;
+            this.dgvEntrenadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntrenadores.Size = new System.Drawing.Size(831, 480);
             this.dgvEntrenadores.TabIndex = 0;
             // 

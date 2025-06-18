@@ -75,46 +75,126 @@ namespace _03_CapaDatos.BaseDatos
 
         public void InsertarSocio(string nombre, string apellido, string dni, string tel, string fechaIngreso)
         {
-            comando.Connection = conexion.OpenConexion();
-            string query = "INSERT INTO Socios (Nombre, Apellido, Dni, Telefono, FechaIngreso) VALUES ('"+nombre+"','"+apellido+"','"+dni+"','"+tel+"','"+fechaIngreso+ "')";
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "INSERT INTO Socios (Nombre, Apellido, Dni, Telefono, FechaIngreso) VALUES ('" + nombre + "','" + apellido + "','" + dni + "','" + tel + "','" + fechaIngreso + "')";
 
-            comando.CommandText = query;
+                comando.CommandText = query;
 
-            comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion();
+            }
         }
 
         public void EliminarFisico(int id)
-        { 
-            comando.Connection = conexion.OpenConexion();
-            string query = "DELETE FROM Socios WHERE Id_Socio = "+id+"";
-            comando.CommandText = query;
-            comando.ExecuteNonQuery();
+        {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "DELETE FROM Socios WHERE Id_Socio = " + id + "";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion() ;
+            }
 
 
         }
 
         public void EliminarLogico(int id)
         {
-            comando.Connection = conexion.OpenConexion();
-            string query = "UPDATE Socios set Activo = 0 where Id_Socio = "+id+"";
-            comando.CommandText = query;
-            comando.ExecuteNonQuery();
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "UPDATE Socios set Activo = 0 where Id_Socio = " + id + "";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion();
+            }
         }
 
         public void EditarSocio(string nombre, string apellido, string dni, string telefono, string fechaIngreso, int id)
         {
-            comando.Connection = conexion.OpenConexion();
-            string query = "UPDATE Socios set Nombre  = '" + nombre + "',Apellido = '" + apellido + "', Dni = '" + dni + "',Telefono = '" + telefono + "',FechaIngreso = '" + fechaIngreso + "'WHERE Id_Socio = "+id+"";
-            comando.CommandText = query;
-            comando.ExecuteNonQuery();
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "UPDATE Socios set Nombre  = '" + nombre + "',Apellido = '" + apellido + "', Dni = '" + dni + "',Telefono = '" + telefono + "',FechaIngreso = '" + fechaIngreso + "'WHERE Id_Socio = " + id + "";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion() ;
+            }
         }
 
         public void DarAltaSocio(string fechaAlta, string Activo, int id)
         {
-            comando.Connection = conexion.OpenConexion();
-            string query = "UPDATE Socios set Activo = "+Activo+", FechaIngreso = '"+fechaAlta+"' where Id_Socio = "+id+";";
-            comando.CommandText = query;
-            comando.ExecuteNonQuery();
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "UPDATE Socios set Activo = " + Activo + ", FechaIngreso = '" + fechaAlta + "' where Id_Socio = " + id + ";";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }finally
+            {
+                conexion.CloseConexion();
+            }
         }
+
+        public void VerDetalleSocioActivo (int id, string nombre, string apellido, string dni, string telefono, string fechaAlta)
+        {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "SELECT Id_Socio = '"+id+"', Nombre = '"+nombre+ "', Apellido = '"+apellido+ "', Dni= '"+dni+ "', Telefono= '"+telefono+ "', FechaIngreso = '"+fechaAlta+"' FROM Socios WHERE Activo = 1";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion ();
+            }
+        }
+
+        
     }
 }

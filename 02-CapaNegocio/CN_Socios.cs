@@ -47,5 +47,10 @@ namespace _02_CapaNegocio
         {
             socio.DarAltaSocio(fechaAlta,Activo,int.Parse(id));
         }
+
+        public void VerDetalleSocioActivo (string id, string nombre, string apellido, string dni, string telefono, string fechaAlta)
+        {
+            socio.VerDetalleSocioActivo(int.Parse(id), nombre, apellido, dni, telefono,fechaAlta);
+        }
     }
 }

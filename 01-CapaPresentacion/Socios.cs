@@ -49,12 +49,18 @@ namespace _01_CapaPresentacion
             string telefono = txt_Telefono.Text;
             string fechaIngreso = txt_FechaIngreso.Text;
 
-            socio.InsertarSocio(nombre,apellido, dni, telefono, fechaIngreso);
-            MessageBox.Show($"{nombre} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ListarSocio();
-            BorrarInputs();
-
-            
+            if (nombre == "" || apellido == "" || dni == "" || telefono == "" || fechaIngreso == "")
+            {
+                MessageBox.Show("Debes rellenar todos los campos");
+            }
+            else
+            {
+                socio.InsertarSocio(nombre, apellido, dni, telefono, fechaIngreso);
+                MessageBox.Show($"{nombre} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListarSocio();
+                BorrarInputs();
+            }
+          
         }
 
         public void ListarSocio ()
@@ -98,12 +104,16 @@ namespace _01_CapaPresentacion
             btn_Actualizar.Enabled = true;
             btn_Actualizar.Show();
 
+            txt_Nombre.Enabled = false;
+            txt_Apellido.Enabled = false;
+            txt_Dni.Enabled = false;
+
             txt_Nombre.Text = dgv_Socios.CurrentRow.Cells["Nombre"].Value.ToString();
             txt_Apellido.Text = dgv_Socios.CurrentRow.Cells["Apellido"].Value.ToString();
             txt_Dni.Text = dgv_Socios.CurrentRow.Cells["Dni"].Value.ToString();
             txt_Telefono.Text = dgv_Socios.CurrentRow.Cells["Telefono"].Value.ToString();
             txt_FechaIngreso.Text = dgv_Socios.CurrentRow.Cells["FechaIngreso"].Value.ToString();
-           
+
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
@@ -116,13 +126,46 @@ namespace _01_CapaPresentacion
 
             string id = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
-            socio.EditarSocio(nombre,apellido,dni,telefono,fechaIngreso,id);
+            if (telefono == "" || fechaIngreso == "")
+            {
+                MessageBox.Show("Debes rellenar todos los campos");
+            }
+            else
+            {
+                socio.EditarSocio(nombre, apellido, dni, telefono, fechaIngreso, id);
 
-            MessageBox.Show($" {nombre} fue editado con exito");
+                MessageBox.Show($" {nombre} fue editado con exito");
 
-            ListarSocio();
-            BorrarInputs();
+                ListarSocio();
+                BorrarInputs();
+            }
+
             
+            
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (dgv_Socios.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dgv_Socios.SelectedRows[0];
+                string id = fila.Cells["Id_Socio"].Value.ToString();
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+                string apellido = fila.Cells["Apellido"].Value.ToString();
+                string dni = fila.Cells["Dni"].Value.ToString();
+                string telefono = fila.Cells["Telefono"].Value.ToString();
+                string fechaIngreso = fila.Cells["FechaIngreso"].Value.ToString();
+
+                this.Hide();
+                frmVerSocioActivo destino = new frmVerSocioActivo(id,nombre,apellido,dni,telefono, fechaIngreso);
+                destino.Show();
+            }
+
+
+
+
+
+
         }
     }
 }

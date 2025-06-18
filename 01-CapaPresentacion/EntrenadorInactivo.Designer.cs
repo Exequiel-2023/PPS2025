@@ -34,18 +34,18 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbEntrenadorInactivo = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.lblDomicilio = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblActivo = new System.Windows.Forms.Label();
             this.txtActivo = new System.Windows.Forms.TextBox();
+            this.lblActivo = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblDomicilio = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenadorInactivo)).BeginInit();
             this.gbEntrenadorInactivo.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +55,10 @@
             this.dgvEntrenadorInactivo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEntrenadorInactivo.Location = new System.Drawing.Point(12, 12);
             this.dgvEntrenadorInactivo.Name = "dgvEntrenadorInactivo";
+            this.dgvEntrenadorInactivo.ReadOnly = true;
             this.dgvEntrenadorInactivo.RowHeadersWidth = 51;
             this.dgvEntrenadorInactivo.RowTemplate.Height = 24;
+            this.dgvEntrenadorInactivo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntrenadorInactivo.Size = new System.Drawing.Size(839, 537);
             this.dgvEntrenadorInactivo.TabIndex = 0;
             // 
@@ -112,85 +114,12 @@
             this.gbEntrenadorInactivo.TabStop = false;
             this.gbEntrenadorInactivo.Text = "groupBox1";
             // 
-            // lblNombre
+            // txtActivo
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(7, 45);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(7, 102);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(57, 16);
-            this.lblApellido.TabIndex = 1;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // lblDni
-            // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(7, 160);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(27, 16);
-            this.lblDni.TabIndex = 2;
-            this.lblDni.Text = "Dni";
-            // 
-            // lblDomicilio
-            // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(7, 235);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(63, 16);
-            this.lblDomicilio.TabIndex = 3;
-            this.lblDomicilio.Text = "Domicilio";
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(7, 297);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(61, 16);
-            this.lblTelefono.TabIndex = 4;
-            this.lblTelefono.Text = "Telefono";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(108, 39);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(162, 22);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(108, 96);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(162, 22);
-            this.txtApellido.TabIndex = 6;
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(105, 154);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(162, 22);
-            this.txtDni.TabIndex = 7;
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Location = new System.Drawing.Point(105, 229);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(162, 22);
-            this.txtDomicilio.TabIndex = 8;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(105, 297);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(162, 22);
-            this.txtTelefono.TabIndex = 9;
+            this.txtActivo.Location = new System.Drawing.Point(105, 360);
+            this.txtActivo.Name = "txtActivo";
+            this.txtActivo.Size = new System.Drawing.Size(162, 22);
+            this.txtActivo.TabIndex = 11;
             // 
             // lblActivo
             // 
@@ -201,12 +130,85 @@
             this.lblActivo.TabIndex = 10;
             this.lblActivo.Text = "Activo";
             // 
-            // txtActivo
+            // txtTelefono
             // 
-            this.txtActivo.Location = new System.Drawing.Point(105, 360);
-            this.txtActivo.Name = "txtActivo";
-            this.txtActivo.Size = new System.Drawing.Size(162, 22);
-            this.txtActivo.TabIndex = 11;
+            this.txtTelefono.Location = new System.Drawing.Point(105, 297);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(162, 22);
+            this.txtTelefono.TabIndex = 9;
+            // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.Location = new System.Drawing.Point(105, 229);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(162, 22);
+            this.txtDomicilio.TabIndex = 8;
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(105, 154);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(162, 22);
+            this.txtDni.TabIndex = 7;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(108, 96);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(162, 22);
+            this.txtApellido.TabIndex = 6;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(108, 39);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(162, 22);
+            this.txtNombre.TabIndex = 5;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(7, 297);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(61, 16);
+            this.lblTelefono.TabIndex = 4;
+            this.lblTelefono.Text = "Telefono";
+            // 
+            // lblDomicilio
+            // 
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Location = new System.Drawing.Point(7, 235);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(63, 16);
+            this.lblDomicilio.TabIndex = 3;
+            this.lblDomicilio.Text = "Domicilio";
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Location = new System.Drawing.Point(7, 160);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(27, 16);
+            this.lblDni.TabIndex = 2;
+            this.lblDni.Text = "Dni";
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(7, 102);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(57, 16);
+            this.lblApellido.TabIndex = 1;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(7, 45);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre";
             // 
             // EntrenadorInactivo
             // 

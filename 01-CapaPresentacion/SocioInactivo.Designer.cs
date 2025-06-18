@@ -32,6 +32,8 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.gvSocioInactivo = new System.Windows.Forms.GroupBox();
+            this.txtActivo = new System.Windows.Forms.TextBox();
+            this.lblActivo = new System.Windows.Forms.Label();
             this.txtFechaAlta = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblActivo = new System.Windows.Forms.Label();
-            this.txtActivo = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SocioInactivo)).BeginInit();
             this.gvSocioInactivo.SuspendLayout();
@@ -102,6 +102,22 @@
             this.gvSocioInactivo.TabIndex = 3;
             this.gvSocioInactivo.TabStop = false;
             this.gvSocioInactivo.Text = "Actualizar Socio";
+            // 
+            // txtActivo
+            // 
+            this.txtActivo.Location = new System.Drawing.Point(77, 288);
+            this.txtActivo.Name = "txtActivo";
+            this.txtActivo.Size = new System.Drawing.Size(131, 22);
+            this.txtActivo.TabIndex = 12;
+            // 
+            // lblActivo
+            // 
+            this.lblActivo.AutoSize = true;
+            this.lblActivo.Location = new System.Drawing.Point(6, 294);
+            this.lblActivo.Name = "lblActivo";
+            this.lblActivo.Size = new System.Drawing.Size(44, 16);
+            this.lblActivo.TabIndex = 11;
+            this.lblActivo.Text = "Activo";
             // 
             // txtFechaAlta
             // 
@@ -182,22 +198,6 @@
             this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
-            // 
-            // lblActivo
-            // 
-            this.lblActivo.AutoSize = true;
-            this.lblActivo.Location = new System.Drawing.Point(6, 294);
-            this.lblActivo.Name = "lblActivo";
-            this.lblActivo.Size = new System.Drawing.Size(44, 16);
-            this.lblActivo.TabIndex = 11;
-            this.lblActivo.Text = "Activo";
-            // 
-            // txtActivo
-            // 
-            this.txtActivo.Location = new System.Drawing.Point(77, 288);
-            this.txtActivo.Name = "txtActivo";
-            this.txtActivo.Size = new System.Drawing.Size(131, 22);
-            this.txtActivo.TabIndex = 12;
             // 
             // btnAtras
             // 

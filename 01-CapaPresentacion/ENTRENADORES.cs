@@ -68,10 +68,26 @@ namespace _01_CapaPresentacion
             string domicilio = txtDomicilio.Text;
             string telefono = txtTelefono.Text;
 
-            entrenador.InsertarEntrenador(nombre, apellido, dni, domicilio, telefono);
-            MessageBox.Show($"{nombre} {apellido} fue agregado correctamente");
-            ListarEntrenadores();  
-            BorrarInputs();
+            if (nombre == "" || apellido == "" || dni == "" || domicilio == "" || telefono == "")
+            {
+                MessageBox.Show("Debes rellenar todos los campos!");
+            }
+            else
+            {
+                entrenador.InsertarEntrenador(nombre, apellido, dni, domicilio, telefono);
+                MessageBox.Show($"{nombre} {apellido} fue agregado correctamente");
+                ListarEntrenadores();
+                BorrarInputs();
+
+                btnEliminarFisico.Enabled = true;
+                btnEliminarFisico.Show();
+                btnEliminarLogico.Enabled = true;
+                btnEliminarLogico.Show();
+                btnEditar.Enabled = true;
+                btnEditar.Show();
+            }
+
+            
 
         }
 
@@ -141,6 +157,15 @@ namespace _01_CapaPresentacion
 
             ListarEntrenadores();
             BorrarInputs();
+
+            btnEliminarFisico.Enabled = true;
+            btnEliminarFisico.Show();
+            btnEliminarLogico.Enabled = true;
+            btnEliminarLogico.Show();
+            btnEditar.Enabled = true;
+            btnEditar.Show();
+            btnAgregar.Enabled = true;
+            btnAgregar.Show();
         }
     }
 }
