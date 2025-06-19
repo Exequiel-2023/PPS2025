@@ -73,7 +73,7 @@ namespace _03_CapaDatos.BaseDatos
             
         }
 
-        public void InsertarSocio(string nombre, string apellido, string dni, string tel, string fechaIngreso)
+        public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
         {
             try
             {

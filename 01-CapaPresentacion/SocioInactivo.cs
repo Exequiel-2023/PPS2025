@@ -34,7 +34,7 @@ namespace _01_CapaPresentacion
             txtApellido.Text = dgv_SocioInactivo.CurrentRow.Cells["Apellido"].Value.ToString();
             txtDni.Text = dgv_SocioInactivo.CurrentRow.Cells["Dni"].Value.ToString();
             txtTelefono.Text = dgv_SocioInactivo.CurrentRow.Cells["Telefono"].Value.ToString();
-            txtFechaAlta.Text = dgv_SocioInactivo.CurrentRow.Cells["FechaIngreso"].Value.ToString();
+            dtpFechaAlta.Text = dgv_SocioInactivo.CurrentRow.Cells["FechaIngreso"].Value.ToString();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -43,18 +43,18 @@ namespace _01_CapaPresentacion
             
             string nombre = txtNombre.Text;
             string telefono = txtTelefono.Text;
-            string fechaIngreso = txtFechaAlta.Text;
+            DateTime fecha = dtpFechaAlta.Value;
             string Activo = txtActivo.Text;
 
             string id = dgv_SocioInactivo.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
-            if (telefono == "" || fechaIngreso == "" || Activo == "")
+            if (telefono == "" || Activo == "")
             {
                 MessageBox.Show("Debes rellenar todos los campos");
             }
             else
             {
-                socios.DarAltaSocio(fechaIngreso, Activo, id);
+                socios.DarAltaSocio(fecha.ToString(), Activo, id);
 
                 MessageBox.Show($" {nombre} fue editado con exito");
 

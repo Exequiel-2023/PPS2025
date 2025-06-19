@@ -34,7 +34,6 @@
             this.gvSocioInactivo = new System.Windows.Forms.GroupBox();
             this.txtActivo = new System.Windows.Forms.TextBox();
             this.lblActivo = new System.Windows.Forms.Label();
-            this.txtFechaAlta = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SocioInactivo)).BeginInit();
             this.gvSocioInactivo.SuspendLayout();
             this.SuspendLayout();
@@ -83,10 +83,10 @@
             // 
             // gvSocioInactivo
             // 
+            this.gvSocioInactivo.Controls.Add(this.dtpFechaAlta);
             this.gvSocioInactivo.Controls.Add(this.txtActivo);
             this.gvSocioInactivo.Controls.Add(this.lblActivo);
             this.gvSocioInactivo.Controls.Add(this.btnActualizar);
-            this.gvSocioInactivo.Controls.Add(this.txtFechaAlta);
             this.gvSocioInactivo.Controls.Add(this.txtDni);
             this.gvSocioInactivo.Controls.Add(this.txtTelefono);
             this.gvSocioInactivo.Controls.Add(this.txtApellido);
@@ -118,13 +118,6 @@
             this.lblActivo.Size = new System.Drawing.Size(44, 16);
             this.lblActivo.TabIndex = 11;
             this.lblActivo.Text = "Activo";
-            // 
-            // txtFechaAlta
-            // 
-            this.txtFechaAlta.Location = new System.Drawing.Point(102, 231);
-            this.txtFechaAlta.Name = "txtFechaAlta";
-            this.txtFechaAlta.Size = new System.Drawing.Size(131, 22);
-            this.txtFechaAlta.TabIndex = 10;
             // 
             // txtDni
             // 
@@ -209,6 +202,13 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // dtpFechaAlta
+            // 
+            this.dtpFechaAlta.Location = new System.Drawing.Point(102, 231);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(118, 22);
+            this.dtpFechaAlta.TabIndex = 13;
+            // 
             // SocioInactivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,7 +236,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.GroupBox gvSocioInactivo;
-        private System.Windows.Forms.TextBox txtFechaAlta;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtApellido;
@@ -249,5 +248,6 @@
         private System.Windows.Forms.TextBox txtActivo;
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
     }
 }

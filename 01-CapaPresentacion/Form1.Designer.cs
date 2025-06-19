@@ -68,6 +68,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(100, 22);
             this.txt_Password.TabIndex = 3;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // btn_Ingresar
             // 
@@ -77,7 +78,7 @@
             this.btn_Ingresar.TabIndex = 4;
             this.btn_Ingresar.Text = "Ingresar";
             this.btn_Ingresar.UseVisualStyleBackColor = true;
-            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
+            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click_1);
             // 
             // btn_Salir
             // 

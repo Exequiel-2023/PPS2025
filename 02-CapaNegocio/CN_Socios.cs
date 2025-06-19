@@ -1,4 +1,5 @@
 ﻿using _03_CapaDatos.BaseDatos;
+using System;
 using System.Data;
 
 namespace _02_CapaNegocio
@@ -23,7 +24,7 @@ namespace _02_CapaNegocio
             return tabla;
         }
 
-        public void InsertarSocio(string nombre, string apellido, string dni, string tel, string fechaIngreso)
+        public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
         {
             socio.InsertarSocio(nombre, apellido, dni, tel, fechaIngreso);
         }

@@ -107,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SocioInactivo.resx">
       <DependentUpon>SocioInactivo.cs</DependentUpon>
@@ -138,6 +139,9 @@
       <Project>{cae9e8f0-982a-4fd4-b2c8-204eee16df47}</Project>
       <Name>02-CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tevez.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

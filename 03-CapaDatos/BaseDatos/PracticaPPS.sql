@@ -14,12 +14,14 @@ FechaIngreso smalldatetime,
 Activo Bit default 1
 );
 
+SELECT Id_Socio, Nombre, Apellido, Dni, Telefono, FechaIngreso FROM Socios WHERE Activo = 1;
+
 ALTER TABLE Socios alter column FechaIngreso Date; 
 UPDATE Socios set Activo = 0, FechaIngreso = '' where Id_Socio = 8;
 
 
 INSERT INTO Socios (Nombre, Apellido, Dni, Telefono, FechaIngreso) VALUES ('Exequiel','Nuñez','34910234','3813567876', '02/06/2025');
-select * from Socios where Activo = 1;
+select  Id_Socio, Nombre, Apellido from Socios where Activo = 1;
 UPDATE Socios set Nombre  = 'NICOLAS',Apellido = 'RODRIGUEZ', Dni = '43567880',Telefono = '381456758',FechaIngreso = '2005/02/07' WHERE Id_Socio= 8;
  
 

@@ -34,6 +34,10 @@ namespace _01_CapaPresentacion
 
         private void Socios_Load(object sender, EventArgs e)
         {
+            cboClase.Items.Add("Zumba");
+            cboClase.Items.Add("Boxeo");
+            cboClase.Items.Add("Spining");
+
             btn_Actualizar.Enabled = false;
             btn_Actualizar.Hide();
             ListarSocio();
@@ -47,15 +51,15 @@ namespace _01_CapaPresentacion
             string apellido = txt_Apellido.Text;
             string dni = txt_Dni.Text;
             string telefono = txt_Telefono.Text;
-            string fechaIngreso = txt_FechaIngreso.Text;
+            DateTime fecha = dtpFechaIngreso.Value;
 
-            if (nombre == "" || apellido == "" || dni == "" || telefono == "" || fechaIngreso == "")
+            if (nombre == "" || apellido == "" || dni == "" || telefono == "")
             {
                 MessageBox.Show("Debes rellenar todos los campos");
             }
             else
             {
-                socio.InsertarSocio(nombre, apellido, dni, telefono, fechaIngreso);
+                socio.InsertarSocio(nombre, apellido, dni, telefono, fecha);
                 MessageBox.Show($"{nombre} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListarSocio();
                 BorrarInputs();
@@ -76,7 +80,7 @@ namespace _01_CapaPresentacion
             txt_Apellido.Clear();
             txt_Dni.Clear();
             txt_Telefono.Clear();
-            txt_FechaIngreso.Clear();
+           
         }
 
         private void btn_EliminarFisico_Click(object sender, EventArgs e)
@@ -112,7 +116,7 @@ namespace _01_CapaPresentacion
             txt_Apellido.Text = dgv_Socios.CurrentRow.Cells["Apellido"].Value.ToString();
             txt_Dni.Text = dgv_Socios.CurrentRow.Cells["Dni"].Value.ToString();
             txt_Telefono.Text = dgv_Socios.CurrentRow.Cells["Telefono"].Value.ToString();
-            txt_FechaIngreso.Text = dgv_Socios.CurrentRow.Cells["FechaIngreso"].Value.ToString();
+            dtpFechaIngreso.Text = dgv_Socios.CurrentRow.Cells["FechaIngreso"].Value.ToString();
 
         }
 
@@ -122,17 +126,17 @@ namespace _01_CapaPresentacion
             string apellido = txt_Apellido.Text;
             string dni = txt_Dni.Text;
             string telefono = txt_Telefono.Text;
-            string fechaIngreso = txt_FechaIngreso.Text;
+            DateTime fecha = dtpFechaIngreso.Value;
 
             string id = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
-            if (telefono == "" || fechaIngreso == "")
+            if (telefono == "" )
             {
                 MessageBox.Show("Debes rellenar todos los campos");
             }
             else
             {
-                socio.EditarSocio(nombre, apellido, dni, telefono, fechaIngreso, id);
+                socio.EditarSocio(nombre, apellido, dni, telefono, fecha.ToString(), id);
 
                 MessageBox.Show($" {nombre} fue editado con exito");
 
@@ -167,5 +171,7 @@ namespace _01_CapaPresentacion
 
 
         }
+
+        
     }
 }

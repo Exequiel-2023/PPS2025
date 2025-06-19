@@ -15,6 +15,7 @@ namespace _01_CapaPresentacion
         public frmVerSocioActivo(string id, string nombre, string apellido, string dni, string telefono, string fechaIngreso)
         {
             InitializeComponent();
+
             txtId.Text = id;
             txtNombre.Text = nombre;
             txtApellido.Text = apellido;
@@ -25,7 +26,6 @@ namespace _01_CapaPresentacion
         }
 
         
-
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();

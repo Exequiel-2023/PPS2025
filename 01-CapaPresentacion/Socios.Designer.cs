@@ -37,7 +37,9 @@
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.btn_Atras = new System.Windows.Forms.Button();
             this.gb_Socios = new System.Windows.Forms.GroupBox();
-            this.txt_FechaIngreso = new System.Windows.Forms.TextBox();
+            this.lblClase = new System.Windows.Forms.Label();
+            this.cboClase = new System.Windows.Forms.ComboBox();
+            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.txt_Dni = new System.Windows.Forms.TextBox();
             this.txt_Apellido = new System.Windows.Forms.TextBox();
@@ -134,7 +136,9 @@
             // 
             // gb_Socios
             // 
-            this.gb_Socios.Controls.Add(this.txt_FechaIngreso);
+            this.gb_Socios.Controls.Add(this.lblClase);
+            this.gb_Socios.Controls.Add(this.cboClase);
+            this.gb_Socios.Controls.Add(this.dtpFechaIngreso);
             this.gb_Socios.Controls.Add(this.txt_Telefono);
             this.gb_Socios.Controls.Add(this.txt_Dni);
             this.gb_Socios.Controls.Add(this.txt_Apellido);
@@ -153,12 +157,29 @@
             this.gb_Socios.TabStop = false;
             this.gb_Socios.Text = "Ingresa un nuevo socio:";
             // 
-            // txt_FechaIngreso
+            // lblClase
             // 
-            this.txt_FechaIngreso.Location = new System.Drawing.Point(114, 283);
-            this.txt_FechaIngreso.Name = "txt_FechaIngreso";
-            this.txt_FechaIngreso.Size = new System.Drawing.Size(173, 22);
-            this.txt_FechaIngreso.TabIndex = 15;
+            this.lblClase.AutoSize = true;
+            this.lblClase.Location = new System.Drawing.Point(6, 342);
+            this.lblClase.Name = "lblClase";
+            this.lblClase.Size = new System.Drawing.Size(42, 16);
+            this.lblClase.TabIndex = 17;
+            this.lblClase.Text = "Clase";
+            // 
+            // cboClase
+            // 
+            this.cboClase.FormattingEnabled = true;
+            this.cboClase.Location = new System.Drawing.Point(114, 334);
+            this.cboClase.Name = "cboClase";
+            this.cboClase.Size = new System.Drawing.Size(121, 24);
+            this.cboClase.TabIndex = 16;
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(114, 286);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(173, 22);
+            this.dtpFechaIngreso.TabIndex = 15;
             // 
             // txt_Telefono
             // 
@@ -267,7 +288,6 @@
         private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.Button btn_Atras;
         private System.Windows.Forms.GroupBox gb_Socios;
-        private System.Windows.Forms.TextBox txt_FechaIngreso;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.TextBox txt_Dni;
         private System.Windows.Forms.TextBox txt_Apellido;
@@ -277,5 +297,8 @@
         private System.Windows.Forms.Label lbl_Dni;
         private System.Windows.Forms.Label lbl_Apellido;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
+        private System.Windows.Forms.Label lblClase;
+        private System.Windows.Forms.ComboBox cboClase;
     }
 }
