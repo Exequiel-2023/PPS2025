@@ -195,6 +195,24 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        
+        public void MandarEmailSocioInactivo( int id, string email)
+        {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "SELECT Id_Socio = "+id+" , Email = '"+email+"' from Socios where activo = 0;  ";
+                comando.CommandText = query;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion () ;
+            }
+        }
     }
 }

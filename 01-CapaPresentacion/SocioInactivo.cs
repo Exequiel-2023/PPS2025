@@ -77,5 +77,22 @@ namespace _01_CapaPresentacion
             dgv_SocioInactivo.DataSource = null;
             dgv_SocioInactivo.DataSource = socios.SociosInactivos();
         }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            if (dgv_SocioInactivo.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dgv_SocioInactivo.SelectedRows[0];
+                string id = fila.Cells["Id_Socio"].Value.ToString();
+                string email = fila.Cells["Email"].Value.ToString();
+
+                this.Hide();
+                FrmCorreo correo = new FrmCorreo(id,email);
+                correo.ShowDialog();
+
+            }
+
+           
+        }
     }
 }

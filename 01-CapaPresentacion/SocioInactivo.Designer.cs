@@ -32,6 +32,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.gvSocioInactivo = new System.Windows.Forms.GroupBox();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.txtActivo = new System.Windows.Forms.TextBox();
             this.lblActivo = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.btnEmail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SocioInactivo)).BeginInit();
             this.gvSocioInactivo.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +103,13 @@
             this.gvSocioInactivo.TabIndex = 3;
             this.gvSocioInactivo.TabStop = false;
             this.gvSocioInactivo.Text = "Actualizar Socio";
+            // 
+            // dtpFechaAlta
+            // 
+            this.dtpFechaAlta.Location = new System.Drawing.Point(102, 231);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(118, 22);
+            this.dtpFechaAlta.TabIndex = 13;
             // 
             // txtActivo
             // 
@@ -202,18 +210,22 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // dtpFechaAlta
+            // btnEmail
             // 
-            this.dtpFechaAlta.Location = new System.Drawing.Point(102, 231);
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(118, 22);
-            this.dtpFechaAlta.TabIndex = 13;
+            this.btnEmail.Location = new System.Drawing.Point(415, 506);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(129, 23);
+            this.btnEmail.TabIndex = 5;
+            this.btnEmail.Text = "Enviar e-mail";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // SocioInactivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 582);
+            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gvSocioInactivo);
             this.Controls.Add(this.btnEditar);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        private System.Windows.Forms.Button btnEmail;
     }
 }

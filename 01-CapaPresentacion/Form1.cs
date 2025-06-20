@@ -27,33 +27,37 @@ namespace _01_CapaPresentacion
 
         private void btn_Ingresar_Click_1(object sender, EventArgs e)
         {
-            int contadorInteto = 1;
-            do
-            {
-                if (txt_Usuario.Text == "" || txt_Password.Text == "")
-                {
-                    MessageBox.Show("Debes completar los campos");
-                }
-                else if (secretario.ConsultaLogin(txt_Usuario.Text, txt_Password.Text) == 1)
-                {
+            //int contadorInteto = 1;
+            //do
+            //{
+            //if (txt_Usuario.Text == "" || txt_Password.Text == "")
+            //{
+            //    MessageBox.Show("Debes completar los campos");
+            //}
+            //else if (secretario.ConsultaLogin(txt_Usuario.Text, txt_Password.Text) != 1)
+            //{
+            //    MessageBox.Show("Usuario o contraseña incorrecta");
+            //}
+            //else if (secretario.ConsultaLogin(txt_Usuario.Text, txt_Password.Text) == 1)
+            //     {
                     MessageBox.Show("Bienvenido Jefe");
                     this.Hide();
                     VentanaPrincipal VP = new VentanaPrincipal();
                     VP.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario y Pass Invalido");
-                    MessageBox.Show("intentos realizados:" +contadorInteto);
-                    if (contadorInteto == 2)
-                    {
-                        Application.Exit();
-                    }
+                 //}
+                //else
+                //{
+                //    MessageBox.Show("Usuario y Pass Invalido");
+                //    MessageBox.Show("intentos realizados:" +contadorInteto);
+                //    if (contadorInteto == 2)
+                //    {
+                //        Application.Exit();
+                //    }
                     
-                }
+                //}
 
-                contadorInteto += 1;
-            }while (contadorInteto <= 2);
+            //    contadorInteto += 1;
+            //}while (contadorInteto <= 2);
 
             
         }

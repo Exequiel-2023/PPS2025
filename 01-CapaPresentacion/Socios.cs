@@ -16,7 +16,7 @@ namespace _01_CapaPresentacion
         
         CN_Socios socio = new CN_Socios();
 
-        public MessageBoxButtons MessageBoxButton { get; private set; }
+        //public MessageBoxButtons MessageBoxButton { get; private set; }
 
         public Socios()
         {

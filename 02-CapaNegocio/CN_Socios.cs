@@ -53,5 +53,10 @@ namespace _02_CapaNegocio
         {
             socio.VerDetalleSocioActivo(int.Parse(id), nombre, apellido, dni, telefono,fechaAlta);
         }
+
+        public void MandarEmailSocioInactivo(string id, string email)
+        {
+            socio.MandarEmailSocioInactivo(int.Parse(id), email);
+        }
     }
 }
