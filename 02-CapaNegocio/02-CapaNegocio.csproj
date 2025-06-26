@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Entrenadores.cs" />
+    <Compile Include="CN_Inventario.cs" />
     <Compile Include="CN_Secretarios.cs" />
     <Compile Include="CN_Socios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblPara);
             this.Name = "FrmCorreo";
             this.Text = "FrmCorreo";
-            this.Load += new System.EventHandler(this.FrmCorreo_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

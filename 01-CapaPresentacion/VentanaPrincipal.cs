@@ -46,5 +46,12 @@ namespace _01_CapaPresentacion
             EntrenadorInactivo EntrenadorInactivo = new EntrenadorInactivo();
             EntrenadorInactivo.ShowDialog();
         }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inventario inventario = new Inventario();
+            inventario.ShowDialog();
+        }
     }
 }

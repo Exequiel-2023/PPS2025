@@ -35,6 +35,7 @@
             this.entrenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarEntrenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNuevoEntrenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sociosToolStripMenuItem,
-            this.entrenadoresToolStripMenuItem});
+            this.entrenadoresToolStripMenuItem,
+            this.inventarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -96,6 +98,13 @@
             this.registrarNuevoEntrenadorToolStripMenuItem.Text = "Entrenadores Inactivos";
             this.registrarNuevoEntrenadorToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoEntrenadorToolStripMenuItem_Click);
             // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -121,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem entrenadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarEntrenadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarNuevoEntrenadorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
     }
 }

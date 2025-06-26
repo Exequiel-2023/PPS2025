@@ -28,11 +28,6 @@ namespace _01_CapaPresentacion
             socioInactivo.ShowDialog();
         }
 
-        private void FrmCorreo_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void AdjuntarArchivos()
         {
             string NombreArchivos = "";
