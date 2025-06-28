@@ -58,5 +58,11 @@ namespace _02_CapaNegocio
         {
             socio.MandarEmailSocioInactivo(int.Parse(id), email);
         }
+
+        public DataTable FiltroInactivo(string dni, string activo)
+        {
+            DataTable tabla = new DataTable();
+           return tabla = socio.FiltroSocioInactivo(dni, activo);
+        }
     }
 }

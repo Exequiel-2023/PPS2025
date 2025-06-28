@@ -46,6 +46,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
+            this.lblFiltrarInactivo = new System.Windows.Forms.Label();
+            this.txbFiltrarInactivo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SocioInactivo)).BeginInit();
             this.gvSocioInactivo.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             // dgv_SocioInactivo
             // 
             this.dgv_SocioInactivo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_SocioInactivo.Location = new System.Drawing.Point(12, 23);
+            this.dgv_SocioInactivo.Location = new System.Drawing.Point(12, 56);
             this.dgv_SocioInactivo.Name = "dgv_SocioInactivo";
             this.dgv_SocioInactivo.ReadOnly = true;
             this.dgv_SocioInactivo.RowHeadersWidth = 51;
@@ -64,7 +66,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(625, 506);
+            this.btnEditar.Location = new System.Drawing.Point(634, 537);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 1;
@@ -97,7 +99,7 @@
             this.gvSocioInactivo.Controls.Add(this.lblDni);
             this.gvSocioInactivo.Controls.Add(this.lblApellido);
             this.gvSocioInactivo.Controls.Add(this.lblNombre);
-            this.gvSocioInactivo.Location = new System.Drawing.Point(743, 23);
+            this.gvSocioInactivo.Location = new System.Drawing.Point(755, 56);
             this.gvSocioInactivo.Name = "gvSocioInactivo";
             this.gvSocioInactivo.Size = new System.Drawing.Size(239, 444);
             this.gvSocioInactivo.TabIndex = 3;
@@ -212,7 +214,7 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(415, 506);
+            this.btnEmail.Location = new System.Drawing.Point(269, 537);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(129, 23);
             this.btnEmail.TabIndex = 5;
@@ -220,11 +222,31 @@
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
+            // lblFiltrarInactivo
+            // 
+            this.lblFiltrarInactivo.AutoSize = true;
+            this.lblFiltrarInactivo.Location = new System.Drawing.Point(102, 19);
+            this.lblFiltrarInactivo.Name = "lblFiltrarInactivo";
+            this.lblFiltrarInactivo.Size = new System.Drawing.Size(95, 16);
+            this.lblFiltrarInactivo.TabIndex = 14;
+            this.lblFiltrarInactivo.Text = "Filtrar por DNI :";
+            // 
+            // txbFiltrarInactivo
+            // 
+            this.txbFiltrarInactivo.Location = new System.Drawing.Point(217, 19);
+            this.txbFiltrarInactivo.Name = "txbFiltrarInactivo";
+            this.txbFiltrarInactivo.Size = new System.Drawing.Size(309, 22);
+            this.txbFiltrarInactivo.TabIndex = 15;
+            this.txbFiltrarInactivo.TextChanged += new System.EventHandler(this.txbFiltrarInactivo_TextChanged);
+            
+            // 
             // SocioInactivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 582);
+            this.Controls.Add(this.txbFiltrarInactivo);
+            this.Controls.Add(this.lblFiltrarInactivo);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gvSocioInactivo);
@@ -239,6 +261,7 @@
             this.gvSocioInactivo.ResumeLayout(false);
             this.gvSocioInactivo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,5 +285,7 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.Label lblFiltrarInactivo;
+        private System.Windows.Forms.TextBox txbFiltrarInactivo;
     }
 }

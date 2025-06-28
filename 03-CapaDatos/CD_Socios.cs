@@ -214,5 +214,28 @@ namespace _03_CapaDatos.BaseDatos
                 conexion.CloseConexion () ;
             }
         }
+
+        public DataTable FiltroSocioInactivo (string apellido, string activo)
+        {
+            try
+            {
+                comando.Connection = conexion.OpenConexion();
+                string query = "SELECT * FROM Socios distint WHERE Dni LIKE '%" + apellido + "%' AND Activo = " + activo + ";";
+                comando.CommandText = query;
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(tabla);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conexion.CloseConexion () ;
+            }
+            return tabla;
+        }
     }
 }

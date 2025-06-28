@@ -42,6 +42,7 @@
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnPDF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSocio
@@ -56,7 +57,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(86, 119);
+            this.lblNombre.Location = new System.Drawing.Point(47, 129);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 1;
@@ -65,7 +66,7 @@
             // Apellido
             // 
             this.Apellido.AutoSize = true;
-            this.Apellido.Location = new System.Drawing.Point(86, 185);
+            this.Apellido.Location = new System.Drawing.Point(47, 195);
             this.Apellido.Name = "Apellido";
             this.Apellido.Size = new System.Drawing.Size(57, 16);
             this.Apellido.TabIndex = 2;
@@ -74,7 +75,7 @@
             // lblDni
             // 
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(81, 260);
+            this.lblDni.Location = new System.Drawing.Point(42, 270);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(27, 16);
             this.lblDni.TabIndex = 3;
@@ -83,7 +84,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(81, 332);
+            this.lblTelefono.Location = new System.Drawing.Point(42, 342);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(61, 16);
             this.lblTelefono.TabIndex = 4;
@@ -92,7 +93,7 @@
             // lblFechaAlta
             // 
             this.lblFechaAlta.AutoSize = true;
-            this.lblFechaAlta.Location = new System.Drawing.Point(81, 416);
+            this.lblFechaAlta.Location = new System.Drawing.Point(42, 426);
             this.lblFechaAlta.Name = "lblFechaAlta";
             this.lblFechaAlta.Size = new System.Drawing.Size(90, 16);
             this.lblFechaAlta.TabIndex = 5;
@@ -100,7 +101,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(219, 119);
+            this.txtNombre.Location = new System.Drawing.Point(180, 129);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(145, 22);
@@ -108,7 +109,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(219, 185);
+            this.txtApellido.Location = new System.Drawing.Point(180, 195);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(145, 22);
@@ -116,7 +117,7 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(219, 260);
+            this.txtDni.Location = new System.Drawing.Point(180, 270);
             this.txtDni.Name = "txtDni";
             this.txtDni.ReadOnly = true;
             this.txtDni.Size = new System.Drawing.Size(145, 22);
@@ -124,7 +125,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(219, 329);
+            this.txtTelefono.Location = new System.Drawing.Point(180, 339);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(145, 22);
@@ -132,7 +133,7 @@
             // 
             // txtFechaAlta
             // 
-            this.txtFechaAlta.Location = new System.Drawing.Point(219, 410);
+            this.txtFechaAlta.Location = new System.Drawing.Point(180, 420);
             this.txtFechaAlta.Name = "txtFechaAlta";
             this.txtFechaAlta.ReadOnly = true;
             this.txtFechaAlta.Size = new System.Drawing.Size(145, 22);
@@ -140,7 +141,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(731, 486);
+            this.btnAtras.Location = new System.Drawing.Point(770, 516);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 23);
             this.btnAtras.TabIndex = 11;
@@ -151,7 +152,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(90, 67);
+            this.lblId.Location = new System.Drawing.Point(51, 77);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 16);
             this.lblId.TabIndex = 12;
@@ -159,31 +160,42 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(228, 65);
+            this.txtId.Location = new System.Drawing.Point(189, 75);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(145, 22);
             this.txtId.TabIndex = 13;
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.Location = new System.Drawing.Point(537, 516);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(143, 23);
+            this.btnPDF.TabIndex = 14;
+            this.btnPDF.Text = "Imprimir PDF";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // frmVerSocioActivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 551);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtFechaAlta);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtDni);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblFechaAlta);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.lblDni);
-            this.Controls.Add(this.Apellido);
             this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.btnPDF);
+            this.Controls.Add(this.Apellido);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblSocio);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtFechaAlta);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.lblFechaAlta);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtTelefono);
             this.Name = "frmVerSocioActivo";
             this.Text = "Ver Socio Activo";
             this.ResumeLayout(false);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnPDF;
     }
 }

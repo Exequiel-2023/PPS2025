@@ -1,18 +1,23 @@
 ﻿using _02_CapaNegocio;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataTable = System.Data.DataTable;
 
 namespace _01_CapaPresentacion
 {
     public partial class SocioInactivo : Form
     {
+        DataTable tabla = new DataTable();
         CN_Socios socios = new CN_Socios();
         public SocioInactivo()
         {
@@ -93,6 +98,26 @@ namespace _01_CapaPresentacion
             }
 
            
+        }
+
+        //private void txbFiltrarInactivo_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //   string dni = txtDni.Text;
+          
+        //}
+
+        private void txbFiltrarInactivo_TextChanged(object sender, EventArgs e)
+        {
+         
+
+            string dni = txtDni.Text; // suponiendo que ese es el nombre del textbox
+            string activo = "0"; // Buscamos solo inactivos
+
+            //tabla = socios.FiltroInactivo(dni,activo);
+
+            DataTable resultado = socios.FiltroInactivo(dni,activo);
+
+            dgv_SocioInactivo.DataSource = resultado;
         }
     }
 }
