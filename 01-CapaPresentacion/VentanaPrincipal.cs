@@ -53,5 +53,18 @@ namespace _01_CapaPresentacion
             Inventario inventario = new Inventario();
             inventario.ShowDialog();
         }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            if (frm_login.id_logeo  == "1")
+            {
+                MessageBox.Show("Bienvenido jefe");
+            }
+            if (frm_login.id_logeo == "2" || frm_login.id_logeo == "3")
+            {
+                MessageBox.Show("Bienvenido secretario");
+            }
+        }
+        
     }
 }

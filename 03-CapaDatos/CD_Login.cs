@@ -1,6 +1,7 @@
 ﻿using _03_CapaDatos.BaseDatos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,25 +11,26 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace _03_CapaDatos
 {
-    public class CD_Secretarios
+    public class CD_Login
     {
         ConexionDB conexion = new ConexionDB();
 
         SqlCommand comando = new SqlCommand();
 
-        public int ConsultaLogin (string usuario, string contrasena)
+        SqlDataAdapter adaptador = new SqlDataAdapter();   
+        
+        DataTable tabla = new DataTable();  
+        public DataTable ConsultaLogin (string usuario, string contrasena)
         {
             
             try
             {
-                int contador;
                 comando.Connection = conexion.OpenConexion();
-                string query = "select Count(*) from Secretarios where Usuario = '"+usuario+"' and Contrasena = '"+contrasena+"';";
+                string query = "select * from UsuarioLogin where Usuario = '" + usuario + "' and Contrasena = '"+contrasena+"'";
                 comando.CommandText = query;
-                comando.ExecuteNonQuery();
-                contador = Convert.ToInt32(comando.ExecuteScalar());
-
-                return contador;
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(tabla);
+                return tabla;
             }
             catch (Exception ex)
             {
@@ -39,7 +41,7 @@ namespace _03_CapaDatos
             {
                 conexion.CloseConexion();
             }
-            return 0;
+            return tabla;
         }
 
     }
