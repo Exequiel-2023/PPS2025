@@ -88,7 +88,7 @@ namespace _01_CapaPresentacion
             string identificador = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
             socio.EliminarFisico(identificador);
             
-            MessageBox.Show($"El socio fue eliminado con exito....");
+            MessageBox.Show($"El socio fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarSocio();
         }
 
@@ -96,7 +96,7 @@ namespace _01_CapaPresentacion
         {
             string identificador = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
             socio.EliminarLogico(identificador);
-            MessageBox.Show("el socio fue eliminado logicamente");
+            MessageBox.Show("el socio fue eliminado logicamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarSocio();
         }
 
@@ -132,13 +132,13 @@ namespace _01_CapaPresentacion
 
             if (telefono == "" )
             {
-                MessageBox.Show("Debes rellenar todos los campos");
+                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 socio.EditarSocio(nombre, apellido, dni, telefono, fecha.ToString(), id);
 
-                MessageBox.Show($" {nombre} fue editado con exito");
+                MessageBox.Show($" {nombre} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ListarSocio();
                 BorrarInputs();

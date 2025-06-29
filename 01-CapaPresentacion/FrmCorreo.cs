@@ -79,7 +79,7 @@ namespace _01_CapaPresentacion
                 smtp.Send(correo);
 
                 lblArchivosCargados.Text = "";
-                MessageBox.Show("Correo enviado con exito!");
+                MessageBox.Show("Correo enviado con exito!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarEmail();
 
             }

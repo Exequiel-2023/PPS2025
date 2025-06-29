@@ -58,11 +58,11 @@ namespace _01_CapaPresentacion
         {
             if (frm_login.id_logeo  == "1")
             {
-                MessageBox.Show("Bienvenido jefe");
+                //MessageBox.Show("Bienvenido jefe");
             }
             if (frm_login.id_logeo == "2" || frm_login.id_logeo == "3")
             {
-                MessageBox.Show("Bienvenido secretario");
+                //MessageBox.Show("Bienvenido secretario");
             }
         }
         

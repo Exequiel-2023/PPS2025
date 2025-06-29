@@ -55,13 +55,13 @@ namespace _01_CapaPresentacion
 
             if (telefono == "" || Activo == "")
             {
-                MessageBox.Show("Debes rellenar todos los campos");
+                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 socios.DarAltaSocio(fecha.ToString(), Activo, id);
 
-                MessageBox.Show($" {nombre} fue editado con exito");
+                MessageBox.Show($" {nombre} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ListarSocioInactivo();
             }

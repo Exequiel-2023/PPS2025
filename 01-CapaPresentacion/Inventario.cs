@@ -59,7 +59,7 @@ namespace _01_CapaPresentacion
 
             string Archivo = System.IO.Path.GetTempFileName() + ".xls";
             hoja.SaveAs(Archivo);
-            MessageBox.Show("Archivo descargado correctamente");
+            MessageBox.Show("Archivo descargado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

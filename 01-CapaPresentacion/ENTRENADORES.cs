@@ -69,13 +69,13 @@ namespace _01_CapaPresentacion
             string telefono = txtTelefono.Text;
 
             if (nombre == "" || apellido == "" || dni == "" || domicilio == "" || telefono == "")
-            {
-                MessageBox.Show("Debes rellenar todos los campos!");
+            {                
+                MessageBox.Show("Debes completar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 entrenador.InsertarEntrenador(nombre, apellido, dni, domicilio, telefono);
-                MessageBox.Show($"{nombre} {apellido} fue agregado correctamente");
+                MessageBox.Show($"{nombre} {apellido} fue agregado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListarEntrenadores();
                 BorrarInputs();
 
@@ -105,7 +105,7 @@ namespace _01_CapaPresentacion
             string identificador = dgvEntrenadores.CurrentRow.Cells["Id_Entrenador"].Value.ToString();
 
             entrenador.EliminarFisico(identificador);
-            MessageBox.Show("Entrenador eliminado fisicamente correctamente");
+            MessageBox.Show("Entrenador eliminado fisicamente correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarEntrenadores();
 
             
@@ -116,7 +116,7 @@ namespace _01_CapaPresentacion
             string identificador = dgvEntrenadores.CurrentRow.Cells["Id_Entrenador"].Value.ToString();
 
             entrenador.EliminarLogico(identificador);
-            MessageBox.Show("Entrenador eliminado logicamente correctamente");
+            MessageBox.Show("Entrenador eliminado logicamente correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarEntrenadores();
         }
 
@@ -153,7 +153,7 @@ namespace _01_CapaPresentacion
 
             entrenador.EditarEntrenador(nombre, apellido,dni,domicilio, telefono, identificador);
 
-            MessageBox.Show("Entrenador editado correctamente");
+            MessageBox.Show("Entrenador editado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ListarEntrenadores();
             BorrarInputs();

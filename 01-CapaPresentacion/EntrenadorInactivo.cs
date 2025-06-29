@@ -58,13 +58,13 @@ namespace _01_CapaPresentacion
             string identificador = dgvEntrenadorInactivo.CurrentRow.Cells["Id_Entrenador"].Value.ToString();
             if (domicilio == "" || telefono == "" || activo == "")
             {
-                MessageBox.Show("Debes rellenar todos los campos");
+                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 entrenador.DarAltaEntrenador(domicilio, telefono, activo, identificador);
 
-                MessageBox.Show("Entrenador editado correctamente");
+                MessageBox.Show("Entrenador editado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ListarEntrenadoresInactivos();
 

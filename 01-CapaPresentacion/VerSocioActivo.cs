@@ -78,7 +78,7 @@ namespace _01_CapaPresentacion
                     documento.Add(TablaPdf);
                     documento.Close();
 
-                    MessageBox.Show("PDF generado con exito");
+                    MessageBox.Show("PDF generado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
