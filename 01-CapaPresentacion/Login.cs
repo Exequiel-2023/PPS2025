@@ -51,39 +51,46 @@ namespace _01_CapaPresentacion
 
             tabla = logueo.datosLogin(user, pass);
 
-            if (tabla.Rows.Count > 0)
+
+
+
+            if (txt_Usuario.Text == "" || txt_Password.Text == "")
             {
 
-                MessageBox.Show("Bienvenido " + tabla.Rows[0][1].ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                nombre_login = tabla.Rows[0][3].ToString();
-                id_logeo = tabla.Rows[0][0].ToString();
-
-                this.Hide();
-                principal.ShowDialog();
-                frm_login login = new frm_login();
-                //login.ShowDialog();
-
-                if (login.DialogResult == DialogResult.OK)
-                {
-                    Application.Run(new VentanaPrincipal());
-                }
-
-                limpiarInputslogin();
-
-            } else if (txt_Usuario.Text == "" || txt_Password.Text == "")
-            {
                 MessageBox.Show("Debes completar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
+            }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               
+                if (tabla.Rows.Count > 0)
+                {
+
+                    MessageBox.Show("Bienvenido/a " + tabla.Rows[0][1].ToString() + " " + tabla.Rows[0][3].ToString(), " Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    nombre_login = tabla.Rows[0][3].ToString();
+                    id_logeo = tabla.Rows[0][0].ToString();
+
+                    this.Hide();
+                    principal.ShowDialog();
+                    frm_login login = new frm_login();
+                    //login.ShowDialog();
+
+                    if (login.DialogResult == DialogResult.OK)
+                    {
+                        Application.Run(new VentanaPrincipal());
+                    }
+
+                    limpiarInputslogin();
+                }
+
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+
             }
-
-
-
         }
 
         private void txt_Usuario_Enter(object sender, EventArgs e)

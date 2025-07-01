@@ -49,6 +49,8 @@
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.lbl_Apellido = new System.Windows.Forms.Label();
             this.btnVer = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txbSocioActivo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Socios)).BeginInit();
             this.gb_Socios.SuspendLayout();
             this.SuspendLayout();
@@ -255,11 +257,30 @@
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(108, 13);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(49, 16);
+            this.lblBuscar.TabIndex = 10;
+            this.lblBuscar.Text = "Buscar";
+            // 
+            // txbSocioActivo
+            // 
+            this.txbSocioActivo.Location = new System.Drawing.Point(185, 13);
+            this.txbSocioActivo.Name = "txbSocioActivo";
+            this.txbSocioActivo.Size = new System.Drawing.Size(412, 22);
+            this.txbSocioActivo.TabIndex = 11;
+            this.txbSocioActivo.TextChanged += new System.EventHandler(this.txbSocioActivo_TextChanged);
+            // 
             // Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 699);
+            this.Controls.Add(this.txbSocioActivo);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.gb_Socios);
             this.Controls.Add(this.btn_Atras);
@@ -274,6 +295,7 @@
             this.gb_Socios.ResumeLayout(false);
             this.gb_Socios.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -300,5 +322,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.Label lblClase;
         private System.Windows.Forms.ComboBox cboClase;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txbSocioActivo;
     }
 }

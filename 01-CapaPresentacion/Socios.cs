@@ -172,6 +172,9 @@ namespace _01_CapaPresentacion
 
         }
 
-        
+        private void txbSocioActivo_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_Socios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre  LIKE '{0}%'", txbSocioActivo.Text);
+        }
     }
 }

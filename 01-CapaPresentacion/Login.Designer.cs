@@ -49,7 +49,7 @@
             this.txt_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Usuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_Usuario.Location = new System.Drawing.Point(307, 85);
+            this.txt_Usuario.Location = new System.Drawing.Point(344, 87);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(397, 25);
             this.txt_Usuario.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_Password.Location = new System.Drawing.Point(307, 160);
+            this.txt_Password.Location = new System.Drawing.Point(344, 160);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(397, 25);
             this.txt_Password.TabIndex = 2;
@@ -108,11 +108,11 @@
             this.lbl_Login.AutoSize = true;
             this.lbl_Login.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Login.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_Login.Location = new System.Drawing.Point(419, 9);
+            this.lbl_Login.Location = new System.Drawing.Point(382, 9);
             this.lbl_Login.Name = "lbl_Login";
-            this.lbl_Login.Size = new System.Drawing.Size(135, 40);
+            this.lbl_Login.Size = new System.Drawing.Size(255, 40);
             this.lbl_Login.TabIndex = 6;
-            this.lbl_Login.Text = "LOGIN ";
+            this.lbl_Login.Text = "INICIAR SESIÓN";
             // 
             // panel1
             // 
@@ -137,7 +137,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.Image = global::_01_CapaPresentacion.Properties.Resources.x;
             this.btnExit.Location = new System.Drawing.Point(753, 9);
             this.btnExit.Name = "btnExit";
@@ -149,7 +149,7 @@
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnMinimizar.BackColor = System.Drawing.Color.Teal;
             this.btnMinimizar.Image = global::_01_CapaPresentacion.Properties.Resources.minus;
             this.btnMinimizar.Location = new System.Drawing.Point(721, 9);
             this.btnMinimizar.Name = "btnMinimizar";

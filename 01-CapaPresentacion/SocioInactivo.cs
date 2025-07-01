@@ -100,24 +100,10 @@ namespace _01_CapaPresentacion
            
         }
 
-        //private void txbFiltrarInactivo_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //   string dni = txtDni.Text;
-          
-        //}
-
-        private void txbFiltrarInactivo_TextChanged(object sender, EventArgs e)
+        private void txbFiltroInactivo_TextChanged(object sender, EventArgs e)
         {
-         
-
-            string dni = txtDni.Text; // suponiendo que ese es el nombre del textbox
-            string activo = "0"; // Buscamos solo inactivos
-
-            //tabla = socios.FiltroInactivo(dni,activo);
-
-            DataTable resultado = socios.FiltroInactivo(dni,activo);
-
-            dgv_SocioInactivo.DataSource = resultado;
+            (dgv_SocioInactivo.DataSource as DataTable).DefaultView.RowFilter = string.Format("Dni LIKE '{0}%'", txbFiltroInactivo.Text);
+           // (dgv_Socios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre  LIKE '{0}%'", txbSocioActivo.Text);
         }
     }
 }

@@ -46,8 +46,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
-            this.lblFiltrarInactivo = new System.Windows.Forms.Label();
-            this.txbFiltrarInactivo = new System.Windows.Forms.TextBox();
+            this.lblBuscarSocioInactivo = new System.Windows.Forms.Label();
+            this.txbFiltroInactivo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SocioInactivo)).BeginInit();
             this.gvSocioInactivo.SuspendLayout();
             this.SuspendLayout();
@@ -222,31 +222,30 @@
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
-            // lblFiltrarInactivo
+            // lblBuscarSocioInactivo
             // 
-            this.lblFiltrarInactivo.AutoSize = true;
-            this.lblFiltrarInactivo.Location = new System.Drawing.Point(102, 19);
-            this.lblFiltrarInactivo.Name = "lblFiltrarInactivo";
-            this.lblFiltrarInactivo.Size = new System.Drawing.Size(95, 16);
-            this.lblFiltrarInactivo.TabIndex = 14;
-            this.lblFiltrarInactivo.Text = "Filtrar por DNI :";
+            this.lblBuscarSocioInactivo.AutoSize = true;
+            this.lblBuscarSocioInactivo.Location = new System.Drawing.Point(65, 13);
+            this.lblBuscarSocioInactivo.Name = "lblBuscarSocioInactivo";
+            this.lblBuscarSocioInactivo.Size = new System.Drawing.Size(87, 16);
+            this.lblBuscarSocioInactivo.TabIndex = 6;
+            this.lblBuscarSocioInactivo.Text = "Buscar Socio";
             // 
-            // txbFiltrarInactivo
+            // txbFiltroInactivo
             // 
-            this.txbFiltrarInactivo.Location = new System.Drawing.Point(217, 19);
-            this.txbFiltrarInactivo.Name = "txbFiltrarInactivo";
-            this.txbFiltrarInactivo.Size = new System.Drawing.Size(309, 22);
-            this.txbFiltrarInactivo.TabIndex = 15;
-            this.txbFiltrarInactivo.TextChanged += new System.EventHandler(this.txbFiltrarInactivo_TextChanged);
-            
+            this.txbFiltroInactivo.Location = new System.Drawing.Point(184, 6);
+            this.txbFiltroInactivo.Name = "txbFiltroInactivo";
+            this.txbFiltroInactivo.Size = new System.Drawing.Size(369, 22);
+            this.txbFiltroInactivo.TabIndex = 7;
+            this.txbFiltroInactivo.TextChanged += new System.EventHandler(this.txbFiltroInactivo_TextChanged);
             // 
             // SocioInactivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 582);
-            this.Controls.Add(this.txbFiltrarInactivo);
-            this.Controls.Add(this.lblFiltrarInactivo);
+            this.Controls.Add(this.txbFiltroInactivo);
+            this.Controls.Add(this.lblBuscarSocioInactivo);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gvSocioInactivo);
@@ -285,7 +284,7 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Button btnEmail;
-        private System.Windows.Forms.Label lblFiltrarInactivo;
-        private System.Windows.Forms.TextBox txbFiltrarInactivo;
+        private System.Windows.Forms.Label lblBuscarSocioInactivo;
+        private System.Windows.Forms.TextBox txbFiltroInactivo;
     }
 }
