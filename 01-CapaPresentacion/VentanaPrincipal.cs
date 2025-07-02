@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02_CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,12 @@ namespace _01_CapaPresentacion
                 //MessageBox.Show("Bienvenido secretario");
             }
         }
-        
+
+        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Horarios MostrarHorarios = new Horarios();
+            this.Hide();
+            MostrarHorarios.ShowDialog();
+        }
     }
 }

@@ -76,6 +76,12 @@
     <Compile Include="EntrenadorInactivo.Designer.cs">
       <DependentUpon>EntrenadorInactivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Horarios.Designer.cs">
+      <DependentUpon>Horarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntrenadorInactivo.resx">
       <DependentUpon>EntrenadorInactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Horarios.resx">
+      <DependentUpon>Horarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -188,6 +197,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip-back1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

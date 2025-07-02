@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Entrenadores.cs" />
+    <Compile Include="CD_Horarios.cs" />
     <Compile Include="CD_Inventario.cs" />
     <Compile Include="CD_Login.cs" />
     <Compile Include="CD_Socios.cs" />

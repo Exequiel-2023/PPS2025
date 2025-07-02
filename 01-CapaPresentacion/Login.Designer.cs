@@ -34,13 +34,13 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.lbl_Login = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Usuario
@@ -125,15 +125,17 @@
             this.panel1.TabIndex = 7;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // pictureBox1
+            // btnMinimizar
             // 
-            this.pictureBox1.Image = global::_01_CapaPresentacion.Properties.Resources.logooo;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 210);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnMinimizar.BackColor = System.Drawing.Color.Teal;
+            this.btnMinimizar.Image = global::_01_CapaPresentacion.Properties.Resources.minus;
+            this.btnMinimizar.Location = new System.Drawing.Point(721, 9);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 9;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnExit
             // 
@@ -147,17 +149,15 @@
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnMinimizar
+            // pictureBox1
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Teal;
-            this.btnMinimizar.Image = global::_01_CapaPresentacion.Properties.Resources.minus;
-            this.btnMinimizar.Location = new System.Drawing.Point(721, 9);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 9;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.pictureBox1.Image = global::_01_CapaPresentacion.Properties.Resources.logooo;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 210);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_login
             // 
@@ -180,9 +180,9 @@
             this.Text = "LOGIN";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_login_MouseDown);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

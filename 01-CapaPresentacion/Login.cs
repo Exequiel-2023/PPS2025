@@ -46,23 +46,19 @@ namespace _01_CapaPresentacion
         {
             DataTable tabla = new DataTable();  
             string user = txt_Usuario.Text;
-            string pass = txt_Password.Text;    
+            string pass = txt_Password.Text;
 
-
-            tabla = logueo.datosLogin(user, pass);
-
-
-
-
-            if (txt_Usuario.Text == "" || txt_Password.Text == "")
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
             {
 
                 MessageBox.Show("Debes completar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else
-            {
-                if (tabla.Rows.Count > 0)
+
+            tabla = logueo.datosLogin(user, pass);
+
+                      
+                if (tabla.Rows.Count > 0 && txt_Usuario.Text != "" && txt_Password.Text != "")
                 {
 
                     MessageBox.Show("Bienvenido/a " + tabla.Rows[0][1].ToString() + " " + tabla.Rows[0][3].ToString(), " Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -80,17 +76,13 @@ namespace _01_CapaPresentacion
                         Application.Run(new VentanaPrincipal());
                     }
 
-                    limpiarInputslogin();
                 }
-
-                else
+                else 
                 {
                     MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                }
-
-
-            }
+                }              
+            
         }
 
         private void txt_Usuario_Enter(object sender, EventArgs e)

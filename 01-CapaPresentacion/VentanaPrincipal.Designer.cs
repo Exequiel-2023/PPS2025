@@ -36,6 +36,7 @@
             this.visualizarEntrenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNuevoEntrenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sociosToolStripMenuItem,
             this.entrenadoresToolStripMenuItem,
-            this.inventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem,
+            this.horariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -105,6 +107,13 @@
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
+            // horariosToolStripMenuItem
+            // 
+            this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
+            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.horariosToolStripMenuItem.Text = "Horarios";
+            this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,5 +141,6 @@
         private System.Windows.Forms.ToolStripMenuItem visualizarEntrenadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarNuevoEntrenadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem horariosToolStripMenuItem;
     }
 }
