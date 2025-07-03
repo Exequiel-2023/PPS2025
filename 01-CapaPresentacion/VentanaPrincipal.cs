@@ -25,15 +25,6 @@ namespace _01_CapaPresentacion
             socios.ShowDialog();
         }
 
-        private void sociosConDeudasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SocioInactivo socioInactivo = new SocioInactivo();
-            socioInactivo.ShowDialog();
-        }
-
-      
-
         private void visualizarEntrenadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -41,12 +32,7 @@ namespace _01_CapaPresentacion
             frmEntrenadores.ShowDialog();
         }
 
-        private void registrarNuevoEntrenadorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            EntrenadorInactivo EntrenadorInactivo = new EntrenadorInactivo();
-            EntrenadorInactivo.ShowDialog();
-        }
+      
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {

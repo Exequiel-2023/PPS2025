@@ -71,7 +71,7 @@ namespace _01_CapaPresentacion
         {
             CN_Socios socio = new CN_Socios();
             dgv_Socios.DataSource = null;
-            dgv_Socios.DataSource = socio.MostrarSociosActivos();
+            dgv_Socios.DataSource = socio.MostrarSocios();
         }
 
         public void BorrarInputs()

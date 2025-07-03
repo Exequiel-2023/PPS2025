@@ -31,11 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarSociosActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sociosConDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entrenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarEntrenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarNuevoEntrenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +43,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sociosToolStripMenuItem,
             this.entrenadoresToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
             this.horariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -57,8 +53,7 @@
             // sociosToolStripMenuItem
             // 
             this.sociosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarSociosActivosToolStripMenuItem,
-            this.sociosConDeudasToolStripMenuItem});
+            this.visualizarSociosActivosToolStripMenuItem});
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.sociosToolStripMenuItem.Text = "Socios";
@@ -70,18 +65,10 @@
             this.visualizarSociosActivosToolStripMenuItem.Text = "Visualizar socios activos";
             this.visualizarSociosActivosToolStripMenuItem.Click += new System.EventHandler(this.visualizarSociosActivosToolStripMenuItem_Click);
             // 
-            // sociosConDeudasToolStripMenuItem
-            // 
-            this.sociosConDeudasToolStripMenuItem.Name = "sociosConDeudasToolStripMenuItem";
-            this.sociosConDeudasToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
-            this.sociosConDeudasToolStripMenuItem.Text = "Socios con deudas";
-            this.sociosConDeudasToolStripMenuItem.Click += new System.EventHandler(this.sociosConDeudasToolStripMenuItem_Click);
-            // 
             // entrenadoresToolStripMenuItem
             // 
             this.entrenadoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarEntrenadoresToolStripMenuItem,
-            this.registrarNuevoEntrenadorToolStripMenuItem});
+            this.visualizarEntrenadoresToolStripMenuItem});
             this.entrenadoresToolStripMenuItem.Name = "entrenadoresToolStripMenuItem";
             this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
             this.entrenadoresToolStripMenuItem.Text = "Entrenadores";
@@ -89,23 +76,9 @@
             // visualizarEntrenadoresToolStripMenuItem
             // 
             this.visualizarEntrenadoresToolStripMenuItem.Name = "visualizarEntrenadoresToolStripMenuItem";
-            this.visualizarEntrenadoresToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.visualizarEntrenadoresToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.visualizarEntrenadoresToolStripMenuItem.Text = "Entrenadores Activos";
             this.visualizarEntrenadoresToolStripMenuItem.Click += new System.EventHandler(this.visualizarEntrenadoresToolStripMenuItem_Click);
-            // 
-            // registrarNuevoEntrenadorToolStripMenuItem
-            // 
-            this.registrarNuevoEntrenadorToolStripMenuItem.Name = "registrarNuevoEntrenadorToolStripMenuItem";
-            this.registrarNuevoEntrenadorToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.registrarNuevoEntrenadorToolStripMenuItem.Text = "Entrenadores Inactivos";
-            this.registrarNuevoEntrenadorToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoEntrenadorToolStripMenuItem_Click);
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.inventarioToolStripMenuItem.Text = "Inventario";
-            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // horariosToolStripMenuItem
             // 
@@ -136,11 +109,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarSociosActivosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sociosConDeudasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entrenadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarEntrenadoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarNuevoEntrenadorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem horariosToolStripMenuItem;
     }
 }

@@ -16,7 +16,7 @@ namespace _01_CapaPresentacion
     {
         CN_Login logueo = new CN_Login();
         VentanaPrincipal principal = new VentanaPrincipal();
-
+        VentanaPrincipalJefe jefe = new VentanaPrincipalJefe();
 
         public static string nombre_login;
         public static string id_logeo; 
@@ -67,21 +67,32 @@ namespace _01_CapaPresentacion
                     id_logeo = tabla.Rows[0][0].ToString();
 
                     this.Hide();
-                    principal.ShowDialog();
+                    //principal.ShowDialog();
                     frm_login login = new frm_login();
                     //login.ShowDialog();
 
                     if (login.DialogResult == DialogResult.OK)
                     {
-                        Application.Run(new VentanaPrincipal());
+                        Application.Run(new VentanaPrincipalJefe());
                     }
-
-                }
-                else 
+                if (id_logeo == "1")
                 {
-                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                  
+                    jefe.ShowDialog();
+                }
+                else if (id_logeo == "2" || id_logeo == "3")
+                {
+                    this.Hide();
+                    principal.ShowDialog();
+                }
 
-                }              
+            }
+                //else 
+                //{
+                //    MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //}              
             
         }
 

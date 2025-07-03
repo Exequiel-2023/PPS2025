@@ -39,8 +39,10 @@
             this.dgvHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHorarios.Location = new System.Drawing.Point(84, 70);
             this.dgvHorarios.Name = "dgvHorarios";
+            this.dgvHorarios.ReadOnly = true;
             this.dgvHorarios.RowHeadersWidth = 51;
             this.dgvHorarios.RowTemplate.Height = 24;
+            this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHorarios.Size = new System.Drawing.Size(662, 429);
             this.dgvHorarios.TabIndex = 0;
             // 
@@ -61,6 +63,7 @@
             this.btnAtras.TabIndex = 2;
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // Horarios
             // 

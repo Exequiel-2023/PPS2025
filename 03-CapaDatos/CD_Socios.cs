@@ -19,13 +19,13 @@ namespace _03_CapaDatos.BaseDatos
 
         SqlDataReader lector;
 
-        public DataTable MostrarSociosActivos()
+        public DataTable MostrarSocios()
         {
             try
             {
 
                 comando.Connection = conexion.OpenConexion();
-                string query = "select * from Socios where Activo = 1;";
+                string query = "select * from Socios";
                 comando.CommandText = query;
                 lector = comando.ExecuteReader();
                 tabla.Load(lector);
@@ -45,33 +45,6 @@ namespace _03_CapaDatos.BaseDatos
 
         }
 
-
-        public DataTable SociosInactivos() {
-
-            try
-            {
-                comando.Connection = conexion.OpenConexion();
-
-                string query = "select * from Socios where Activo = 0;";
-
-                comando.CommandText = query;
-
-                lector = comando.ExecuteReader();
-
-                tabla.Load(lector);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                conexion.CloseConexion() ;
-            }
-            return tabla;
-            
-        }
 
         public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
         {

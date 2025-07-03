@@ -9,20 +9,14 @@ namespace _02_CapaNegocio
 
         CD_Socios socio = new CD_Socios();
 
-        public DataTable MostrarSociosActivos ()
+        public DataTable MostrarSocios ()
         {
             DataTable tabla = new DataTable();
-            tabla = socio.MostrarSociosActivos();
+            tabla = socio.MostrarSocios();
 
             return tabla;
         }
 
-        public DataTable SociosInactivos()
-        {
-            DataTable tabla = new DataTable();
-            tabla = socio.SociosInactivos();
-            return tabla;
-        }
 
         public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
         {

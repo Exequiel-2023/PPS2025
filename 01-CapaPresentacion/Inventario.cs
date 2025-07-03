@@ -65,7 +65,7 @@ namespace _01_CapaPresentacion
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VentanaPrincipal V1 = new VentanaPrincipal();
+            VentanaPrincipalJefe V1 = new VentanaPrincipalJefe();
             V1.ShowDialog();
         }
     }

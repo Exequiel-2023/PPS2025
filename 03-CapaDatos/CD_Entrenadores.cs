@@ -47,32 +47,6 @@ namespace _03_CapaDatos
             return tabla;
         }
 
-        public DataTable MostrarEntrenadoresInactivos ()
-        {
-            try
-            {
-                comando.Connection = conexion.OpenConexion();
-
-                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni,Domicilio,Telefono from Entrenadores where Activo = 0;";
-
-                comando.CommandText = query;
-
-                lector = comando.ExecuteReader();
-
-                tabla.Load(lector);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error:" + ex);
-            }
-            finally
-            {
-                conexion.CloseConexion();
-            }
-            return tabla;
-        }
-
         public void InsertarEntrenador (string nombre, string apellido, string dni, string domicilio, string telefono)
         {
             try

@@ -18,16 +18,7 @@ namespace _02_CapaNegocio
             tabla = entrenador.MostrarEntrenadoresActivo();
 
             return tabla;
-        }
-
-        public DataTable MostrarEntrenadoresInactivos()
-        {
-
-            tabla = entrenador.MostrarEntrenadoresInactivos();
-
-            return tabla;
-        }
-
+        }        
 
         public void InsertarEntrenador(string nombre, string apellido, string dni, string domicilio, string telefono)
         {

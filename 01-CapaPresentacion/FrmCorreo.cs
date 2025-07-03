@@ -21,12 +21,7 @@ namespace _01_CapaPresentacion
             txtPara.Text = email;
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SocioInactivo socioInactivo = new SocioInactivo();
-            socioInactivo.ShowDialog();
-        }
+     
 
         private void AdjuntarArchivos()
         {
