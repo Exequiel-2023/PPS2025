@@ -64,11 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ENTRENADORES.cs">
+    <Compile Include="Entrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ENTRENADORES.Designer.cs">
-      <DependentUpon>ENTRENADORES.cs</DependentUpon>
+    <Compile Include="Entrenador.Designer.cs">
+      <DependentUpon>Entrenador.cs</DependentUpon>
     </Compile>
     <Compile Include="Horarios.cs">
       <SubType>Form</SubType>
@@ -96,6 +96,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Socios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,8 +131,8 @@
     <Compile Include="VisualizarSociosJefe.Designer.cs">
       <DependentUpon>VisualizarSociosJefe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ENTRENADORES.resx">
-      <DependentUpon>ENTRENADORES.cs</DependentUpon>
+    <EmbeddedResource Include="Entrenador.resx">
+      <DependentUpon>Entrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
@@ -143,14 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Socios.resx">
       <DependentUpon>Socios.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,43 +187,52 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tevez.jpg" />
+    <None Include="Resources\pngCerrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logooo.png" />
+    <None Include="Resources\pngMaximizar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\x.png" />
+    <None Include="Resources\pngMinimizar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\minus.png" />
+    <None Include="Resources\pngRestaurar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user.png" />
+    <None Include="Resources\pngMenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trash.png" />
+    <None Include="Resources\pngSocios.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eye.png" />
+    <None Include="Resources\pngEntrenador.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit.png" />
+    <None Include="Resources\pngCalendario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\skip-back.png" />
+    <None Include="Resources\pngCerrarSesion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trash %281%29.png" />
+    <None Include="Resources\pngLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit1.png" />
+    <None Include="Resources\pngInventario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit2.png" />
+    <None Include="Resources\pngEstadistica.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\skip-back1.png" />
+    <None Include="Resources\pngEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngVer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngImprimir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

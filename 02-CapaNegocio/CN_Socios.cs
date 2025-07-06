@@ -18,9 +18,9 @@ namespace _02_CapaNegocio
         }
 
 
-        public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
+        public void InsertarSocio(string nombreCompleto, string dni, string email, string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento)
         {
-            socio.InsertarSocio(nombre, apellido, dni, tel, fechaIngreso);
+            socio.InsertarSocio(nombreCompleto, dni, email, Clase, FechaIngreso, ProximoVencimiento);
         }
 
         public void EliminarFisico(string id)
@@ -33,9 +33,9 @@ namespace _02_CapaNegocio
             socio.EliminarLogico(int.Parse(id));
         }
 
-        public void EditarSocio (string nombre, string apellido, string dni, string telefono, string fechaIngreso, string id)
+        public void EditarSocio (string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento,string id)
         {
-            socio.EditarSocio(nombre, apellido, dni, telefono, fechaIngreso, int.Parse(id));
+            socio.EditarSocio(nombreCompleto, dni, email, clase, FechaIngreso,ProximoVencimiento, int.Parse(id));
         }
 
         public void DarAltaSocio(string fechaAlta, string Activo, string id)
@@ -43,9 +43,9 @@ namespace _02_CapaNegocio
             socio.DarAltaSocio(fechaAlta,Activo,int.Parse(id));
         }
 
-        public void VerDetalleSocioActivo (string id, string nombre, string apellido, string dni, string telefono, string fechaAlta)
+        public void VerDetalleSocioActivo (string id, string nombreCompleto, string dni, string telefono, string fechaAlta)
         {
-            socio.VerDetalleSocioActivo(int.Parse(id), nombre, apellido, dni, telefono,fechaAlta);
+            socio.VerDetalleSocioActivo(int.Parse(id), nombreCompleto, dni, telefono,fechaAlta);
         }
 
         public void MandarEmailSocioInactivo(string id, string email)
@@ -53,10 +53,5 @@ namespace _02_CapaNegocio
             socio.MandarEmailSocioInactivo(int.Parse(id), email);
         }
 
-        public DataTable FiltroInactivo(string dni, string activo)
-        {
-            DataTable tabla = new DataTable();
-           return tabla = socio.FiltroSocioInactivo(dni, activo);
-        }
     }
 }

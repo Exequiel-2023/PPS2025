@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace _01_CapaPresentacion
 {
@@ -18,6 +19,11 @@ namespace _01_CapaPresentacion
             InitializeComponent();
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hand,int wmsg, int wparam, int Iparam);
+
         private void visualizarSociosActivosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -25,21 +31,6 @@ namespace _01_CapaPresentacion
             socios.ShowDialog();
         }
 
-        private void visualizarEntrenadoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmEntrenadores frmEntrenadores = new frmEntrenadores();
-            frmEntrenadores.ShowDialog();
-        }
-
-      
-
-        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Inventario inventario = new Inventario();
-            inventario.ShowDialog();
-        }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
@@ -53,11 +44,108 @@ namespace _01_CapaPresentacion
             }
         }
 
-        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AbrirFormSocios(object socio1)
         {
-            Horarios MostrarHorarios = new Horarios();
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = socio1 as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+
+
+        }
+        private void btnSocios_Click(object sender, EventArgs e)
+        {
+            AbrirFormSocios(new Socios());
+        }
+
+        private void AbrirFormEntrenadores(object entrenador1)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = entrenador1 as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+
+
+        }
+
+        private void btnEntrenadores_Click(object sender, EventArgs e)
+        {
+            AbrirFormEntrenadores(new Entrenador());
+        }
+
+        private void AbrirFormHorarios(object horario1)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = horario1 as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+
+
+        }
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormHorarios(new Horarios());
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            iconrestaurar.Visible= true;
+            iconmaximizar.Visible= false;
+        }
+
+        private void iconrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            iconrestaurar.Visible= false;
+            iconmaximizar.Visible= true;
+        }
+
+        private void iconminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState= FormWindowState.Minimized;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle,0x112,0xf012,0);
+        }
+
+        private void btnslide_Click_1(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+            {
+                MenuVertical.Width = 250;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            MostrarHorarios.ShowDialog();
+            frm_login login = new frm_login();
+            login.ShowDialog();
         }
     }
 }

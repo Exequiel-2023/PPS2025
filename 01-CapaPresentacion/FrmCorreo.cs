@@ -11,7 +11,7 @@ namespace _01_CapaPresentacion
     public partial class FrmCorreo : Form
     {
         private string emailEmisor = "gymtucuman@gmail.com";
-        private string passwordEmisor = "kuuo upin wduw ciqt";
+        private string passwordEmisor = "dqkg ajbg znxk lbnf";
         private string aliasEmisor = "GymTUC";
         private string[] archivos;
         private MailMessage correo;
@@ -102,5 +102,7 @@ namespace _01_CapaPresentacion
             CrearCuerpoCorreo();
             EnviarEmail();
         }
+
+      
     }
 }

@@ -25,11 +25,5 @@ namespace _01_CapaPresentacion
             dgvHorarios.DataSource = horarios.MostrarHorarios();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            VentanaPrincipal principal = new VentanaPrincipal();
-            principal.ShowDialog();
-        }
     }
 }

@@ -106,7 +106,6 @@
             this.btnAtras.TabIndex = 7;
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
-         
             // 
             // lblCargarArchivo
             // 
@@ -145,7 +144,7 @@
             this.Controls.Add(this.lblPara);
             this.Name = "FrmCorreo";
             this.Text = "FrmCorreo";
-           
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 

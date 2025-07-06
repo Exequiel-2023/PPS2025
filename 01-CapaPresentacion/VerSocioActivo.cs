@@ -32,7 +32,7 @@ namespace _01_CapaPresentacion
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Socios V1 = new Socios();
+            VentanaPrincipal V1 = new VentanaPrincipal();
             V1.ShowDialog();
         }
 

@@ -25,7 +25,7 @@ namespace _03_CapaDatos.BaseDatos
             {
 
                 comando.Connection = conexion.OpenConexion();
-                string query = "select * from Socios";
+                string query = "SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento,Activo FROM Socios;";
                 comando.CommandText = query;
                 lector = comando.ExecuteReader();
                 tabla.Load(lector);
@@ -46,12 +46,12 @@ namespace _03_CapaDatos.BaseDatos
         }
 
 
-        public void InsertarSocio(string nombre, string apellido, string dni, string tel, DateTime fechaIngreso)
+        public void InsertarSocio(string nombreCompleto, string dni, string email,string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "INSERT INTO Socios (Nombre, Apellido, Dni, Telefono, FechaIngreso) VALUES ('" + nombre + "','" + apellido + "','" + dni + "','" + tel + "','" + fechaIngreso + "')";
+                string query = "INSERT INTO Socios (NombreCompleto, Dni, Email, Clase, FechaIngreso, ProximoVencimiento ) VALUES ('" + nombreCompleto + "','" + dni + "','"+email+"','"+Clase+"','"+FechaIngreso+"','" + ProximoVencimiento + "')";
 
                 comando.CommandText = query;
 
@@ -109,12 +109,12 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public void EditarSocio(string nombre, string apellido, string dni, string telefono, string fechaIngreso, int id)
+        public void EditarSocio(string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento, int id)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "UPDATE Socios set Nombre  = '" + nombre + "',Apellido = '" + apellido + "', Dni = '" + dni + "',Telefono = '" + telefono + "',FechaIngreso = '" + fechaIngreso + "'WHERE Id_Socio = " + id + "";
+                string query = "UPDATE Socios set NombreCompleto  = '" + nombreCompleto + "', Dni = '" + dni + "',Email = '"+email+"',Clase = '"+clase+"',FechaIngreso = '" + FechaIngreso + "',ProximoVencimiento = '"+ProximoVencimiento+"' WHERE Id_Socio = " + id + "";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }
@@ -148,12 +148,12 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public void VerDetalleSocioActivo (int id, string nombre, string apellido, string dni, string telefono, string fechaAlta)
+        public void VerDetalleSocioActivo (int id, string nombreCompleto, string dni, string telefono, string fechaAlta)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "SELECT Id_Socio = '"+id+"', Nombre = '"+nombre+ "', Apellido = '"+apellido+ "', Dni= '"+dni+ "', Telefono= '"+telefono+ "', FechaIngreso = '"+fechaAlta+"' FROM Socios WHERE Activo = 1";
+                string query = "SELECT Id_Socio = '"+id+"', NombreCompleto = '"+nombreCompleto+ "', Dni= '"+dni+ "', Telefono= '"+telefono+ "', FechaIngreso = '"+fechaAlta+"' FROM Socios WHERE Activo = 1";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }
@@ -188,27 +188,6 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public DataTable FiltroSocioInactivo (string apellido, string activo)
-        {
-            try
-            {
-                comando.Connection = conexion.OpenConexion();
-                string query = "SELECT * FROM Socios distint WHERE Dni LIKE '%" + apellido + "%' AND Activo = " + activo + ";";
-                comando.CommandText = query;
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(tabla);
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                conexion.CloseConexion () ;
-            }
-            return tabla;
-        }
+       
     }
 }

@@ -133,17 +133,6 @@ namespace _01_CapaPresentacion
                 txt_Password.UseSystemPasswordChar= false;
             }
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void frm_login_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -160,6 +149,16 @@ namespace _01_CapaPresentacion
         {
             txt_Password.Clear();
             txt_Usuario.Clear();
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

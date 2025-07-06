@@ -34,12 +34,12 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.lbl_Login = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.iconminimizar = new System.Windows.Forms.PictureBox();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,33 +125,35 @@
             this.panel1.TabIndex = 7;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // btnMinimizar
+            // iconminimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Teal;
-            this.btnMinimizar.Image = global::_01_CapaPresentacion.Properties.Resources.minus;
-            this.btnMinimizar.Location = new System.Drawing.Point(721, 9);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 9;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconminimizar.Image = global::_01_CapaPresentacion.Properties.Resources.pngMinimizar;
+            this.iconminimizar.Location = new System.Drawing.Point(731, 0);
+            this.iconminimizar.Name = "iconminimizar";
+            this.iconminimizar.Size = new System.Drawing.Size(20, 20);
+            this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconminimizar.TabIndex = 11;
+            this.iconminimizar.TabStop = false;
+            this.iconminimizar.Click += new System.EventHandler(this.iconminimizar_Click);
             // 
-            // btnExit
+            // iconcerrar
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.Image = global::_01_CapaPresentacion.Properties.Resources.x;
-            this.btnExit.Location = new System.Drawing.Point(753, 9);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(20, 20);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 8;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Image = global::_01_CapaPresentacion.Properties.Resources.pngCerrar;
+            this.iconcerrar.Location = new System.Drawing.Point(757, 0);
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.Size = new System.Drawing.Size(20, 20);
+            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconcerrar.TabIndex = 10;
+            this.iconcerrar.TabStop = false;
+            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::_01_CapaPresentacion.Properties.Resources.logooo;
+            this.pictureBox1.Image = global::_01_CapaPresentacion.Properties.Resources.pngLogo;
             this.pictureBox1.Location = new System.Drawing.Point(24, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 210);
@@ -165,8 +167,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
-            this.Controls.Add(this.btnMinimizar);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.iconminimizar);
+            this.Controls.Add(this.iconcerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_Login);
             this.Controls.Add(this.btn_Salir);
@@ -180,8 +182,8 @@
             this.Text = "LOGIN";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_login_MouseDown);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,8 +198,8 @@
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox btnExit;
-        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox iconcerrar;
+        private System.Windows.Forms.PictureBox iconminimizar;
     }
 }
 

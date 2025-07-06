@@ -16,27 +16,17 @@ namespace _01_CapaPresentacion
         
         CN_Socios socio = new CN_Socios();
 
-        //public MessageBoxButtons MessageBoxButton { get; private set; }
-
         public Socios()
         {
             InitializeComponent();
         }
 
-        private void btn_Atras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            VentanaPrincipal V1 = new VentanaPrincipal();
-            V1.Show();
-
-            
-        }
-
         private void Socios_Load(object sender, EventArgs e)
         {
-            cboClase.Items.Add("Zumba");
-            cboClase.Items.Add("Boxeo");
-            cboClase.Items.Add("Spining");
+            gb_Socios.Enabled = false;
+            gb_Socios.Hide();
+
+        
 
             btn_Actualizar.Enabled = false;
             btn_Actualizar.Hide();
@@ -47,23 +37,46 @@ namespace _01_CapaPresentacion
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            string nombre = txt_Nombre.Text;
-            string apellido = txt_Apellido.Text;
+            string nombreCompleto = txt_Nombre.Text;
             string dni = txt_Dni.Text;
-            string telefono = txt_Telefono.Text;
-            DateTime fecha = dtpFechaIngreso.Value;
+            string email = txtEmail.Text;
+            string Actividad = cboClase.Text;
+            DateTime fechaAlta = dtpFechaIngreso.Value;
+            DateTime fechaVencimiento = DateTime.Parse(txtProximoVencimiento.Text);
+            
 
-            if (nombre == "" || apellido == "" || dni == "" || telefono == "")
+            if (nombreCompleto == "" || dni == "")
             {
                 MessageBox.Show("Debes rellenar todos los campos");
             }
             else
             {
-                socio.InsertarSocio(nombre, apellido, dni, telefono, fecha);
-                MessageBox.Show($"{nombre} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                socio.InsertarSocio(nombreCompleto, dni, email, Actividad, fechaAlta, fechaVencimiento);
+                MessageBox.Show($"{nombreCompleto} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListarSocio();
                 BorrarInputs();
             }
+
+            gb_Socios.Enabled = false;
+            gb_Socios.Hide();
+
+            btn_EliminarLogico.Enabled = true;
+            btn_EliminarLogico.Show();
+
+            btnVer.Enabled = true;
+            btnVer.Show();
+
+            btn_Editar.Enabled = true;
+            btn_Editar.Show();
+
+            btnInsertar.Enabled = true;
+            btnInsertar.Show();
+
+            btn_Agregar.Enabled = true;
+            btn_Agregar.Show();
+
+            btnEmail.Enabled = true;
+            btnEmail.Show();
           
         }
 
@@ -77,9 +90,9 @@ namespace _01_CapaPresentacion
         public void BorrarInputs()
         {
             txt_Nombre.Clear();
-            txt_Apellido.Clear();
+          
             txt_Dni.Clear();
-            txt_Telefono.Clear();
+           
            
         }
 
@@ -102,79 +115,183 @@ namespace _01_CapaPresentacion
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
+            btn_EliminarLogico.Enabled = false;
+            btn_EliminarLogico.Hide();
+
+            btnVer.Enabled = false;
+            btnVer.Hide();
+
+            btn_Editar.Enabled = false;
+            btn_Editar.Hide();
+
             btn_Agregar.Enabled = false;
             btn_Agregar.Hide();
+
+            btnEmail.Enabled = false;
+            btnEmail.Hide();
+
+            btnInsertar.Enabled = false;
+            btnInsertar.Hide();
 
             btn_Actualizar.Enabled = true;
             btn_Actualizar.Show();
 
+            gb_Socios.Enabled = true;
+            gb_Socios.Show();
+
             txt_Nombre.Enabled = false;
-            txt_Apellido.Enabled = false;
+           
             txt_Dni.Enabled = false;
 
-            txt_Nombre.Text = dgv_Socios.CurrentRow.Cells["Nombre"].Value.ToString();
-            txt_Apellido.Text = dgv_Socios.CurrentRow.Cells["Apellido"].Value.ToString();
+            txt_Nombre.Text = dgv_Socios.CurrentRow.Cells["NombreCompleto"].Value.ToString();
             txt_Dni.Text = dgv_Socios.CurrentRow.Cells["Dni"].Value.ToString();
-            txt_Telefono.Text = dgv_Socios.CurrentRow.Cells["Telefono"].Value.ToString();
+            txtEmail.Text = dgv_Socios.CurrentRow.Cells["Email"].Value.ToString();
+            cboClase.Text = dgv_Socios.CurrentRow.Cells["Clase"].Value.ToString();
             dtpFechaIngreso.Text = dgv_Socios.CurrentRow.Cells["FechaIngreso"].Value.ToString();
+            txtProximoVencimiento.Text = dgv_Socios.CurrentRow.Cells["ProximoVencimiento"].Value.ToString();
 
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
-            string nombre = txt_Nombre.Text;
-            string apellido = txt_Apellido.Text;
+            string nombreCompleto = txt_Nombre.Text;
             string dni = txt_Dni.Text;
-            string telefono = txt_Telefono.Text;
-            DateTime fecha = dtpFechaIngreso.Value;
+            string email = txtEmail.Text;
+            string clase = cboClase.Text;
+            DateTime FechaIngreso = dtpFechaIngreso.Value;
+            DateTime ProximoVencimiento = DateTime.Parse(txtProximoVencimiento.Text);
 
             string id = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
-            if (telefono == "" )
+            if (nombreCompleto == "" )
             {
                 MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                socio.EditarSocio(nombre, apellido, dni, telefono, fecha.ToString(), id);
+                socio.EditarSocio(nombreCompleto, dni,email,clase, FechaIngreso.ToString(),ProximoVencimiento.ToString(), id);
 
-                MessageBox.Show($" {nombre} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($" {nombreCompleto} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ListarSocio();
                 BorrarInputs();
             }
 
-            
-            
+            gb_Socios.Enabled = false;
+            gb_Socios.Hide();
+
+            btn_EliminarLogico.Enabled = true;
+            btn_EliminarLogico.Show();
+
+            btnVer.Enabled = true;
+            btnVer.Show();
+
+            btn_Editar.Enabled = true;
+            btn_Editar.Show();
+
+            btnInsertar.Enabled = true;
+            btnInsertar.Show();
+
+            btnEmail.Enabled = true;
+            btnEmail.Show();
+         
         }
 
+      
         private void btnVer_Click(object sender, EventArgs e)
         {
+            
             if (dgv_Socios.SelectedRows.Count > 0)
             {
                 DataGridViewRow fila = dgv_Socios.SelectedRows[0];
                 string id = fila.Cells["Id_Socio"].Value.ToString();
-                string nombre = fila.Cells["Nombre"].Value.ToString();
-                string apellido = fila.Cells["Apellido"].Value.ToString();
+                string nombreCompleto = fila.Cells["NombreCompleto"].Value.ToString();     
                 string dni = fila.Cells["Dni"].Value.ToString();
-                string telefono = fila.Cells["Telefono"].Value.ToString();
-                string fechaIngreso = fila.Cells["FechaIngreso"].Value.ToString();
+                string email = fila.Cells["Email"].Value.ToString();
+                string FechaIngreso = fila.Cells["FechaIngreso"].Value.ToString();
+                string ProximoVencimiento = fila.Cells["ProximoVencimiento"].Value.ToString();
 
                 this.Hide();
-                frmVerSocioActivo destino = new frmVerSocioActivo(id,nombre,apellido,dni,telefono, fechaIngreso);
-                destino.Show();
+                frmVerSocioActivo destino = new frmVerSocioActivo(id, nombreCompleto, dni, email, FechaIngreso, ProximoVencimiento);
+                destino.ShowDialog();
+              
+
             }
-
-
-
-
-
 
         }
 
         private void txbSocioActivo_TextChanged(object sender, EventArgs e)
         {
-            (dgv_Socios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre  LIKE '{0}%'", txbSocioActivo.Text);
+            (dgv_Socios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Dni  LIKE '{0}%'", txbSocioActivo.Text);
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            gb_Socios.Enabled = true;
+            gb_Socios.Show();
+
+            btn_EliminarLogico.Enabled = false;
+            btn_EliminarLogico.Hide();
+
+            btnVer.Enabled = false;
+            btnVer.Hide();
+
+            btn_Editar.Enabled = false;
+            btn_Editar.Hide();
+
+            btnInsertar.Enabled = false;
+            btnInsertar.Hide();
+
+            btnEmail.Enabled = false;
+            btnEmail.Hide();
+
+            btn_Agregar.Enabled = true;
+            btn_Agregar.Show();
+
+            btn_Actualizar.Enabled = false;
+            btn_Actualizar.Hide();
+        }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (dgv_Socios.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dgv_Socios.SelectedRows[0];
+                string id = fila.Cells["Id_Socio"].Value.ToString();
+                string email = fila.Cells["Email"].Value.ToString();
+
+
+                FrmCorreo correo = new FrmCorreo(id, email);
+                correo.ShowDialog();
+            }
+        }
+
+        private void dtpFechaIngreso_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaIngresoSocio = dtpFechaIngreso.Value;
+            DateTime proximoVencimiento = fechaIngresoSocio.AddDays(31);
+            txtProximoVencimiento.Text = proximoVencimiento.ToShortDateString();
+
+            int Dia = fechaIngresoSocio.Day;
+            int Mes = fechaIngresoSocio.Month;
+            int Año = fechaIngresoSocio.Year;
+
+            if (Mes == 2)
+            {
+                txtProximoVencimiento.Text = $"{Dia}/{Mes + 1}/{Año}";
+            }
+            else if (Mes == 4 || Mes == 6 || Mes == 9 || Mes == 11)
+            {
+                txtProximoVencimiento.Text = $"{Dia}/{Mes + 1}/{Año}";
+            }
+        }
+
+        private void gb_Socios_Enter(object sender, EventArgs e)
+        {
+            cboClase.Items.Add("Zumba");
+            cboClase.Items.Add("Boxeo");
+            cboClase.Items.Add("Spining");
         }
     }
 }

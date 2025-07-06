@@ -48,102 +48,117 @@
             // lblSocio
             // 
             this.lblSocio.AutoSize = true;
-            this.lblSocio.Location = new System.Drawing.Point(334, 25);
+            this.lblSocio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSocio.Location = new System.Drawing.Point(499, 9);
             this.lblSocio.Name = "lblSocio";
-            this.lblSocio.Size = new System.Drawing.Size(140, 16);
+            this.lblSocio.Size = new System.Drawing.Size(200, 23);
             this.lblSocio.TabIndex = 0;
             this.lblSocio.Text = "DETALLE DEL SOCIO";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(47, 129);
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(231, 129);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(82, 21);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "Nombre:";
             // 
             // Apellido
             // 
             this.Apellido.AutoSize = true;
-            this.Apellido.Location = new System.Drawing.Point(47, 195);
+            this.Apellido.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Apellido.Location = new System.Drawing.Point(231, 195);
             this.Apellido.Name = "Apellido";
-            this.Apellido.Size = new System.Drawing.Size(57, 16);
+            this.Apellido.Size = new System.Drawing.Size(83, 21);
             this.Apellido.TabIndex = 2;
-            this.Apellido.Text = "Apellido";
+            this.Apellido.Text = "Apellido:";
             // 
             // lblDni
             // 
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(42, 270);
+            this.lblDni.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.Location = new System.Drawing.Point(231, 270);
             this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(27, 16);
+            this.lblDni.Size = new System.Drawing.Size(41, 21);
             this.lblDni.TabIndex = 3;
-            this.lblDni.Text = "Dni";
+            this.lblDni.Text = "Dni:";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(42, 342);
+            this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(231, 342);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(61, 16);
+            this.lblTelefono.Size = new System.Drawing.Size(85, 21);
             this.lblTelefono.TabIndex = 4;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Telefono:";
             // 
             // lblFechaAlta
             // 
             this.lblFechaAlta.AutoSize = true;
-            this.lblFechaAlta.Location = new System.Drawing.Point(42, 426);
+            this.lblFechaAlta.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaAlta.Location = new System.Drawing.Point(231, 426);
             this.lblFechaAlta.Name = "lblFechaAlta";
-            this.lblFechaAlta.Size = new System.Drawing.Size(90, 16);
+            this.lblFechaAlta.Size = new System.Drawing.Size(135, 21);
             this.lblFechaAlta.TabIndex = 5;
-            this.lblFechaAlta.Text = "Fecha de Alta";
+            this.lblFechaAlta.Text = "Fecha de Alta:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(180, 129);
+            this.txtNombre.BackColor = System.Drawing.Color.White;
+            this.txtNombre.Location = new System.Drawing.Point(396, 129);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(145, 22);
+            this.txtNombre.Size = new System.Drawing.Size(303, 22);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(180, 195);
+            this.txtApellido.BackColor = System.Drawing.Color.White;
+            this.txtApellido.Location = new System.Drawing.Point(396, 197);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(145, 22);
+            this.txtApellido.Size = new System.Drawing.Size(303, 22);
             this.txtApellido.TabIndex = 7;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(180, 270);
+            this.txtDni.BackColor = System.Drawing.Color.White;
+            this.txtDni.Location = new System.Drawing.Point(396, 270);
             this.txtDni.Name = "txtDni";
             this.txtDni.ReadOnly = true;
-            this.txtDni.Size = new System.Drawing.Size(145, 22);
+            this.txtDni.Size = new System.Drawing.Size(303, 22);
             this.txtDni.TabIndex = 8;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(180, 339);
+            this.txtTelefono.BackColor = System.Drawing.Color.White;
+            this.txtTelefono.Location = new System.Drawing.Point(396, 342);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(145, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(303, 22);
             this.txtTelefono.TabIndex = 9;
             // 
             // txtFechaAlta
             // 
-            this.txtFechaAlta.Location = new System.Drawing.Point(180, 420);
+            this.txtFechaAlta.BackColor = System.Drawing.Color.White;
+            this.txtFechaAlta.Location = new System.Drawing.Point(396, 426);
             this.txtFechaAlta.Name = "txtFechaAlta";
             this.txtFechaAlta.ReadOnly = true;
-            this.txtFechaAlta.Size = new System.Drawing.Size(145, 22);
+            this.txtFechaAlta.Size = new System.Drawing.Size(303, 22);
             this.txtFechaAlta.TabIndex = 10;
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(770, 516);
+            this.btnAtras.FlatAppearance.BorderSize = 0;
+            this.btnAtras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(963, 553);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnAtras.Size = new System.Drawing.Size(75, 35);
             this.btnAtras.TabIndex = 11;
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -152,27 +167,35 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(51, 77);
+            this.lblId.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(231, 77);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 16);
+            this.lblId.Size = new System.Drawing.Size(32, 21);
             this.lblId.TabIndex = 12;
-            this.lblId.Text = "Id";
+            this.lblId.Text = "Id:";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(189, 75);
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(396, 76);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(145, 22);
+            this.txtId.Size = new System.Drawing.Size(303, 22);
             this.txtId.TabIndex = 13;
             // 
             // btnPDF
             // 
-            this.btnPDF.Location = new System.Drawing.Point(537, 516);
+            this.btnPDF.FlatAppearance.BorderSize = 0;
+            this.btnPDF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDF.Image = global::_01_CapaPresentacion.Properties.Resources.pngImprimir;
+            this.btnPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPDF.Location = new System.Drawing.Point(470, 494);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(143, 23);
+            this.btnPDF.Size = new System.Drawing.Size(143, 33);
             this.btnPDF.TabIndex = 14;
-            this.btnPDF.Text = "Imprimir PDF";
+            this.btnPDF.Text = "PDF";
             this.btnPDF.UseVisualStyleBackColor = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
@@ -180,7 +203,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 551);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtId);
@@ -196,7 +220,9 @@
             this.Controls.Add(this.lblFechaAlta);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtTelefono);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVerSocioActivo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Socio Activo";
             this.ResumeLayout(false);
             this.PerformLayout();
