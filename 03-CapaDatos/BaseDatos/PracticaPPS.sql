@@ -6,23 +6,36 @@ GO
 
 CREATE TABLE Socios (
 Id_Socio int primary key identity (1,1),
-Nombre VARCHAR (60),
-Apellido VARCHAR (60),
+NombreCompleto VARCHAR (60),
 Dni VARCHAR (60),
-Telefono VARCHAR (60),
 FechaIngreso Date,
+ProximoVencimiento Date,
 Activo Bit default 1,
 Email varchar (100)
 );
 
 ALTER TABLE Socios alter column FechaIngreso Date; 
+
 UPDATE Socios set Activo = 0, FechaIngreso = '' where Id_Socio = 8;
 ALTER TABLE Socios add Email varchar (100)
+ALTER TABLE Socios add ProximoVencimiento DATE;
+ALTER TABLE Socios add Clase VARCHAR (60);
+DELETE FROM Socios WHERE Id_Socio > 8; 
 
 INSERT INTO Socios (Nombre, Apellido, Dni, Telefono, FechaIngreso) VALUES ('Exequiel','Nuñez','34910234','3813567876', '02/06/2025');
 select * from Socios where Activo = 1;
 select * from Socios where Activo = 0;
-UPDATE Socios set Nombre  = 'NICOLAS',Apellido = 'RODRIGUEZ', Dni = '43567880',Telefono = '381456758',FechaIngreso = '2005/02/07' WHERE Id_Socio= 8;
+UPDATE Socios set NombreCompleto = 'Julian Alvarez' WHERE Id_Socio = 8;
+UPDATE Socios set Clase = 'Spining' WHERE Id_Socio = 5;
+
+SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento,Activo FROM Socios;
+
+ALTER TABLE Socios DROP COLUMN Telefono;
+ALTER TABLE Socios DROP COLUMN Apellido;
+
+SELECT CONCAT (Nombre,'',Apellido) AS NombreCompleto From Socios;
+EXEC SP_RENAME 'Socios.Nombre', 'NombreCompleto', 'Column';
+
 
 SELECT * FROM Socios WHERE Dni LIKE '%78%' AND Activo = 0;
 SELECT * FROM Socios WHERE Nombre LIKE '%Felipe%' AND Activo = 1;

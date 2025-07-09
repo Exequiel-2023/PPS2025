@@ -25,7 +25,7 @@ namespace _03_CapaDatos.BaseDatos
             {
 
                 comando.Connection = conexion.OpenConexion();
-                string query = "SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento,Activo FROM Socios;";
+                string query = "SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento, Estado FROM Socios;";
                 comando.CommandText = query;
                 lector = comando.ExecuteReader();
                 tabla.Load(lector);
@@ -46,12 +46,12 @@ namespace _03_CapaDatos.BaseDatos
         }
 
 
-        public void InsertarSocio(string nombreCompleto, string dni, string email,string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento)
+        public void InsertarSocio(string nombreCompleto, string dni, string email,string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string Estado)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "INSERT INTO Socios (NombreCompleto, Dni, Email, Clase, FechaIngreso, ProximoVencimiento ) VALUES ('" + nombreCompleto + "','" + dni + "','"+email+"','"+Clase+"','"+FechaIngreso+"','" + ProximoVencimiento + "')";
+                string query = "INSERT INTO Socios (NombreCompleto, Dni, Email, Clase, FechaIngreso, ProximoVencimiento, Estado ) VALUES ('" + nombreCompleto + "','" + dni + "','"+email+"','"+Clase+"','"+FechaIngreso+"','" + ProximoVencimiento + "', '"+Estado+"')";
 
                 comando.CommandText = query;
 
@@ -67,34 +67,13 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public void EliminarFisico(int id)
+     
+        public void EliminarSocioFisicamente(int id)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "DELETE FROM Socios WHERE Id_Socio = " + id + "";
-                comando.CommandText = query;
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                conexion.CloseConexion() ;
-            }
-
-
-        }
-
-        public void EliminarLogico(int id)
-        {
-            try
-            {
-                comando.Connection = conexion.OpenConexion();
-                string query = "UPDATE Socios set Activo = 0 where Id_Socio = " + id + "";
+                string query = "DELETE from Socios where Estado = 'Inactivo' and Id_Socio = "+id+"";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }
@@ -109,12 +88,12 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public void EditarSocio(string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento, int id)
+        public void EditarSocio(string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento, string Estado, int id)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "UPDATE Socios set NombreCompleto  = '" + nombreCompleto + "', Dni = '" + dni + "',Email = '"+email+"',Clase = '"+clase+"',FechaIngreso = '" + FechaIngreso + "',ProximoVencimiento = '"+ProximoVencimiento+"' WHERE Id_Socio = " + id + "";
+                string query = "UPDATE Socios set NombreCompleto  = '" + nombreCompleto + "', Dni = '" + dni + "',Email = '"+email+"',Clase = '"+clase+"',FechaIngreso = '" + FechaIngreso + "',ProximoVencimiento = '"+ProximoVencimiento+"', Estado = '"+Estado+"' WHERE Id_Socio = " + id + "";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }

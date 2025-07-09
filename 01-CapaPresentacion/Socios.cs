@@ -15,7 +15,7 @@ namespace _01_CapaPresentacion
     {
         
         CN_Socios socio = new CN_Socios();
-
+       
         public Socios()
         {
             InitializeComponent();
@@ -23,13 +23,45 @@ namespace _01_CapaPresentacion
 
         private void Socios_Load(object sender, EventArgs e)
         {
-            gb_Socios.Enabled = false;
-            gb_Socios.Hide();
 
-        
 
-            btn_Actualizar.Enabled = false;
-            btn_Actualizar.Hide();
+            //DataTable tabla = socio.MostrarSocios();
+
+            //foreach (DataRow fila in tabla.Rows)
+            //{
+
+            //    DateTime fechaAlta = dtpFechaIngreso.Value;
+            //    DateTime fechaVencimiento = Convert.ToDateTime(fila["ProximoVencimiento"]);
+
+            //    if (DateTime.Today <= fechaVencimiento)
+            //    {
+            //        fila["Estado"] = "Activo";
+            //    }
+            //    else
+            //    {
+            //        fila["Estado"] = "Inactivo";
+            //    }
+            //}
+
+            //dgv_Socios.DataSource = null;
+            //dgv_Socios.DataSource = tabla;
+            //BorrarInputs();
+
+
+
+            //gb_Socios.Enabled = false;
+            //gb_Socios.Hide();
+
+
+
+            //btn_Actualizar.Enabled = false;
+            //btn_Actualizar.Hide();
+
+            cbEstado.Enabled = false;
+            cbEstado.Hide();
+            lblEstado.Enabled=false;
+            lblEstado.Hide();
+
             ListarSocio();
 
 
@@ -37,12 +69,14 @@ namespace _01_CapaPresentacion
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
+           
             string nombreCompleto = txt_Nombre.Text;
             string dni = txt_Dni.Text;
             string email = txtEmail.Text;
             string Actividad = cboClase.Text;
             DateTime fechaAlta = dtpFechaIngreso.Value;
             DateTime fechaVencimiento = DateTime.Parse(txtProximoVencimiento.Text);
+            string Estado = cbEstado.Text;
             
 
             if (nombreCompleto == "" || dni == "")
@@ -51,7 +85,7 @@ namespace _01_CapaPresentacion
             }
             else
             {
-                socio.InsertarSocio(nombreCompleto, dni, email, Actividad, fechaAlta, fechaVencimiento);
+                socio.InsertarSocio(nombreCompleto, dni, email, Actividad, fechaAlta, fechaVencimiento, Estado);
                 MessageBox.Show($"{nombreCompleto} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListarSocio();
                 BorrarInputs();
@@ -82,35 +116,61 @@ namespace _01_CapaPresentacion
 
         public void ListarSocio ()
         {
+
             CN_Socios socio = new CN_Socios();
+            //dgv_Socios.DataSource = null;
+
+            //dgv_Socios.DataSource = socio.MostrarSocios();
+            DataTable tabla = socio.MostrarSocios();
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                DateTime fechaVencimiento = Convert.ToDateTime(fila["ProximoVencimiento"]);
+
+                if (DateTime.Today <= fechaVencimiento)
+                {
+                    fila["Estado"] = "Activo";
+                }
+                else
+                {
+                    fila["Estado"] = "Inactivo";
+                }
+            }
+
             dgv_Socios.DataSource = null;
-            dgv_Socios.DataSource = socio.MostrarSocios();
+            dgv_Socios.DataSource = tabla;
+
         }
+
 
         public void BorrarInputs()
         {
-            txt_Nombre.Clear();
-          
+            txt_Nombre.Clear();          
             txt_Dni.Clear();
+            txtEmail.Clear();
+            cboClase.Items.Clear();
+            dtpFechaIngreso.Checked = false;
+           
+
            
            
         }
 
-        private void btn_EliminarFisico_Click(object sender, EventArgs e)
-        {
-            string identificador = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
-            socio.EliminarFisico(identificador);
-            
-            MessageBox.Show($"El socio fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ListarSocio();
-        }
 
         private void btn_EliminarLogico_Click(object sender, EventArgs e)
         {
             string identificador = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
-            socio.EliminarLogico(identificador);
-            MessageBox.Show("el socio fue eliminado logicamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ListarSocio();
+            socio.EliminarSocioFisicamente(identificador);
+            if (dgv_Socios.CurrentRow.Cells["Estado"].Value.ToString() == "Inactivo")
+            {
+                MessageBox.Show("el socio fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListarSocio();
+            }
+            else
+            {
+                MessageBox.Show("el socio no puede ser eliminado ya que esta Activo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
@@ -160,6 +220,8 @@ namespace _01_CapaPresentacion
             string clase = cboClase.Text;
             DateTime FechaIngreso = dtpFechaIngreso.Value;
             DateTime ProximoVencimiento = DateTime.Parse(txtProximoVencimiento.Text);
+            string Estado = cbEstado.Text;
+            
 
             string id = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
 
@@ -169,7 +231,7 @@ namespace _01_CapaPresentacion
             }
             else
             {
-                socio.EditarSocio(nombreCompleto, dni,email,clase, FechaIngreso.ToString(),ProximoVencimiento.ToString(), id);
+                socio.EditarSocio(nombreCompleto, dni,email,clase, FechaIngreso.ToString(),ProximoVencimiento.ToString(), Estado, id);
 
                 MessageBox.Show($" {nombreCompleto} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -292,6 +354,12 @@ namespace _01_CapaPresentacion
             cboClase.Items.Add("Zumba");
             cboClase.Items.Add("Boxeo");
             cboClase.Items.Add("Spining");
+
+            cbEstado.Items.Add("Activo");
+            cbEstado.Items.Add("Inactivo");
+
+
+
         }
     }
 }

@@ -18,24 +18,20 @@ namespace _02_CapaNegocio
         }
 
 
-        public void InsertarSocio(string nombreCompleto, string dni, string email, string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento)
+        public void InsertarSocio(string nombreCompleto, string dni, string email, string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string Estado)
         {
-            socio.InsertarSocio(nombreCompleto, dni, email, Clase, FechaIngreso, ProximoVencimiento);
+            socio.InsertarSocio(nombreCompleto, dni, email, Clase, FechaIngreso, ProximoVencimiento, Estado);
         }
 
-        public void EliminarFisico(string id)
+
+        public void EliminarSocioFisicamente(string id)
         {
-            socio.EliminarFisico(int.Parse(id));
+            socio.EliminarSocioFisicamente(int.Parse(id));
         }
 
-        public void EliminarLogico (string id)
+        public void EditarSocio (string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento, string Estado,string id)
         {
-            socio.EliminarLogico(int.Parse(id));
-        }
-
-        public void EditarSocio (string nombreCompleto, string dni,string email,string clase, string FechaIngreso, string ProximoVencimiento,string id)
-        {
-            socio.EditarSocio(nombreCompleto, dni, email, clase, FechaIngreso,ProximoVencimiento, int.Parse(id));
+            socio.EditarSocio(nombreCompleto, dni, email, clase, FechaIngreso,ProximoVencimiento, Estado, int.Parse(id));
         }
 
         public void DarAltaSocio(string fechaAlta, string Activo, string id)
