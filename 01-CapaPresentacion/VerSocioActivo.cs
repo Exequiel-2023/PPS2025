@@ -10,22 +10,26 @@ using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Image = System.Drawing.Image;
 
 namespace _01_CapaPresentacion
 {
     public partial class frmVerSocioActivo : Form
     {
-        public frmVerSocioActivo(string id, string nombre, string apellido, string dni, string telefono, string fechaIngreso)
+        public frmVerSocioActivo(string nombreCompleto, string Dni, string email, string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string ImagenURL)
         {
             InitializeComponent();
 
-            txtId.Text = id;
-            txtNombre.Text = nombre;
-            txtApellido.Text = apellido;
-            txtDni.Text = dni;
-            txtTelefono.Text = telefono;
-            txtFechaAlta.Text = fechaIngreso;
+        
 
+            txtNombreCompleto.Text = nombreCompleto;
+            txtDocumento.Text = Dni;
+            txtEmail.Text = email;
+            txtClase.Text = Clase;
+            txtFechaAlta.Text = FechaIngreso.ToString("dd/MM/yyyy");
+            txtProximoVencimiento.Text = ProximoVencimiento.ToString("dd/MM/yyyy");
+            pbImagenSocio.Image = Image.FromFile(ImagenURL);
+            
         }
 
         
@@ -51,29 +55,30 @@ namespace _01_CapaPresentacion
 
                     documento.Open();
 
-                    Paragraph titulo = new Paragraph("Informacion Detalla del Socio", FontFactory.GetFont("Times New Roman"));
+                    Paragraph titulo = new Paragraph("Informacion Detallada del Socio", FontFactory.GetFont("Times New Roman"));
                     titulo.Alignment = Element.ALIGN_CENTER;
                     documento.Add(titulo);
                     documento.Add(new Paragraph("\n"));
 
-                    //string nombre = txtNombre.Text;
-                    PdfPTable TablaPdf = new PdfPTable(5);
+                   
+                    PdfPTable TablaPdf = new PdfPTable(6);
                     TablaPdf.WidthPercentage = 100;
 
-                    TablaPdf.AddCell("Nombre Socio");
-                    TablaPdf.AddCell("Apellido Socio");
-                    TablaPdf.AddCell("Dni Socio");
-                    TablaPdf.AddCell("Telefono Socio");
-                    TablaPdf.AddCell("Fecha Alta del Socio");
+                    TablaPdf.AddCell("Nombre Completo");
+                    TablaPdf.AddCell("Documento");
+                    TablaPdf.AddCell("E-mail");
+                    TablaPdf.AddCell("Deporte");
+                    TablaPdf.AddCell("Fecha de alta");
+                    TablaPdf.AddCell("Proximo Vencimiento");
+                   
 
-
-
-                    TablaPdf.AddCell(txtNombre.Text);
-                    TablaPdf.AddCell(txtApellido.Text);
-                    TablaPdf.AddCell(txtDni.Text);
-                    TablaPdf.AddCell(txtTelefono.Text);
+                    TablaPdf.AddCell(txtNombreCompleto.Text);
+                    TablaPdf.AddCell(txtDocumento.Text);
+                    TablaPdf.AddCell(txtEmail.Text);
+                    TablaPdf.AddCell(txtClase.Text);
                     TablaPdf.AddCell(txtFechaAlta.Text);
-
+                    TablaPdf.AddCell(txtProximoVencimiento.Text);
+                
 
                     documento.Add(TablaPdf);
                     documento.Close();
@@ -87,5 +92,6 @@ namespace _01_CapaPresentacion
                 }
             }
         }
+
     }
 }

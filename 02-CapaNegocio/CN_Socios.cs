@@ -39,9 +39,9 @@ namespace _02_CapaNegocio
             socio.DarAltaSocio(fechaAlta,Activo,int.Parse(id));
         }
 
-        public void VerDetalleSocioActivo (string id, string nombreCompleto, string dni, string telefono, string fechaAlta)
+        public void VerDetalleSocioActivo (string id, string nombreCompleto, string dni, string email, string clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string ImagenURL)
         {
-            socio.VerDetalleSocioActivo(int.Parse(id), nombreCompleto, dni, telefono,fechaAlta);
+            socio.VerDetalleSocioActivo(int.Parse(id), nombreCompleto, dni, email, clase, FechaIngreso, ProximoVencimiento, ImagenURL);
         }
 
         public void MandarEmailSocioInactivo(string id, string email)

@@ -25,7 +25,7 @@ namespace _03_CapaDatos.BaseDatos
             {
 
                 comando.Connection = conexion.OpenConexion();
-                string query = "SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento, Estado FROM Socios;";
+                string query = "SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento, Estado, ImagenURL FROM Socios;";
                 comando.CommandText = query;
                 lector = comando.ExecuteReader();
                 tabla.Load(lector);
@@ -127,12 +127,12 @@ namespace _03_CapaDatos.BaseDatos
             }
         }
 
-        public void VerDetalleSocioActivo (int id, string nombreCompleto, string dni, string telefono, string fechaAlta)
+        public void VerDetalleSocioActivo (int id, string nombreCompleto, string dni, string email, string clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string ImagenURL)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "SELECT Id_Socio = '"+id+"', NombreCompleto = '"+nombreCompleto+ "', Dni= '"+dni+ "', Telefono= '"+telefono+ "', FechaIngreso = '"+fechaAlta+"' FROM Socios WHERE Activo = 1";
+                string query = "SELECT Id_Socio = '"+id+"', NombreCompleto = '"+nombreCompleto+ "', Dni= '"+dni+ "', Telefono= '"+email+ "', FechaIngreso = '"+FechaIngreso+"', ProximoVencimiento = '"+ProximoVencimiento+"' FROM Socios";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }

@@ -33,15 +33,18 @@ namespace _01_CapaPresentacion
             if (dgvVisualizarSocios.SelectedRows.Count > 0)
             {
                 DataGridViewRow fila = dgvVisualizarSocios.SelectedRows[0];
-                string id = fila.Cells["Id_Socio"].Value.ToString();
-                string nombre = fila.Cells["Nombre"].Value.ToString();
-                string apellido = fila.Cells["Apellido"].Value.ToString();
-                string dni = fila.Cells["Dni"].Value.ToString();
-                string telefono = fila.Cells["Telefono"].Value.ToString();
-                string fechaIngreso = fila.Cells["FechaIngreso"].Value.ToString();
+               
+                string nombreCompleto = fila.Cells["NombreCompleto"].Value.ToString();
+                string Dni = fila.Cells["Documento"].Value.ToString();
+                string email = fila.Cells["Email"].Value.ToString();
+                string Clase = fila.Cells["Clase"].Value.ToString();
+                DateTime FechaIngreso = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+                DateTime ProximoVencimiento = Convert.ToDateTime(fila.Cells["ProximoVencimiento"].Value);
+                string ImagenURL = fila.Cells["ImagenURL"].Value.ToString();
+
 
                 this.Hide();
-                frmVerSocioActivo destino = new frmVerSocioActivo(id, nombre, apellido, dni, telefono, fechaIngreso);
+                frmVerSocioActivo destino = new frmVerSocioActivo(nombreCompleto, Dni, email, Clase, FechaIngreso, ProximoVencimiento, ImagenURL);
                 destino.Show();
             }
         }

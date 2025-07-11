@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,41 +25,12 @@ namespace _01_CapaPresentacion
         private void Socios_Load(object sender, EventArgs e)
         {
 
-
-            //DataTable tabla = socio.MostrarSocios();
-
-            //foreach (DataRow fila in tabla.Rows)
-            //{
-
-            //    DateTime fechaAlta = dtpFechaIngreso.Value;
-            //    DateTime fechaVencimiento = Convert.ToDateTime(fila["ProximoVencimiento"]);
-
-            //    if (DateTime.Today <= fechaVencimiento)
-            //    {
-            //        fila["Estado"] = "Activo";
-            //    }
-            //    else
-            //    {
-            //        fila["Estado"] = "Inactivo";
-            //    }
-            //}
-
-            //dgv_Socios.DataSource = null;
-            //dgv_Socios.DataSource = tabla;
-            //BorrarInputs();
-
-
-
-            //gb_Socios.Enabled = false;
-            //gb_Socios.Hide();
-
-
-
-            //btn_Actualizar.Enabled = false;
-            //btn_Actualizar.Hide();
+            gb_Socios.Enabled = false;
+            gb_Socios.Hide();
 
             cbEstado.Enabled = false;
             cbEstado.Hide();
+
             lblEstado.Enabled=false;
             lblEstado.Hide();
 
@@ -87,31 +59,46 @@ namespace _01_CapaPresentacion
             {
                 socio.InsertarSocio(nombreCompleto, dni, email, Actividad, fechaAlta, fechaVencimiento, Estado);
                 MessageBox.Show($"{nombreCompleto} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                             
+                gb_Socios.Enabled = false;
+                gb_Socios.Hide();
+
+                btn_EliminarLogico.Enabled = true;
+                btn_EliminarLogico.Show();
+
+                btnVer.Enabled = true;
+                btnVer.Show();
+
+                btn_Editar.Enabled = true;
+                btn_Editar.Show();
+
+                btnInsertar.Enabled = true;
+                btnInsertar.Show();
+
+                btn_Agregar.Enabled = true;
+                btn_Agregar.Show();
+
+                btnEmail.Enabled = true;
+                btnEmail.Show();
+
+                dgv_Socios.Enabled = true;
+                dgv_Socios.Show();
+
+                lblBuscar.Enabled = true;
+                lblBuscar.Show();
+
+                txbSocioActivo.Enabled = true;
+                txbSocioActivo.Show();
+
                 ListarSocio();
                 BorrarInputs();
+  
+                
+
             }
 
-            gb_Socios.Enabled = false;
-            gb_Socios.Hide();
+            
 
-            btn_EliminarLogico.Enabled = true;
-            btn_EliminarLogico.Show();
-
-            btnVer.Enabled = true;
-            btnVer.Show();
-
-            btn_Editar.Enabled = true;
-            btn_Editar.Show();
-
-            btnInsertar.Enabled = true;
-            btnInsertar.Show();
-
-            btn_Agregar.Enabled = true;
-            btn_Agregar.Show();
-
-            btnEmail.Enabled = true;
-            btnEmail.Show();
-          
         }
 
         public void ListarSocio ()
@@ -148,12 +135,12 @@ namespace _01_CapaPresentacion
             txt_Nombre.Clear();          
             txt_Dni.Clear();
             txtEmail.Clear();
-            cboClase.Items.Clear();
             dtpFechaIngreso.Checked = false;
-           
+            cboClase.Items.Clear();
 
-           
-           
+
+
+
         }
 
 
@@ -196,6 +183,15 @@ namespace _01_CapaPresentacion
             btn_Actualizar.Enabled = true;
             btn_Actualizar.Show();
 
+            lblBuscar.Enabled = false;
+            lblBuscar.Hide();
+
+            txbSocioActivo.Enabled = false;
+            txbSocioActivo.Hide();
+
+            dgv_Socios.Enabled = false;
+            dgv_Socios.Hide();
+
             gb_Socios.Enabled = true;
             gb_Socios.Show();
 
@@ -235,28 +231,40 @@ namespace _01_CapaPresentacion
 
                 MessageBox.Show($" {nombreCompleto} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                gb_Socios.Enabled = false;
+                gb_Socios.Hide();
+
+                btn_EliminarLogico.Enabled = true;
+                btn_EliminarLogico.Show();
+
+                btnVer.Enabled = true;
+                btnVer.Show();
+
+                btn_Editar.Enabled = true;
+                btn_Editar.Show();
+
+                btnInsertar.Enabled = true;
+                btnInsertar.Show();
+
+                btnEmail.Enabled = true;
+                btnEmail.Show();
+
+                lblBuscar.Enabled = true;
+                lblBuscar.Show();
+
+                txbSocioActivo.Enabled = true;
+                txbSocioActivo.Show();
+
+                dgv_Socios.Enabled = true;
+                dgv_Socios.Show();
+
                 ListarSocio();
                 BorrarInputs();
+
             }
 
-            gb_Socios.Enabled = false;
-            gb_Socios.Hide();
-
-            btn_EliminarLogico.Enabled = true;
-            btn_EliminarLogico.Show();
-
-            btnVer.Enabled = true;
-            btnVer.Show();
-
-            btn_Editar.Enabled = true;
-            btn_Editar.Show();
-
-            btnInsertar.Enabled = true;
-            btnInsertar.Show();
-
-            btnEmail.Enabled = true;
-            btnEmail.Show();
-         
+            
+            
         }
 
       
@@ -266,15 +274,17 @@ namespace _01_CapaPresentacion
             if (dgv_Socios.SelectedRows.Count > 0)
             {
                 DataGridViewRow fila = dgv_Socios.SelectedRows[0];
-                string id = fila.Cells["Id_Socio"].Value.ToString();
+          
                 string nombreCompleto = fila.Cells["NombreCompleto"].Value.ToString();     
-                string dni = fila.Cells["Dni"].Value.ToString();
+                string Dni = fila.Cells["Dni"].Value.ToString();
                 string email = fila.Cells["Email"].Value.ToString();
-                string FechaIngreso = fila.Cells["FechaIngreso"].Value.ToString();
-                string ProximoVencimiento = fila.Cells["ProximoVencimiento"].Value.ToString();
+                string clase = fila.Cells["Clase"].Value.ToString();
+                DateTime FechaIngreso = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+                DateTime ProximoVencimiento = Convert.ToDateTime(fila.Cells["ProximoVencimiento"].Value);
+                string ImagenURL = fila.Cells["ImagenURL"].Value.ToString();
 
                 this.Hide();
-                frmVerSocioActivo destino = new frmVerSocioActivo(id, nombreCompleto, dni, email, FechaIngreso, ProximoVencimiento);
+                frmVerSocioActivo destino = new frmVerSocioActivo(nombreCompleto, Dni, email, clase, FechaIngreso, ProximoVencimiento, ImagenURL);
                 destino.ShowDialog();
               
 
@@ -312,6 +322,15 @@ namespace _01_CapaPresentacion
 
             btn_Actualizar.Enabled = false;
             btn_Actualizar.Hide();
+
+            lblBuscar.Enabled = false;
+            lblBuscar.Hide();
+
+            txbSocioActivo.Enabled = false;
+            txbSocioActivo.Hide();
+
+            dgv_Socios.Enabled = false;
+            dgv_Socios.Hide();
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
@@ -361,5 +380,30 @@ namespace _01_CapaPresentacion
 
 
         }
+
+        //private void dgv_Socios_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (dgv_Socios.CurrentCell != null)
+        //    {
+        //        string ruta = dgv_Socios.CurrentRow.Cells["ImagenURL"].Value.ToString();
+        //       // MessageBox.Show("La ruta es: " +ruta);
+
+        //        if (! string.IsNullOrEmpty(ruta) && File.Exists(ruta))
+        //        {
+        //            //try
+        //            //{
+        //            //    if ()
+        //            //    {
+
+        //            //    }
+        //            //}
+        //            //catch (Exception ex)
+        //            //{
+
+        //            //    throw;
+        //            //}
+        //        }
+        //    }
+        //}
     }
 }
