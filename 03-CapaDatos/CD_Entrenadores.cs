@@ -21,13 +21,13 @@ namespace _03_CapaDatos
         SqlDataReader lector;
 
 
-        public DataTable MostrarEntrenadoresActivo ()
+        public DataTable MostrarEntrenadores ()
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
 
-                string query = "Select Id_Entrenador,Nombre as 'Nombre Entrenador',Apellido,Dni, Domicilio, Telefono from Entrenadores where Activo = 1;";
+                string query = "SELECT Id_Entrenador, NombreCompleto, Dni, Domicilio, Clase, Telefono, Estado FROM Entrenadores;";
 
                 comando.CommandText = query;
 
@@ -47,13 +47,13 @@ namespace _03_CapaDatos
             return tabla;
         }
 
-        public void InsertarEntrenador (string nombre, string apellido, string dni, string domicilio, string telefono)
+        public void InsertarEntrenador (string nombreCompleto, string dni, string domicilio, string clase, string telefono, string estado)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "INSERT INTO Entrenadores (Nombre, Apellido, Dni, Domicilio, Telefono) VALUES " +
-                    "('"+nombre+"','"+apellido+"','"+dni+"','"+domicilio+"','"+telefono+"');";
+                string query = "INSERT INTO Entrenadores (NombreCompleto, Dni, Domicilio, Clase, Telefono, Estado) VALUES " +
+                    "('"+ nombreCompleto + "','"+dni+"','"+domicilio+ "','"+clase+"','" + telefono+ "','" + estado+"');";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }
@@ -68,7 +68,7 @@ namespace _03_CapaDatos
             }
         }
 
-        public void EliminarFisico (int id)
+        public void EliminarEntrenador (int id)
         {
             try
             {
@@ -89,31 +89,12 @@ namespace _03_CapaDatos
             
         }
 
-        public void EliminarLogico(int id)
+        public void EditarEntrenador(string domicilio, string clase, string telefono, string estado, int id)
         {
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "UPDATE Entrenadores SET Activo = 0 WHERE Id_Entrenador = "+id+"";
-                comando.CommandText = query;
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error " + ex.Message);
-            }finally
-            {
-                conexion.CloseConexion() ;
-            }
-        }
-
-        public void EditarEntrenador(string nombre, string apellido, string dni, string domicilio, string telefono, int id)
-        {
-            try
-            {
-                comando.Connection = conexion.OpenConexion();
-                string query = "UPDATE Entrenadores SET Nombre = '" + nombre + "',Apellido = '" + apellido + "',Dni = '" + dni + "',Domicilio = '" + domicilio + "',Telefono = '" + telefono + "' where Id_Entrenador = " + id + ";";
+                string query = "UPDATE Entrenadores SET Domicilio = '" + domicilio + "', Clase = '"+clase+"',Telefono = '" + telefono + "', Estado = '"+estado+"' where Id_Entrenador = " + id + ";";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }

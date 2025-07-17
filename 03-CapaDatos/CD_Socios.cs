@@ -46,7 +46,7 @@ namespace _03_CapaDatos.BaseDatos
         }
 
 
-        public void InsertarSocio(string nombreCompleto, string dni, string email,string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string Estado)
+        public void InsertarSocio(string nombreCompleto, string dni, string email,string Clase, DateTime FechaIngreso, string ProximoVencimiento, string Estado)
         {
             try
             {
@@ -72,8 +72,9 @@ namespace _03_CapaDatos.BaseDatos
         {
             try
             {
+                
                 comando.Connection = conexion.OpenConexion();
-                string query = "DELETE from Socios where Estado = 'Inactivo' and Id_Socio = "+id+"";
+                string query = "DELETE FROM Socios WHERE (Estado IS NULL OR Estado = '') AND Id_Socio = "+id+"";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }
@@ -132,7 +133,7 @@ namespace _03_CapaDatos.BaseDatos
             try
             {
                 comando.Connection = conexion.OpenConexion();
-                string query = "SELECT Id_Socio = '"+id+"', NombreCompleto = '"+nombreCompleto+ "', Dni= '"+dni+ "', Telefono= '"+email+ "', FechaIngreso = '"+FechaIngreso+"', ProximoVencimiento = '"+ProximoVencimiento+"' FROM Socios";
+                string query = "SELECT Id_Socio = '"+id+"', NombreCompleto = '"+nombreCompleto+ "', Dni= '"+dni+ "', Telefono= '"+email+ "', FechaIngreso = '"+FechaIngreso+"', ProximoVencimiento = '"+ProximoVencimiento+ "', ImagenURL = '"+ ImagenURL + "' FROM Socios";
                 comando.CommandText = query;
                 comando.ExecuteNonQuery();
             }

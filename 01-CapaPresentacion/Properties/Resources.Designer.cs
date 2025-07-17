@@ -63,6 +63,16 @@ namespace _01_CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_off {
+            get {
+                object obj = ResourceManager.GetObject("eye-off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngCalendario {
             get {
                 object obj = ResourceManager.GetObject("pngCalendario", resourceCulture);
@@ -216,6 +226,16 @@ namespace _01_CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap pngVer {
             get {
                 object obj = ResourceManager.GetObject("pngVer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

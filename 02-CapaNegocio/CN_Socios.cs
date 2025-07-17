@@ -18,7 +18,7 @@ namespace _02_CapaNegocio
         }
 
 
-        public void InsertarSocio(string nombreCompleto, string dni, string email, string Clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string Estado)
+        public void InsertarSocio(string nombreCompleto, string dni, string email, string Clase, DateTime FechaIngreso, string ProximoVencimiento, string Estado)
         {
             socio.InsertarSocio(nombreCompleto, dni, email, Clase, FechaIngreso, ProximoVencimiento, Estado);
         }

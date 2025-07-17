@@ -34,15 +34,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEntrenadores = new System.Windows.Forms.DataGridView();
-            this.btnEliminarLogico = new System.Windows.Forms.Button();
+            this.btnEliminarFisico = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gbEntrenadores = new System.Windows.Forms.GroupBox();
+            this.cboEstadoEntrenador = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboClaseEntrenador = new System.Windows.Forms.ComboBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.lblDomicilio = new System.Windows.Forms.Label();
@@ -50,6 +52,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.lblBuscarEntrenador = new System.Windows.Forms.Label();
+            this.txbBuscarEntrenador = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenadores)).BeginInit();
             this.gbEntrenadores.SuspendLayout();
             this.SuspendLayout();
@@ -113,19 +117,19 @@
             this.dgvEntrenadores.Size = new System.Drawing.Size(671, 433);
             this.dgvEntrenadores.TabIndex = 1;
             // 
-            // btnEliminarLogico
+            // btnEliminarFisico
             // 
-            this.btnEliminarLogico.BackColor = System.Drawing.Color.Red;
-            this.btnEliminarLogico.FlatAppearance.BorderSize = 0;
-            this.btnEliminarLogico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnEliminarLogico.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarLogico.Location = new System.Drawing.Point(101, 522);
-            this.btnEliminarLogico.Name = "btnEliminarLogico";
-            this.btnEliminarLogico.Size = new System.Drawing.Size(101, 40);
-            this.btnEliminarLogico.TabIndex = 3;
-            this.btnEliminarLogico.Text = "Eliminar";
-            this.btnEliminarLogico.UseVisualStyleBackColor = false;
-            this.btnEliminarLogico.Click += new System.EventHandler(this.btnEliminarLogico_Click);
+            this.btnEliminarFisico.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarFisico.FlatAppearance.BorderSize = 0;
+            this.btnEliminarFisico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnEliminarFisico.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarFisico.Location = new System.Drawing.Point(101, 522);
+            this.btnEliminarFisico.Name = "btnEliminarFisico";
+            this.btnEliminarFisico.Size = new System.Drawing.Size(101, 40);
+            this.btnEliminarFisico.TabIndex = 3;
+            this.btnEliminarFisico.Text = "Eliminar";
+            this.btnEliminarFisico.UseVisualStyleBackColor = false;
+            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
             // btnEditar
             // 
@@ -158,11 +162,13 @@
             // gbEntrenadores
             // 
             this.gbEntrenadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.gbEntrenadores.Controls.Add(this.cboEstadoEntrenador);
+            this.gbEntrenadores.Controls.Add(this.label1);
+            this.gbEntrenadores.Controls.Add(this.cboClaseEntrenador);
             this.gbEntrenadores.Controls.Add(this.txtTelefono);
             this.gbEntrenadores.Controls.Add(this.lblTelefono);
             this.gbEntrenadores.Controls.Add(this.txtDomicilio);
             this.gbEntrenadores.Controls.Add(this.txtDni);
-            this.gbEntrenadores.Controls.Add(this.txtApellido);
             this.gbEntrenadores.Controls.Add(this.txtNombre);
             this.gbEntrenadores.Controls.Add(this.btnConfirmar);
             this.gbEntrenadores.Controls.Add(this.lblDomicilio);
@@ -172,16 +178,43 @@
             this.gbEntrenadores.Controls.Add(this.lblNombre);
             this.gbEntrenadores.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEntrenadores.ForeColor = System.Drawing.Color.White;
-            this.gbEntrenadores.Location = new System.Drawing.Point(678, 61);
+            this.gbEntrenadores.Location = new System.Drawing.Point(357, 63);
             this.gbEntrenadores.Name = "gbEntrenadores";
             this.gbEntrenadores.Size = new System.Drawing.Size(369, 433);
             this.gbEntrenadores.TabIndex = 14;
             this.gbEntrenadores.TabStop = false;
             this.gbEntrenadores.Text = "Ingresa un nuevo socio:";
+            this.gbEntrenadores.Enter += new System.EventHandler(this.gbEntrenadores_Enter);
+            // 
+            // cboEstadoEntrenador
+            // 
+            this.cboEstadoEntrenador.FormattingEnabled = true;
+            this.cboEstadoEntrenador.Location = new System.Drawing.Point(183, 342);
+            this.cboEstadoEntrenador.Name = "cboEstadoEntrenador";
+            this.cboEstadoEntrenador.Size = new System.Drawing.Size(151, 31);
+            this.cboEstadoEntrenador.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Estado:";
+            // 
+            // cboClaseEntrenador
+            // 
+            this.cboClaseEntrenador.FormattingEnabled = true;
+            this.cboClaseEntrenador.Location = new System.Drawing.Point(183, 228);
+            this.cboClaseEntrenador.Name = "cboClaseEntrenador";
+            this.cboClaseEntrenador.Size = new System.Drawing.Size(151, 31);
+            this.cboClaseEntrenador.TabIndex = 17;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(144, 279);
+            this.txtTelefono.Location = new System.Drawing.Point(183, 286);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(151, 32);
             this.txtTelefono.TabIndex = 18;
@@ -190,7 +223,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(6, 284);
+            this.lblTelefono.Location = new System.Drawing.Point(6, 291);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(85, 21);
             this.lblTelefono.TabIndex = 17;
@@ -198,28 +231,21 @@
             // 
             // txtDomicilio
             // 
-            this.txtDomicilio.Location = new System.Drawing.Point(144, 223);
+            this.txtDomicilio.Location = new System.Drawing.Point(183, 178);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(151, 32);
             this.txtDomicilio.TabIndex = 14;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(144, 169);
+            this.txtDni.Location = new System.Drawing.Point(186, 117);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(151, 32);
             this.txtDni.TabIndex = 13;
             // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(144, 114);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(151, 32);
-            this.txtApellido.TabIndex = 12;
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(144, 59);
+            this.txtNombre.Location = new System.Drawing.Point(183, 59);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(151, 32);
             this.txtNombre.TabIndex = 11;
@@ -244,7 +270,7 @@
             // 
             this.lblDomicilio.AutoSize = true;
             this.lblDomicilio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomicilio.Location = new System.Drawing.Point(6, 223);
+            this.lblDomicilio.Location = new System.Drawing.Point(6, 178);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(88, 21);
             this.lblDomicilio.TabIndex = 9;
@@ -254,7 +280,7 @@
             // 
             this.lblDni.AutoSize = true;
             this.lblDni.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(6, 169);
+            this.lblDni.Location = new System.Drawing.Point(9, 117);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(41, 21);
             this.lblDni.TabIndex = 8;
@@ -265,11 +291,11 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(6, 114);
+            this.lblApellido.Location = new System.Drawing.Point(6, 231);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(83, 21);
+            this.lblApellido.Size = new System.Drawing.Size(62, 21);
             this.lblApellido.TabIndex = 7;
-            this.lblApellido.Text = "Apellido:";
+            this.lblApellido.Text = "Clase:";
             // 
             // btnActualizar
             // 
@@ -294,9 +320,29 @@
             this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(6, 59);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(82, 21);
+            this.lblNombre.Size = new System.Drawing.Size(171, 21);
             this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre Completo:";
+            // 
+            // lblBuscarEntrenador
+            // 
+            this.lblBuscarEntrenador.AutoSize = true;
+            this.lblBuscarEntrenador.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarEntrenador.ForeColor = System.Drawing.Color.Black;
+            this.lblBuscarEntrenador.Location = new System.Drawing.Point(97, 21);
+            this.lblBuscarEntrenador.Name = "lblBuscarEntrenador";
+            this.lblBuscarEntrenador.Size = new System.Drawing.Size(72, 21);
+            this.lblBuscarEntrenador.TabIndex = 15;
+            this.lblBuscarEntrenador.Text = "Buscar:";
+            // 
+            // txbBuscarEntrenador
+            // 
+            this.txbBuscarEntrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBuscarEntrenador.Location = new System.Drawing.Point(175, 14);
+            this.txbBuscarEntrenador.Name = "txbBuscarEntrenador";
+            this.txbBuscarEntrenador.Size = new System.Drawing.Size(345, 28);
+            this.txbBuscarEntrenador.TabIndex = 16;
+            this.txbBuscarEntrenador.TextChanged += new System.EventHandler(this.txbBuscarEntrenador_TextChanged);
             // 
             // Entrenador
             // 
@@ -304,10 +350,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.Controls.Add(this.txbBuscarEntrenador);
+            this.Controls.Add(this.lblBuscarEntrenador);
             this.Controls.Add(this.gbEntrenadores);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnEliminarLogico);
+            this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.dgvEntrenadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Entrenador";
@@ -317,20 +365,20 @@
             this.gbEntrenadores.ResumeLayout(false);
             this.gbEntrenadores.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEntrenadores;
-        private System.Windows.Forms.Button btnEliminarLogico;
+        private System.Windows.Forms.Button btnEliminarFisico;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.GroupBox gbEntrenadores;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label lblDomicilio;
@@ -339,5 +387,10 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblBuscarEntrenador;
+        private System.Windows.Forms.TextBox txbBuscarEntrenador;
+        private System.Windows.Forms.ComboBox cboClaseEntrenador;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboEstadoEntrenador;
     }
 }

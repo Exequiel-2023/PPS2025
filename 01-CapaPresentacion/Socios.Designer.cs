@@ -158,7 +158,7 @@
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_Nombre.Location = new System.Drawing.Point(6, 37);
+            this.lbl_Nombre.Location = new System.Drawing.Point(6, 13);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(171, 21);
             this.lbl_Nombre.TabIndex = 6;
@@ -185,7 +185,7 @@
             this.gb_Socios.Controls.Add(this.lbl_Nombre);
             this.gb_Socios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Socios.ForeColor = System.Drawing.Color.White;
-            this.gb_Socios.Location = new System.Drawing.Point(327, 77);
+            this.gb_Socios.Location = new System.Drawing.Point(326, 89);
             this.gb_Socios.Name = "gb_Socios";
             this.gb_Socios.Size = new System.Drawing.Size(369, 433);
             this.gb_Socios.TabIndex = 8;
@@ -196,7 +196,7 @@
             // 
             this.cbEstado.Enabled = false;
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(204, 364);
+            this.cbEstado.Location = new System.Drawing.Point(204, 300);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(151, 31);
             this.cbEstado.TabIndex = 7;
@@ -205,7 +205,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(6, 364);
+            this.lblEstado.Location = new System.Drawing.Point(6, 310);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(73, 21);
             this.lblEstado.TabIndex = 22;
@@ -213,7 +213,7 @@
             // 
             // txtProximoVencimiento
             // 
-            this.txtProximoVencimiento.Location = new System.Drawing.Point(204, 306);
+            this.txtProximoVencimiento.Location = new System.Drawing.Point(204, 248);
             this.txtProximoVencimiento.Name = "txtProximoVencimiento";
             this.txtProximoVencimiento.Size = new System.Drawing.Size(151, 32);
             this.txtProximoVencimiento.TabIndex = 6;
@@ -222,7 +222,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 317);
+            this.label1.Location = new System.Drawing.Point(5, 259);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 21);
             this.label1.TabIndex = 20;
@@ -230,7 +230,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(204, 139);
+            this.txtEmail.Location = new System.Drawing.Point(204, 89);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(151, 32);
             this.txtEmail.TabIndex = 3;
@@ -239,7 +239,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(5, 144);
+            this.lblEmail.Location = new System.Drawing.Point(6, 100);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(57, 21);
             this.lblEmail.TabIndex = 18;
@@ -249,7 +249,7 @@
             // 
             this.lblClase.AutoSize = true;
             this.lblClase.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClase.Location = new System.Drawing.Point(5, 198);
+            this.lblClase.Location = new System.Drawing.Point(5, 152);
             this.lblClase.Name = "lblClase";
             this.lblClase.Size = new System.Drawing.Size(62, 21);
             this.lblClase.TabIndex = 17;
@@ -258,7 +258,7 @@
             // cboClase
             // 
             this.cboClase.FormattingEnabled = true;
-            this.cboClase.Location = new System.Drawing.Point(204, 193);
+            this.cboClase.Location = new System.Drawing.Point(204, 142);
             this.cboClase.Name = "cboClase";
             this.cboClase.Size = new System.Drawing.Size(151, 31);
             this.cboClase.TabIndex = 4;
@@ -266,7 +266,7 @@
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(204, 262);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(204, 196);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 28);
             this.dtpFechaIngreso.TabIndex = 5;
@@ -274,7 +274,7 @@
             // 
             // txt_Dni
             // 
-            this.txt_Dni.Location = new System.Drawing.Point(204, 87);
+            this.txt_Dni.Location = new System.Drawing.Point(204, 44);
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(151, 32);
             this.txt_Dni.TabIndex = 2;
@@ -282,7 +282,7 @@
             // txt_Nombre
             // 
             this.txt_Nombre.ForeColor = System.Drawing.Color.Black;
-            this.txt_Nombre.Location = new System.Drawing.Point(204, 37);
+            this.txt_Nombre.Location = new System.Drawing.Point(204, 2);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(151, 32);
             this.txt_Nombre.TabIndex = 1;
@@ -291,7 +291,7 @@
             // 
             this.lbl_FechaIngreso.AutoSize = true;
             this.lbl_FechaIngreso.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FechaIngreso.Location = new System.Drawing.Point(6, 262);
+            this.lbl_FechaIngreso.Location = new System.Drawing.Point(5, 202);
             this.lbl_FechaIngreso.Name = "lbl_FechaIngreso";
             this.lbl_FechaIngreso.Size = new System.Drawing.Size(132, 21);
             this.lbl_FechaIngreso.TabIndex = 10;
@@ -301,7 +301,7 @@
             // 
             this.lbl_Dni.AutoSize = true;
             this.lbl_Dni.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dni.Location = new System.Drawing.Point(5, 87);
+            this.lbl_Dni.Location = new System.Drawing.Point(5, 55);
             this.lbl_Dni.Name = "lbl_Dni";
             this.lbl_Dni.Size = new System.Drawing.Size(41, 21);
             this.lbl_Dni.TabIndex = 8;

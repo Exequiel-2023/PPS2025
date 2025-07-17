@@ -36,28 +36,32 @@ namespace _01_CapaPresentacion
 
 
         private void btn_Ingresar_Click_1(object sender, EventArgs e)
-        { 
-            
-            loguearse();
-             
-
-        }
-        public void loguearse()
         {
-            DataTable tabla = new DataTable();  
-            string user = txt_Usuario.Text;
-            string pass = txt_Password.Text;
 
-            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+
+
+            int CantidadCaracteresUsuario = txt_Usuario.Text.Length;
+            int CantidadCaracteresPassword = txt_Password.Text.Length;
+
+            //MessageBox.Show("Las cantidad de caracteres en el usuario son : " + CantidadCaracteresUsuario);
+            //MessageBox.Show("Las cantidad de caracteres en el contraseña son : " + CantidadCaracteresPassword);
+
+            if (CantidadCaracteresUsuario == 0 || CantidadCaracteresPassword == 0)
             {
-
-                MessageBox.Show("Debes completar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Debes completar ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            tabla = logueo.datosLogin(user, pass);
+            if (CantidadCaracteresUsuario > 1 && CantidadCaracteresPassword > 1)
+            {
 
-                      
+                DataTable tabla = new DataTable();
+                string user = txt_Usuario.Text;
+                string pass = txt_Password.Text;
+
+                tabla = logueo.datosLogin(user, pass);
+
+
                 if (tabla.Rows.Count > 0 && txt_Usuario.Text != "" && txt_Password.Text != "")
                 {
 
@@ -75,26 +79,29 @@ namespace _01_CapaPresentacion
                     {
                         Application.Run(new VentanaPrincipalJefe());
                     }
-                if (id_logeo == "1")
-                {
-                    this.Hide();
-                  
-                    jefe.ShowDialog();
+                    if (id_logeo == "1")
+                    {
+                        this.Hide();
+
+                        jefe.ShowDialog();
+                    }
+                    else if (id_logeo == "2" || id_logeo == "3")
+                    {
+                        this.Hide();
+                        principal.ShowDialog();
+                    }
                 }
-                else if (id_logeo == "2" || id_logeo == "3")
+                else
                 {
-                    this.Hide();
-                    principal.ShowDialog();
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    limpiarInputslogin();
                 }
+
+
+
 
             }
-                //else 
-                //{
-                //    MessageBox.Show("Usuario y/o contraseña incorrecta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //}              
-            
-        }
+        }      
 
         private void txt_Usuario_Enter(object sender, EventArgs e)
         {
@@ -151,12 +158,12 @@ namespace _01_CapaPresentacion
             txt_Usuario.Clear();
         }
 
-        private void iconcerrar_Click(object sender, EventArgs e)
+        private void iconcerrar_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconminimizar_Click(object sender, EventArgs e)
+        private void iconminimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }

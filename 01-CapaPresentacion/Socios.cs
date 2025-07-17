@@ -16,7 +16,8 @@ namespace _01_CapaPresentacion
     {
         
         CN_Socios socio = new CN_Socios();
-       
+     
+        private string[] archivos;
         public Socios()
         {
             InitializeComponent();
@@ -47,11 +48,11 @@ namespace _01_CapaPresentacion
             string email = txtEmail.Text;
             string Actividad = cboClase.Text;
             DateTime fechaAlta = dtpFechaIngreso.Value;
-            DateTime fechaVencimiento = DateTime.Parse(txtProximoVencimiento.Text);
+            string fechaVencimiento = txtProximoVencimiento.Text;
             string Estado = cbEstado.Text;
             
 
-            if (nombreCompleto == "" || dni == "")
+            if (nombreCompleto == "" || dni == "" || email == "" || Actividad == "" || fechaVencimiento == "" )
             {
                 MessageBox.Show("Debes rellenar todos los campos");
             }
@@ -90,24 +91,16 @@ namespace _01_CapaPresentacion
                 txbSocioActivo.Enabled = true;
                 txbSocioActivo.Show();
 
-                ListarSocio();
                 BorrarInputs();
-  
-                
+                ListarSocio();             
 
-            }
-
-            
-
+            }            
         }
 
         public void ListarSocio ()
         {
 
-            CN_Socios socio = new CN_Socios();
-            //dgv_Socios.DataSource = null;
-
-            //dgv_Socios.DataSource = socio.MostrarSocios();
+            CN_Socios socio = new CN_Socios();    
             DataTable tabla = socio.MostrarSocios();
 
             foreach (DataRow fila in tabla.Rows)
@@ -135,27 +128,28 @@ namespace _01_CapaPresentacion
             txt_Nombre.Clear();          
             txt_Dni.Clear();
             txtEmail.Clear();
-            dtpFechaIngreso.Checked = false;
+            cboClase.Text = ""; 
             cboClase.Items.Clear();
-
-
-
-
+            dtpFechaIngreso.Value = DateTime.Now;
+            txtProximoVencimiento.Clear();
         }
 
 
         private void btn_EliminarLogico_Click(object sender, EventArgs e)
         {
+            string nombreCompleto = dgv_Socios.CurrentRow.Cells["NombreCompleto"].Value.ToString();
             string identificador = dgv_Socios.CurrentRow.Cells["Id_Socio"].Value.ToString();
+           
             socio.EliminarSocioFisicamente(identificador);
             if (dgv_Socios.CurrentRow.Cells["Estado"].Value.ToString() == "Inactivo")
             {
-                MessageBox.Show("el socio fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El socio {nombreCompleto} fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListarSocio();
             }
             else
             {
-                MessageBox.Show("el socio no puede ser eliminado ya que esta Activo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"el socio{nombre} no puede ser eliminado ya que esta Activo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"El socio {nombreCompleto} no puede ser eliminado ya que esta Activo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
            
         }
@@ -261,13 +255,11 @@ namespace _01_CapaPresentacion
                 ListarSocio();
                 BorrarInputs();
 
-            }
-
-            
-            
+            }                        
         }
 
-      
+
+
         private void btnVer_Click(object sender, EventArgs e)
         {
             
@@ -285,11 +277,8 @@ namespace _01_CapaPresentacion
 
                 this.Hide();
                 frmVerSocioActivo destino = new frmVerSocioActivo(nombreCompleto, Dni, email, clase, FechaIngreso, ProximoVencimiento, ImagenURL);
-                destino.ShowDialog();
-              
-
+                destino.ShowDialog();              
             }
-
         }
 
         private void txbSocioActivo_TextChanged(object sender, EventArgs e)
@@ -376,10 +365,8 @@ namespace _01_CapaPresentacion
 
             cbEstado.Items.Add("Activo");
             cbEstado.Items.Add("Inactivo");
-
-
-
         }
+
 
         //private void dgv_Socios_SelectionChanged(object sender, EventArgs e)
         //{

@@ -15,29 +15,24 @@ namespace _02_CapaNegocio
         public DataTable MostrarEntrenadores()
         {
            
-            tabla = entrenador.MostrarEntrenadoresActivo();
+            tabla = entrenador.MostrarEntrenadores();
 
             return tabla;
         }        
 
-        public void InsertarEntrenador(string nombre, string apellido, string dni, string domicilio, string telefono)
+        public void InsertarEntrenador(string nombreCompleto, string dni, string domicilio, string clase, string telefono, string estado)
         {
-            entrenador.InsertarEntrenador(nombre,apellido,dni,domicilio,telefono);
+            entrenador.InsertarEntrenador(nombreCompleto, dni, domicilio, clase,  telefono, estado);
         }
 
-        public void EliminarFisico(string id)
+        public void EliminarEntrenador(string id)
         {
-            entrenador.EliminarFisico(int.Parse(id));
+            entrenador.EliminarEntrenador(int.Parse(id));
         }
 
-        public void EliminarLogico(string id)
+        public void EditarEntrenador(string domicilio, string clase, string telefono, string estado, string id)
         {
-            entrenador.EliminarLogico(int.Parse(id));
-        }
-
-        public void EditarEntrenador(string nombre,string apellido,string dni, string domicilio, string telefono, string id)
-        {
-            entrenador.EditarEntrenador(nombre,apellido,dni,domicilio,telefono,int.Parse(id));
+            entrenador.EditarEntrenador(domicilio, clase, telefono, estado, int.Parse(id));
         }
 
         public void DarAltaEntrenador(string domicilio, string tel,string activo, string id)
