@@ -46,6 +46,7 @@
     <Compile Include="CD_Horarios.cs" />
     <Compile Include="CD_Inventario.cs" />
     <Compile Include="CD_Login.cs" />
+    <Compile Include="CD_Secretarios.cs" />
     <Compile Include="CD_Socios.cs" />
     <Compile Include="BaseDatos\ConexionDB.cs" />
     <Compile Include="BaseDatos\DatosDB.cs" />

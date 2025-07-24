@@ -45,6 +45,7 @@
     <Compile Include="CN_Horarios.cs" />
     <Compile Include="CN_Inventario.cs" />
     <Compile Include="CN_Login.cs" />
+    <Compile Include="CN_Secretarios.cs" />
     <Compile Include="CN_Socios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

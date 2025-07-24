@@ -62,11 +62,6 @@ namespace _01_CapaPresentacion
             MessageBox.Show("Archivo descargado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            VentanaPrincipalJefe V1 = new VentanaPrincipalJefe();
-            V1.ShowDialog();
-        }
+      
     }
 }

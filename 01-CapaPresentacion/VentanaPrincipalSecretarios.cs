@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 
 namespace _01_CapaPresentacion
 {
-    public partial class VentanaPrincipal : Form
+    public partial class VentanaPrincipalSecretarios : Form
     {
-        public VentanaPrincipal()
+        public VentanaPrincipalSecretarios()
         {
             InitializeComponent();
         }
@@ -79,6 +79,18 @@ namespace _01_CapaPresentacion
         private void btnEntrenadores_Click(object sender, EventArgs e)
         {
             AbrirFormEntrenadores(new Entrenador());
+        }
+
+        public void AbrirFormularioEnPanelDetallesSocioSecretario(Form formHijo2)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+
+            formHijo2.TopLevel = false;
+            formHijo2.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(formHijo2);
+            this.PanelContenedor.Tag = formHijo2;
+            formHijo2.Show();
         }
 
         private void AbrirFormHorarios(object horario1)
@@ -147,5 +159,7 @@ namespace _01_CapaPresentacion
             frm_login login = new frm_login();
             login.ShowDialog();
         }
+
+        
     }
 }

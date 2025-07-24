@@ -223,6 +223,16 @@ namespace _01_CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PngUserBlanco {
+            get {
+                object obj = ResourceManager.GetObject("PngUserBlanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngVer {
             get {
                 object obj = ResourceManager.GetObject("pngVer", resourceCulture);

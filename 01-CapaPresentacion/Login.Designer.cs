@@ -31,7 +31,6 @@
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.btn_Ingresar = new System.Windows.Forms.Button();
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.lbl_Login = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,36 +79,20 @@
             this.btn_Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ingresar.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_Ingresar.Location = new System.Drawing.Point(307, 245);
+            this.btn_Ingresar.Location = new System.Drawing.Point(344, 250);
             this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(126, 40);
+            this.btn_Ingresar.Size = new System.Drawing.Size(397, 40);
             this.btn_Ingresar.TabIndex = 3;
-            this.btn_Ingresar.Text = "INGRESAR";
+            this.btn_Ingresar.Text = "ACCEDER";
             this.btn_Ingresar.UseVisualStyleBackColor = false;
             this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click_1);
-            // 
-            // btn_Salir
-            // 
-            this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_Salir.FlatAppearance.BorderSize = 0;
-            this.btn_Salir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btn_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Salir.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_Salir.Location = new System.Drawing.Point(578, 245);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(126, 40);
-            this.btn_Salir.TabIndex = 4;
-            this.btn_Salir.Text = "SALIR";
-            this.btn_Salir.UseVisualStyleBackColor = false;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // lbl_Login
             // 
             this.lbl_Login.AutoSize = true;
             this.lbl_Login.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Login.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_Login.Location = new System.Drawing.Point(382, 9);
+            this.lbl_Login.Location = new System.Drawing.Point(396, 0);
             this.lbl_Login.Name = "lbl_Login";
             this.lbl_Login.Size = new System.Drawing.Size(255, 40);
             this.lbl_Login.TabIndex = 6;
@@ -124,6 +107,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 330);
             this.panel1.TabIndex = 7;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // pictureBox1
             // 
@@ -217,7 +201,6 @@
             this.Controls.Add(this.iconcerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_Login);
-            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Ingresar);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Usuario);
@@ -226,6 +209,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_login_MouseDown_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -241,7 +225,6 @@
         private System.Windows.Forms.TextBox txt_Usuario;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Button btn_Ingresar;
-        private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;

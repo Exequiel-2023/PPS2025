@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.btnEstadistica = new System.Windows.Forms.Button();
+            this.btnSecretarios = new System.Windows.Forms.Button();
             this.btnSocio = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.MenuVertical.Controls.Add(this.btnEstadistica);
+            this.MenuVertical.Controls.Add(this.btnSecretarios);
             this.MenuVertical.Controls.Add(this.btnSocio);
             this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.button1);
@@ -67,21 +67,22 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 650);
             this.MenuVertical.TabIndex = 4;
             // 
-            // btnEstadistica
+            // btnSecretarios
             // 
-            this.btnEstadistica.FlatAppearance.BorderSize = 0;
-            this.btnEstadistica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnEstadistica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadistica.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadistica.ForeColor = System.Drawing.Color.White;
-            this.btnEstadistica.Image = global::_01_CapaPresentacion.Properties.Resources.pngEstadistica;
-            this.btnEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadistica.Location = new System.Drawing.Point(27, 395);
-            this.btnEstadistica.Name = "btnEstadistica";
-            this.btnEstadistica.Size = new System.Drawing.Size(250, 40);
-            this.btnEstadistica.TabIndex = 11;
-            this.btnEstadistica.Text = " Estadisticas";
-            this.btnEstadistica.UseVisualStyleBackColor = true;
+            this.btnSecretarios.FlatAppearance.BorderSize = 0;
+            this.btnSecretarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSecretarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretarios.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSecretarios.ForeColor = System.Drawing.Color.White;
+            this.btnSecretarios.Image = global::_01_CapaPresentacion.Properties.Resources.PngUserBlanco;
+            this.btnSecretarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSecretarios.Location = new System.Drawing.Point(26, 282);
+            this.btnSecretarios.Name = "btnSecretarios";
+            this.btnSecretarios.Size = new System.Drawing.Size(250, 40);
+            this.btnSecretarios.TabIndex = 12;
+            this.btnSecretarios.Text = "      Secretarios";
+            this.btnSecretarios.UseVisualStyleBackColor = true;
+            this.btnSecretarios.Click += new System.EventHandler(this.btnSecretarios_Click);
             // 
             // btnSocio
             // 
@@ -109,6 +110,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // button1
             // 
@@ -136,7 +138,7 @@
             this.btnInventarios.ForeColor = System.Drawing.Color.White;
             this.btnInventarios.Image = global::_01_CapaPresentacion.Properties.Resources.pngInventario;
             this.btnInventarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventarios.Location = new System.Drawing.Point(27, 338);
+            this.btnInventarios.Location = new System.Drawing.Point(27, 410);
             this.btnInventarios.Name = "btnInventarios";
             this.btnInventarios.Size = new System.Drawing.Size(250, 40);
             this.btnInventarios.TabIndex = 8;
@@ -153,7 +155,7 @@
             this.btnEntrenador.ForeColor = System.Drawing.Color.White;
             this.btnEntrenador.Image = global::_01_CapaPresentacion.Properties.Resources.pngEntrenador;
             this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrenador.Location = new System.Drawing.Point(27, 282);
+            this.btnEntrenador.Location = new System.Drawing.Point(26, 345);
             this.btnEntrenador.Name = "btnEntrenador";
             this.btnEntrenador.Size = new System.Drawing.Size(250, 40);
             this.btnEntrenador.TabIndex = 7;
@@ -172,6 +174,7 @@
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
             this.BarraTitulo.TabIndex = 5;
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // iconrestaurar
             // 
@@ -275,7 +278,6 @@
         private System.Windows.Forms.Button btnInventarios;
         private System.Windows.Forms.Button btnEntrenador;
         private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.Button btnEstadistica;
         private System.Windows.Forms.Button btnSocio;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox btnslide;
@@ -283,5 +285,6 @@
         private System.Windows.Forms.PictureBox iconmaximizar;
         private System.Windows.Forms.PictureBox iconminimizar;
         private System.Windows.Forms.PictureBox iconrestaurar;
+        private System.Windows.Forms.Button btnSecretarios;
     }
 }

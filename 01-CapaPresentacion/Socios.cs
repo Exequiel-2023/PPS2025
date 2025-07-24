@@ -1,4 +1,5 @@
 ﻿using _02_CapaNegocio;
+using iTextSharp.text.pdf.codec.wmf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,10 @@ namespace _01_CapaPresentacion
     public partial class Socios : Form
     {
         
-        CN_Socios socio = new CN_Socios();
+            CN_Socios socio = new CN_Socios();
+            VentanaPrincipalSecretarios VentanaPpalSecretarios = new VentanaPrincipalSecretarios();
      
-        private string[] archivos;
+   
         public Socios()
         {
             InitializeComponent();
@@ -259,28 +261,6 @@ namespace _01_CapaPresentacion
         }
 
 
-
-        private void btnVer_Click(object sender, EventArgs e)
-        {
-            
-            if (dgv_Socios.SelectedRows.Count > 0)
-            {
-                DataGridViewRow fila = dgv_Socios.SelectedRows[0];
-          
-                string nombreCompleto = fila.Cells["NombreCompleto"].Value.ToString();     
-                string Dni = fila.Cells["Dni"].Value.ToString();
-                string email = fila.Cells["Email"].Value.ToString();
-                string clase = fila.Cells["Clase"].Value.ToString();
-                DateTime FechaIngreso = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
-                DateTime ProximoVencimiento = Convert.ToDateTime(fila.Cells["ProximoVencimiento"].Value);
-                string ImagenURL = fila.Cells["ImagenURL"].Value.ToString();
-
-                this.Hide();
-                frmVerSocioActivo destino = new frmVerSocioActivo(nombreCompleto, Dni, email, clase, FechaIngreso, ProximoVencimiento, ImagenURL);
-                destino.ShowDialog();              
-            }
-        }
-
         private void txbSocioActivo_TextChanged(object sender, EventArgs e)
         {
             (dgv_Socios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Dni  LIKE '{0}%'", txbSocioActivo.Text);
@@ -367,30 +347,28 @@ namespace _01_CapaPresentacion
             cbEstado.Items.Add("Inactivo");
         }
 
+        private void btnVer_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dgv_Socios.SelectedRows[0];
 
-        //private void dgv_Socios_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (dgv_Socios.CurrentCell != null)
-        //    {
-        //        string ruta = dgv_Socios.CurrentRow.Cells["ImagenURL"].Value.ToString();
-        //       // MessageBox.Show("La ruta es: " +ruta);
+            string id = fila.Cells["Id_Socio"].Value.ToString();
+            string nombreCompleto = fila.Cells["NombreCompleto"].Value.ToString();
+            string Dni = fila.Cells["Dni"].Value.ToString();
+            string email = fila.Cells["Email"].Value.ToString();
+            string clase = fila.Cells["Clase"].Value.ToString();
+            DateTime FechaIngreso = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+            DateTime ProximoVencimiento = Convert.ToDateTime(fila.Cells["ProximoVencimiento"].Value);
+            string Estado = fila.Cells["Estado"].Value.ToString();
+            string ImagenURL = fila.Cells["ImagenURL"].Value.ToString();
 
-        //        if (! string.IsNullOrEmpty(ruta) && File.Exists(ruta))
-        //        {
-        //            //try
-        //            //{
-        //            //    if ()
-        //            //    {
 
-        //            //    }
-        //            //}
-        //            //catch (Exception ex)
-        //            //{
+            VerDetalleSocioJefe destino = new VerDetalleSocioJefe();
+            destino.CargarDatos(id, nombreCompleto, Dni, email, clase, FechaIngreso, ProximoVencimiento, Estado, ImagenURL);
 
-        //            //    throw;
-        //            //}
-        //        }
-        //    }
-        //}
+            VentanaPrincipalSecretarios principal = (VentanaPrincipalSecretarios)this.ParentForm;
+
+            principal.AbrirFormularioEnPanelDetallesSocioSecretario(destino);
+        }
+
     }
 }

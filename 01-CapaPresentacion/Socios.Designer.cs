@@ -339,7 +339,7 @@
             this.btnVer.TabIndex = 9;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click_1);
             // 
             // btn_Editar
             // 

@@ -77,7 +77,20 @@ Telefono VARCHAR (60),
 alter table Entrenadores add  Activo bit default 1;
 ALTER TABLE Socios alter column FechaIngreso Date; 
 
+UPDATE Entrenadores set NombreCompleto = 'Lionel Messi' WHERE Id_Entrenador = 1;
+EXEC SP_RENAME 'Entrenadores.Nombre', 'Clase', 'Column';
 
+SELECT name 
+FROM sys.default_constraints 
+WHERE parent_object_id = OBJECT_ID('Entrenadores') 
+  AND COL_NAME(parent_object_id, parent_column_id) = 'Estado';
+
+ALTER TABLE Entrenadores DROP COLUMN Activo;
+
+ALTER TABLE Entrenadores DROP CONSTRAINT DF__Entrenado__Estad__3A4CA8FD;
+
+DF__Entrenado__Estad__3A4CA8FD
+ALTER TABLE Entrenadores  add Estado varchar (60) not null default 'Activo';
 
 INSERT INTO Entrenadores (Nombre, Apellido, Dni, Domicilio, Telefono) VALUES ('Lionel','Messi','34910234','Barcelona','3813512345'),('cristiano','ronaldo','34908456','Madrid','381456987');
 Select Nombre as 'Nombre Entrenador',Apellido,Dni from Entrenadores;
@@ -85,8 +98,14 @@ Select Nombre as 'Nombre Entrenador',Apellido,Dni from Entrenadores;
 INSERT INTO Entrenadores (Nombre, Apellido, Dni, Domicilio, Telefono) VALUES ('angel','dimaria','87897664','Rosario','381345758'),('Viviana','Videla','43897567','Las heras 1500','3813566774');
 select * from Entrenadores where Activo = 1;
 
+SELECT Id_Entrenador, NombreCompleto, Dni, Domicilio, Clase, Telefono, Estado FROM Entrenadores;
+
 DELETE from Entrenadores where Id_Entrenador = 8;
-UPDATE Entrenadores SET Domicilio = '', Telefono = '' where Id_Entrenador = 3;
+
+DELETE from Entrenadores WHERE Id_Entrenador > 3;
+
+UPDATE Entrenadores SET NombreCompleto = 'Rodrigo De Paul', Clase = 'Sppining' where Id_Entrenador = 3;
+
 UPDATE Entrenadores SET Activo = 0 WHERE Id_Entrenador >=1 and Id_Entrenador <=6;
 UPDATE Entrenadores SET Activo = 0 WHERE Id_Entrenador = 11;
 
@@ -112,6 +131,8 @@ Usuario varchar (60),
 Contrasena varchar (60)
 );
 
+SELECT * FROM Secretarios;
+
 CREATE TABLE UsuarioLogin
 (
   Id_Secretario int primary key identity (1,1),
@@ -127,8 +148,21 @@ INSERT INTO UsuarioLogin VALUES ('secre2','78','Stefan')
 UPDATE UsuarioLogin SET Usuario = 'Jefe' where Id_Secretario = 1;
 UPDATE UsuarioLogin SET Usuario = 'Secretario' where Id_Secretario >= 2 ;
 
+Exec SP_RENAME 'UsuarioLogin.Nombre', 'NombreCompleto', 'COLUMN';
+
+ALTER TABLE UsuarioLogin ADD Documento VARCHAR (60), Domicilio VARCHAR (60), Telefono VARCHAR (60);
+UPDATE UsuarioLogin SET Documento = '38785374', Domicilio = '12 de octubre 749', Telefono = '3817564837' where Id_Secretario = 3;
+
 
 select * from UsuarioLogin where Usuario = 'jefe1' and Contrasena = '1234';
+select Id_Secretario, NombreCompleto, Documento, Domicilio, Telefono from UsuarioLogin where Id_Secretario > 1;
+
+UPDATE UsuarioLogin SET Domicilio = 'Los Bulacios', Telefono = '3812765234' where Id_Secretario = 8;
+
+INSERT INTO UsuarioLogin Values ('Secretario','00','Julio Cesar', '23890567','Lomas de Tafi', '3813576932')
+
+Delete From UsuarioLogin where Id_Secretario = 4;
+
 
 INSERT INTO Secretarios (Usuario, Contrasena) VALUES ('admin', '1234');
 

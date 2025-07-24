@@ -1,6 +1,6 @@
 ﻿namespace _01_CapaPresentacion
 {
-    partial class VentanaPrincipal
+    partial class VentanaPrincipalSecretarios
     {
         /// <summary>
         /// Required designer variable.
@@ -64,6 +64,7 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(250, 650);
             this.MenuVertical.TabIndex = 4;
+          
             // 
             // button1
             // 
@@ -232,7 +233,7 @@
             this.PanelContenedor.Size = new System.Drawing.Size(1050, 600);
             this.PanelContenedor.TabIndex = 6;
             // 
-            // VentanaPrincipal
+            // VentanaPrincipalSecretarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,7 +242,7 @@
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VentanaPrincipal";
+            this.Name = "VentanaPrincipalSecretarios";
             this.Text = "VentanaPrincipal";
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.MenuVertical.ResumeLayout(false);

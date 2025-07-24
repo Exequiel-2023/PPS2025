@@ -15,7 +15,7 @@ namespace _01_CapaPresentacion
     public partial class frm_login : Form
     {
         CN_Login logueo = new CN_Login();
-        VentanaPrincipal principal = new VentanaPrincipal();
+        VentanaPrincipalSecretarios principalSecretario = new VentanaPrincipalSecretarios();
         VentanaPrincipalJefe jefe = new VentanaPrincipalJefe();
 
         public static string nombre_login;
@@ -24,15 +24,11 @@ namespace _01_CapaPresentacion
         {
             InitializeComponent();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wParam, int lParam);
-
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
 
         private void btn_Ingresar_Click_1(object sender, EventArgs e)
@@ -64,11 +60,14 @@ namespace _01_CapaPresentacion
 
                 if (tabla.Rows.Count > 0 && txt_Usuario.Text != "" && txt_Password.Text != "")
                 {
-
-                    MessageBox.Show("Bienvenido/a " + tabla.Rows[0][1].ToString() + " " + tabla.Rows[0][3].ToString(), " Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                   //MessageBox.Show("Bienvenido/a " + tabla.Rows[0][1].ToString() + " " + tabla.Rows[0][3].ToString(), " Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     nombre_login = tabla.Rows[0][3].ToString();
                     id_logeo = tabla.Rows[0][0].ToString();
+
+                    FormBienvenida Bienvenida = new FormBienvenida(nombre_login);
+                    Bienvenida.ShowDialog();
 
                     this.Hide();
                     //principal.ShowDialog();
@@ -88,7 +87,7 @@ namespace _01_CapaPresentacion
                     else if (id_logeo == "2" || id_logeo == "3")
                     {
                         this.Hide();
-                        principal.ShowDialog();
+                        principalSecretario.ShowDialog();
                     }
                 }
                 else
@@ -140,18 +139,7 @@ namespace _01_CapaPresentacion
                 txt_Password.UseSystemPasswordChar= false;
             }
         }
-        private void frm_login_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
+     
         private void limpiarInputslogin()
         {
             txt_Password.Clear();
@@ -166,6 +154,18 @@ namespace _01_CapaPresentacion
         private void iconminimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void frm_login_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

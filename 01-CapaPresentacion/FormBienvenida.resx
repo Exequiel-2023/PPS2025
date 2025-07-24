@@ -117,62 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pngVer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngVer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngImprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngImprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngEstadistica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngEstadistica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngMinimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngMinimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngCalendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngCalendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngRestaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngRestaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngMaximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngMaximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngEntrenador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngEntrenador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngSocios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngSocios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngInventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngCerrarSesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngCerrarSesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngCerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngCerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PngUserBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PngUserBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>120, 17</value>
+  </metadata>
 </root>
