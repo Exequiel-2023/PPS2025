@@ -100,12 +100,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCorreo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCorreo.Designer.cs">
-      <DependentUpon>FrmCorreo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +143,6 @@
     <Compile Include="VerDetalleSocioSecretario.Designer.cs">
       <DependentUpon>VerDetalleSocioSecretario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisualizarSociosJefe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisualizarSociosJefe.Designer.cs">
-      <DependentUpon>VisualizarSociosJefe.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Entrenador.resx">
       <DependentUpon>Entrenador.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmCorreo.resx">
-      <DependentUpon>FrmCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -195,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VerDetalleSocioSecretario.resx">
       <DependentUpon>VerDetalleSocioSecretario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VisualizarSociosJefe.resx">
-      <DependentUpon>VisualizarSociosJefe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -275,6 +257,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PngUserBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoGym.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoGym.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dolar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estadistica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Morado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Morado1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

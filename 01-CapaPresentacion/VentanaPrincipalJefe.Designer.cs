@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btnFacturacion = new System.Windows.Forms.Button();
+            this.LogoMorado = new System.Windows.Forms.PictureBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.btnSecretarios = new System.Windows.Forms.Button();
             this.btnSocio = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnInventarios = new System.Windows.Forms.Button();
             this.btnEntrenador = new System.Windows.Forms.Button();
@@ -41,9 +45,10 @@
             this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnslide = new System.Windows.Forms.PictureBox();
+            this.timeFechaHora = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoMorado)).BeginInit();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).BeginInit();
@@ -54,21 +59,79 @@
             // 
             // MenuVertical
             // 
-            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(0)))), ((int)(((byte)(79)))));
+            this.MenuVertical.Controls.Add(this.btnFacturacion);
+            this.MenuVertical.Controls.Add(this.LogoMorado);
+            this.MenuVertical.Controls.Add(this.lblFecha);
+            this.MenuVertical.Controls.Add(this.lblHora);
             this.MenuVertical.Controls.Add(this.btnSecretarios);
             this.MenuVertical.Controls.Add(this.btnSocio);
-            this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.btnInventarios);
             this.MenuVertical.Controls.Add(this.btnEntrenador);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 650);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 711);
             this.MenuVertical.TabIndex = 4;
+            // 
+            // btnFacturacion
+            // 
+            this.btnFacturacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnFacturacion.FlatAppearance.BorderSize = 0;
+            this.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturacion.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturacion.ForeColor = System.Drawing.Color.White;
+            this.btnFacturacion.Image = global::_01_CapaPresentacion.Properties.Resources.Dolar;
+            this.btnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturacion.Location = new System.Drawing.Point(24, 456);
+            this.btnFacturacion.Name = "btnFacturacion";
+            this.btnFacturacion.Size = new System.Drawing.Size(250, 40);
+            this.btnFacturacion.TabIndex = 15;
+            this.btnFacturacion.Text = "          Facturacion";
+            this.btnFacturacion.UseVisualStyleBackColor = true;
+            // 
+            // LogoMorado
+            // 
+            this.LogoMorado.BackColor = System.Drawing.Color.Transparent;
+            this.LogoMorado.Image = global::_01_CapaPresentacion.Properties.Resources.Logo_Morado1;
+            this.LogoMorado.Location = new System.Drawing.Point(-54, 12);
+            this.LogoMorado.Name = "LogoMorado";
+            this.LogoMorado.Size = new System.Drawing.Size(371, 226);
+            this.LogoMorado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoMorado.TabIndex = 5;
+            this.LogoMorado.TabStop = false;
+            
+            this.LogoMorado.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.White;
+            this.lblFecha.Location = new System.Drawing.Point(12, 625);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(62, 21);
+            this.lblFecha.TabIndex = 14;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.White;
+            this.lblHora.Location = new System.Drawing.Point(90, 593);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(66, 27);
+            this.lblHora.TabIndex = 13;
+            this.lblHora.Text = "Hora";
             // 
             // btnSecretarios
             // 
+            this.btnSecretarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSecretarios.FlatAppearance.BorderSize = 0;
             this.btnSecretarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnSecretarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,16 +139,17 @@
             this.btnSecretarios.ForeColor = System.Drawing.Color.White;
             this.btnSecretarios.Image = global::_01_CapaPresentacion.Properties.Resources.PngUserBlanco;
             this.btnSecretarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSecretarios.Location = new System.Drawing.Point(26, 282);
+            this.btnSecretarios.Location = new System.Drawing.Point(24, 285);
             this.btnSecretarios.Name = "btnSecretarios";
             this.btnSecretarios.Size = new System.Drawing.Size(250, 40);
             this.btnSecretarios.TabIndex = 12;
-            this.btnSecretarios.Text = "      Secretarios";
+            this.btnSecretarios.Text = "       Secretarios";
             this.btnSecretarios.UseVisualStyleBackColor = true;
             this.btnSecretarios.Click += new System.EventHandler(this.btnSecretarios_Click);
             // 
             // btnSocio
             // 
+            this.btnSocio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSocio.FlatAppearance.BorderSize = 0;
             this.btnSocio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -93,7 +157,7 @@
             this.btnSocio.ForeColor = System.Drawing.Color.White;
             this.btnSocio.Image = global::_01_CapaPresentacion.Properties.Resources.pngSocios;
             this.btnSocio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSocio.Location = new System.Drawing.Point(26, 225);
+            this.btnSocio.Location = new System.Drawing.Point(24, 228);
             this.btnSocio.Name = "btnSocio";
             this.btnSocio.Size = new System.Drawing.Size(250, 40);
             this.btnSocio.TabIndex = 10;
@@ -101,19 +165,9 @@
             this.btnSocio.UseVisualStyleBackColor = true;
             this.btnSocio.Click += new System.EventHandler(this.btnSocio_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::_01_CapaPresentacion.Properties.Resources.pngLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(-37, -33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(354, 224);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -121,7 +175,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::_01_CapaPresentacion.Properties.Resources.pngCerrarSesion;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(24, 595);
+            this.button1.Location = new System.Drawing.Point(15, 668);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 40);
             this.button1.TabIndex = 9;
@@ -131,6 +185,7 @@
             // 
             // btnInventarios
             // 
+            this.btnInventarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnInventarios.FlatAppearance.BorderSize = 0;
             this.btnInventarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnInventarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -138,16 +193,17 @@
             this.btnInventarios.ForeColor = System.Drawing.Color.White;
             this.btnInventarios.Image = global::_01_CapaPresentacion.Properties.Resources.pngInventario;
             this.btnInventarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventarios.Location = new System.Drawing.Point(27, 410);
+            this.btnInventarios.Location = new System.Drawing.Point(24, 400);
             this.btnInventarios.Name = "btnInventarios";
             this.btnInventarios.Size = new System.Drawing.Size(250, 40);
             this.btnInventarios.TabIndex = 8;
-            this.btnInventarios.Text = "Inventario";
+            this.btnInventarios.Text = "    Inventario";
             this.btnInventarios.UseVisualStyleBackColor = true;
             this.btnInventarios.Click += new System.EventHandler(this.btnInventarios_Click);
             // 
             // btnEntrenador
             // 
+            this.btnEntrenador.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnEntrenador.FlatAppearance.BorderSize = 0;
             this.btnEntrenador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnEntrenador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,15 +211,16 @@
             this.btnEntrenador.ForeColor = System.Drawing.Color.White;
             this.btnEntrenador.Image = global::_01_CapaPresentacion.Properties.Resources.pngEntrenador;
             this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrenador.Location = new System.Drawing.Point(26, 345);
+            this.btnEntrenador.Location = new System.Drawing.Point(24, 343);
             this.btnEntrenador.Name = "btnEntrenador";
             this.btnEntrenador.Size = new System.Drawing.Size(250, 40);
             this.btnEntrenador.TabIndex = 7;
-            this.btnEntrenador.Text = "      Entrenadores";
+            this.btnEntrenador.Text = "          Entrenadores";
             this.btnEntrenador.UseVisualStyleBackColor = true;
             // 
             // BarraTitulo
             // 
+            this.BarraTitulo.BackColor = System.Drawing.Color.LightGray;
             this.BarraTitulo.Controls.Add(this.iconrestaurar);
             this.BarraTitulo.Controls.Add(this.iconminimizar);
             this.BarraTitulo.Controls.Add(this.iconmaximizar);
@@ -172,7 +229,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1611, 50);
             this.BarraTitulo.TabIndex = 5;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -181,7 +238,7 @@
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconrestaurar.Image = global::_01_CapaPresentacion.Properties.Resources.pngRestaurar;
-            this.iconrestaurar.Location = new System.Drawing.Point(992, 12);
+            this.iconrestaurar.Location = new System.Drawing.Point(1553, 12);
             this.iconrestaurar.Name = "iconrestaurar";
             this.iconrestaurar.Size = new System.Drawing.Size(20, 20);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -195,7 +252,7 @@
             this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = global::_01_CapaPresentacion.Properties.Resources.pngMinimizar;
-            this.iconminimizar.Location = new System.Drawing.Point(966, 12);
+            this.iconminimizar.Location = new System.Drawing.Point(1527, 12);
             this.iconminimizar.Name = "iconminimizar";
             this.iconminimizar.Size = new System.Drawing.Size(20, 20);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +265,7 @@
             this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconmaximizar.Image = global::_01_CapaPresentacion.Properties.Resources.pngMaximizar;
-            this.iconmaximizar.Location = new System.Drawing.Point(992, 12);
+            this.iconmaximizar.Location = new System.Drawing.Point(1553, 12);
             this.iconmaximizar.Name = "iconmaximizar";
             this.iconmaximizar.Size = new System.Drawing.Size(20, 20);
             this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,7 +278,7 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = global::_01_CapaPresentacion.Properties.Resources.pngCerrar;
-            this.iconcerrar.Location = new System.Drawing.Point(1018, 12);
+            this.iconcerrar.Location = new System.Drawing.Point(1579, 12);
             this.iconcerrar.Name = "iconcerrar";
             this.iconcerrar.Size = new System.Drawing.Size(20, 20);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -241,26 +298,35 @@
             this.btnslide.TabStop = false;
             this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
             // 
+            // timeFechaHora
+            // 
+            this.timeFechaHora.Enabled = true;
+            this.timeFechaHora.Tick += new System.EventHandler(this.timeFechaHora_Tick);
+            // 
             // panelContenedor
             // 
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelContenedor.BackgroundImage = global::_01_CapaPresentacion.Properties.Resources.FondoGym1;
+            this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1050, 600);
+            this.panelContenedor.Size = new System.Drawing.Size(1611, 661);
             this.panelContenedor.TabIndex = 6;
             // 
             // VentanaPrincipalJefe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1861, 711);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaPrincipalJefe";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MenuVertical.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoMorado)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
@@ -273,7 +339,7 @@
 
         #endregion
         private System.Windows.Forms.Panel MenuVertical;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox LogoMorado;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInventarios;
         private System.Windows.Forms.Button btnEntrenador;
@@ -286,5 +352,9 @@
         private System.Windows.Forms.PictureBox iconminimizar;
         private System.Windows.Forms.PictureBox iconrestaurar;
         private System.Windows.Forms.Button btnSecretarios;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timeFechaHora;
+        private System.Windows.Forms.Button btnFacturacion;
     }
 }

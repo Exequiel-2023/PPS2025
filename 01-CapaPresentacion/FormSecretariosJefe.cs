@@ -47,12 +47,31 @@ namespace _01_CapaPresentacion
             MessageBox.Show($"El secretario {nombreCompleto} fue eliminado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ListarSecretarios();
+            LimpiarInputs();
         }
 
         private void btn_EditarSecretario_Click(object sender, EventArgs e)
         {
             gb_Secretarios.Enabled = true;
             gb_Secretarios.Show();
+
+            btn_EditarSecretario.Enabled = false;
+            btn_EditarSecretario.Hide();
+
+            dgv_ObtenerInfoSecretarios.Enabled = false;
+            dgv_ObtenerInfoSecretarios.Hide() ;
+
+            btn_EliminarSecretario.Enabled = false;
+            btn_EliminarSecretario.Hide();
+
+            btnVerSecretario.Enabled = false;
+            btnVerSecretario.Hide() ;
+
+            btnAgregarSecretario.Enabled = false;
+            btnAgregarSecretario.Hide() ;
+
+            btn_ConfirmarSecretario.Enabled = false;
+            btn_ConfirmarSecretario.Hide() ;
 
             txt_NombreSecretario.Text = dgv_ObtenerInfoSecretarios.CurrentRow.Cells["NombreCompleto"].Value.ToString();
             txt_DniSecretario.Text = dgv_ObtenerInfoSecretarios.CurrentRow.Cells["Documento"].Value.ToString();
@@ -63,6 +82,7 @@ namespace _01_CapaPresentacion
 
         private void btn_ActualizarSecretario_Click(object sender, EventArgs e)
         {
+          
             string nombreCompleto = txt_NombreSecretario.Text;
             string dni = txt_DniSecretario.Text;
             string domicilio = txtDomicilioSecretario.Text;
@@ -72,9 +92,9 @@ namespace _01_CapaPresentacion
 
             string id = dgv_ObtenerInfoSecretarios.CurrentRow.Cells["Id_Secretario"].Value.ToString();
 
-            if (nombreCompleto == "")
+            if (nombreCompleto == "" || dni == "" || domicilio == "" || telefono == "")
             {
-                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -83,17 +103,56 @@ namespace _01_CapaPresentacion
                 MessageBox.Show($" {nombreCompleto} fue editado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ListarSecretarios();
+                LimpiarInputs();
+
+                gb_Secretarios.Enabled = false;
+                gb_Secretarios.Hide();
+
+                btn_EliminarSecretario.Enabled = true;
+                btn_EliminarSecretario.Show();
+
+                btnVerSecretario.Enabled = true;
+                btnVerSecretario.Show();
+
+                btn_EditarSecretario.Enabled = true;
+                btn_EditarSecretario.Show();
+
+                btnAgregarSecretario.Enabled = true;
+                btnAgregarSecretario.Show();
+
+                dgv_ObtenerInfoSecretarios.Enabled = true;
+                dgv_ObtenerInfoSecretarios.Show();
             }
         }
 
         private void btnAgregarSecretario_Click(object sender, EventArgs e)
         {
+            btnAgregarSecretario.Enabled = false;
+            btnAgregarSecretario.Hide();
+
             gb_Secretarios.Enabled = true;
             gb_Secretarios.Show();
+
+            btn_ActualizarSecretario.Enabled = false;
+            btn_ActualizarSecretario.Hide();
+
+            dgv_ObtenerInfoSecretarios.Enabled = false;
+            dgv_ObtenerInfoSecretarios.Hide() ;
+
+            btn_EliminarSecretario.Enabled = false;
+            btn_EliminarSecretario.Hide() ;
+
+            btn_EditarSecretario.Enabled = false;
+            btn_EditarSecretario.Hide();
+
+            btnVerSecretario .Enabled = false;
+            btnVerSecretario.Hide();
         }
 
         private void btn_ConfirmarSecretario_Click(object sender, EventArgs e)
         {
+           
+
             string nombreCompleto = txt_NombreSecretario.Text;
             string dni = txt_DniSecretario.Text;
             string domicilio = txtDomicilioSecretario.Text;
@@ -102,14 +161,47 @@ namespace _01_CapaPresentacion
 
             if (nombreCompleto == "" || dni == "" || domicilio == "" || telefono == "")
             {
-                MessageBox.Show("Debes rellenar todos los campos");
+                MessageBox.Show("Debes rellenar todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 secretarios.AgregarSecretario(nombreCompleto, dni, domicilio, telefono);
-                MessageBox.Show($"{nombreCompleto} ah sido agregado correctamente", "Nuevo Socio!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            ListarSecretarios();
+                MessageBox.Show($"El secretario {nombreCompleto} ah sido agregado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ListarSecretarios();
+                LimpiarInputs();
+
+                gb_Secretarios.Enabled = false;
+                gb_Secretarios.Hide();
+
+                dgv_ObtenerInfoSecretarios.Enabled = true;
+                dgv_ObtenerInfoSecretarios.Show();
+
+                btn_EliminarSecretario.Enabled = true;
+                btn_EliminarSecretario.Show();
+
+                btnVerSecretario.Enabled = true;
+                btnVerSecretario.Show();
+
+                btn_EditarSecretario.Enabled = true;
+                btn_EditarSecretario.Show();
+
+                btnAgregarSecretario.Enabled = true;
+                btnAgregarSecretario.Show();
+            }           
+        }
+
+        public void LimpiarInputs ()
+        {
+            txt_NombreSecretario.Clear();
+            txt_DniSecretario.Clear();
+            txtDomicilioSecretario.Clear();
+            txtTelefonoSecretario.Clear();
+        }
+
+        private void txbBuscarSecretario_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_ObtenerInfoSecretarios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Documento  LIKE '{0}%'", txbBuscarSecretario.Text);
         }
     }
 }

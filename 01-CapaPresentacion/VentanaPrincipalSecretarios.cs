@@ -93,6 +93,18 @@ namespace _01_CapaPresentacion
             formHijo2.Show();
         }
 
+        public void AbrirFormularioEnPanelEnvioEmail(Form formEmail)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+
+            formEmail.TopLevel = false;
+            formEmail.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(formEmail);
+            this.PanelContenedor.Tag = formEmail;
+            formEmail.Show();
+        }
+
         private void AbrirFormHorarios(object horario1)
         {
             if (this.PanelContenedor.Controls.Count > 0)
@@ -146,10 +158,18 @@ namespace _01_CapaPresentacion
             if (MenuVertical.Width == 250)
             {
                 MenuVertical.Width = 70;
+                lblHora.Enabled = false;
+                lblHora.Hide();
+                lblFecha.Enabled = false;
+                lblFecha.Hide();
             }
             else
             {
                 MenuVertical.Width = 250;
+                lblHora.Enabled = true;
+                lblHora.Show();
+                lblFecha.Enabled = true;
+                lblFecha.Show();
             }
         }
 
@@ -160,6 +180,12 @@ namespace _01_CapaPresentacion
             login.ShowDialog();
         }
 
-        
+        private void timeFechaHora_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+      
     }
 }

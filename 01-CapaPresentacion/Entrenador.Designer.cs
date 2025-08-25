@@ -60,6 +60,8 @@
             // 
             // dgvEntrenadores
             // 
+            this.dgvEntrenadores.AllowUserToAddRows = false;
+            this.dgvEntrenadores.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -67,7 +69,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEntrenadores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEntrenadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvEntrenadores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEntrenadores.BackgroundColor = System.Drawing.Color.White;
             this.dgvEntrenadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEntrenadores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -80,8 +81,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEntrenadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEntrenadores.ColumnHeadersHeight = 30;
-            this.dgvEntrenadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEntrenadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,7 +92,7 @@
             this.dgvEntrenadores.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEntrenadores.EnableHeadersVisualStyles = false;
             this.dgvEntrenadores.GridColor = System.Drawing.Color.White;
-            this.dgvEntrenadores.Location = new System.Drawing.Point(101, 63);
+            this.dgvEntrenadores.Location = new System.Drawing.Point(0, 63);
             this.dgvEntrenadores.Name = "dgvEntrenadores";
             this.dgvEntrenadores.ReadOnly = true;
             this.dgvEntrenadores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -114,7 +114,7 @@
             this.dgvEntrenadores.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEntrenadores.RowTemplate.Height = 24;
             this.dgvEntrenadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEntrenadores.Size = new System.Drawing.Size(671, 433);
+            this.dgvEntrenadores.Size = new System.Drawing.Size(1050, 537);
             this.dgvEntrenadores.TabIndex = 1;
             // 
             // btnEliminarFisico
@@ -123,7 +123,7 @@
             this.btnEliminarFisico.FlatAppearance.BorderSize = 0;
             this.btnEliminarFisico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnEliminarFisico.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFisico.Location = new System.Drawing.Point(101, 522);
+            this.btnEliminarFisico.Location = new System.Drawing.Point(149, 536);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
             this.btnEliminarFisico.Size = new System.Drawing.Size(101, 40);
             this.btnEliminarFisico.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(327, 522);
+            this.btnEditar.Location = new System.Drawing.Point(422, 536);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 40);
             this.btnEditar.TabIndex = 11;
@@ -151,7 +151,7 @@
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(511, 522);
+            this.btnAgregar.Location = new System.Drawing.Point(693, 536);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(102, 40);
             this.btnAgregar.TabIndex = 13;
@@ -340,7 +340,7 @@
             this.txbBuscarEntrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbBuscarEntrenador.Location = new System.Drawing.Point(175, 14);
             this.txbBuscarEntrenador.Name = "txbBuscarEntrenador";
-            this.txbBuscarEntrenador.Size = new System.Drawing.Size(345, 28);
+            this.txbBuscarEntrenador.Size = new System.Drawing.Size(551, 28);
             this.txbBuscarEntrenador.TabIndex = 16;
             this.txbBuscarEntrenador.TextChanged += new System.EventHandler(this.txbBuscarEntrenador_TextChanged);
             // 

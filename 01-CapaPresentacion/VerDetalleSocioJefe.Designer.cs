@@ -32,44 +32,42 @@
             this.lblNombreCompletoSocio = new System.Windows.Forms.Label();
             this.txtClaseSocio = new System.Windows.Forms.TextBox();
             this.lblDocumentoSocio = new System.Windows.Forms.Label();
-            this.lblFechaAltaSocio = new System.Windows.Forms.Label();
+            this.lblFechaPago = new System.Windows.Forms.Label();
             this.txtDocumentoSocio = new System.Windows.Forms.TextBox();
-            this.txtProximoVencimientoSocio = new System.Windows.Forms.TextBox();
-            this.txtEmailSocio = new System.Windows.Forms.TextBox();
-            this.lblProximoVencimientoSocio = new System.Windows.Forms.Label();
+            this.txtResto = new System.Windows.Forms.TextBox();
+            this.lblResto = new System.Windows.Forms.Label();
             this.txtNombreCompletoSocio = new System.Windows.Forms.TextBox();
-            this.txtFechaAltaSocio = new System.Windows.Forms.TextBox();
-            this.lblEmailSocio = new System.Windows.Forms.Label();
+            this.txtFechaPago = new System.Windows.Forms.TextBox();
             this.lblClaseSocio = new System.Windows.Forms.Label();
-            this.pbImagenSocioPersonal = new System.Windows.Forms.PictureBox();
             this.btnPDFSocio = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenSocioPersonal)).BeginInit();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(439, 33);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(196, 23);
+            this.lblTitulo.Size = new System.Drawing.Size(175, 21);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "DETALLE DEL SOCIO";
             // 
             // lblNombreCompletoSocio
             // 
             this.lblNombreCompletoSocio.AutoSize = true;
-            this.lblNombreCompletoSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCompletoSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreCompletoSocio.Location = new System.Drawing.Point(72, 111);
             this.lblNombreCompletoSocio.Name = "lblNombreCompletoSocio";
-            this.lblNombreCompletoSocio.Size = new System.Drawing.Size(167, 19);
+            this.lblNombreCompletoSocio.Size = new System.Drawing.Size(171, 21);
             this.lblNombreCompletoSocio.TabIndex = 16;
             this.lblNombreCompletoSocio.Text = "Nombre Completo:";
             // 
             // txtClaseSocio
             // 
             this.txtClaseSocio.BackColor = System.Drawing.Color.White;
-            this.txtClaseSocio.Location = new System.Drawing.Point(272, 284);
+            this.txtClaseSocio.Location = new System.Drawing.Point(272, 231);
             this.txtClaseSocio.Name = "txtClaseSocio";
             this.txtClaseSocio.ReadOnly = true;
             this.txtClaseSocio.Size = new System.Drawing.Size(303, 22);
@@ -78,22 +76,22 @@
             // lblDocumentoSocio
             // 
             this.lblDocumentoSocio.AutoSize = true;
-            this.lblDocumentoSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumentoSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocumentoSocio.Location = new System.Drawing.Point(72, 170);
             this.lblDocumentoSocio.Name = "lblDocumentoSocio";
-            this.lblDocumentoSocio.Size = new System.Drawing.Size(110, 19);
+            this.lblDocumentoSocio.Size = new System.Drawing.Size(114, 21);
             this.lblDocumentoSocio.TabIndex = 17;
             this.lblDocumentoSocio.Text = "Documento:";
             // 
-            // lblFechaAltaSocio
+            // lblFechaPago
             // 
-            this.lblFechaAltaSocio.AutoSize = true;
-            this.lblFechaAltaSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaAltaSocio.Location = new System.Drawing.Point(72, 348);
-            this.lblFechaAltaSocio.Name = "lblFechaAltaSocio";
-            this.lblFechaAltaSocio.Size = new System.Drawing.Size(127, 19);
-            this.lblFechaAltaSocio.TabIndex = 18;
-            this.lblFechaAltaSocio.Text = "Fecha de alta:";
+            this.lblFechaPago.AutoSize = true;
+            this.lblFechaPago.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaPago.Location = new System.Drawing.Point(72, 348);
+            this.lblFechaPago.Name = "lblFechaPago";
+            this.lblFechaPago.Size = new System.Drawing.Size(144, 21);
+            this.lblFechaPago.TabIndex = 18;
+            this.lblFechaPago.Text = "Fecha de Pago:";
             // 
             // txtDocumentoSocio
             // 
@@ -104,33 +102,24 @@
             this.txtDocumentoSocio.Size = new System.Drawing.Size(303, 22);
             this.txtDocumentoSocio.TabIndex = 21;
             // 
-            // txtProximoVencimientoSocio
+            // txtResto
             // 
-            this.txtProximoVencimientoSocio.BackColor = System.Drawing.Color.White;
-            this.txtProximoVencimientoSocio.Location = new System.Drawing.Point(272, 419);
-            this.txtProximoVencimientoSocio.Name = "txtProximoVencimientoSocio";
-            this.txtProximoVencimientoSocio.ReadOnly = true;
-            this.txtProximoVencimientoSocio.Size = new System.Drawing.Size(303, 22);
-            this.txtProximoVencimientoSocio.TabIndex = 24;
+            this.txtResto.BackColor = System.Drawing.Color.White;
+            this.txtResto.Location = new System.Drawing.Point(272, 419);
+            this.txtResto.Name = "txtResto";
+            this.txtResto.ReadOnly = true;
+            this.txtResto.Size = new System.Drawing.Size(303, 22);
+            this.txtResto.TabIndex = 24;
             // 
-            // txtEmailSocio
+            // lblResto
             // 
-            this.txtEmailSocio.BackColor = System.Drawing.Color.White;
-            this.txtEmailSocio.Location = new System.Drawing.Point(272, 225);
-            this.txtEmailSocio.Name = "txtEmailSocio";
-            this.txtEmailSocio.ReadOnly = true;
-            this.txtEmailSocio.Size = new System.Drawing.Size(303, 22);
-            this.txtEmailSocio.TabIndex = 22;
-            // 
-            // lblProximoVencimientoSocio
-            // 
-            this.lblProximoVencimientoSocio.AutoSize = true;
-            this.lblProximoVencimientoSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProximoVencimientoSocio.Location = new System.Drawing.Point(72, 418);
-            this.lblProximoVencimientoSocio.Name = "lblProximoVencimientoSocio";
-            this.lblProximoVencimientoSocio.Size = new System.Drawing.Size(188, 19);
-            this.lblProximoVencimientoSocio.TabIndex = 19;
-            this.lblProximoVencimientoSocio.Text = "Proximo vencimiento:";
+            this.lblResto.AutoSize = true;
+            this.lblResto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResto.Location = new System.Drawing.Point(72, 418);
+            this.lblResto.Name = "lblResto";
+            this.lblResto.Size = new System.Drawing.Size(61, 21);
+            this.lblResto.TabIndex = 19;
+            this.lblResto.Text = "Resto:";
             // 
             // txtNombreCompletoSocio
             // 
@@ -141,43 +130,24 @@
             this.txtNombreCompletoSocio.Size = new System.Drawing.Size(303, 22);
             this.txtNombreCompletoSocio.TabIndex = 20;
             // 
-            // txtFechaAltaSocio
+            // txtFechaPago
             // 
-            this.txtFechaAltaSocio.BackColor = System.Drawing.Color.White;
-            this.txtFechaAltaSocio.Location = new System.Drawing.Point(272, 347);
-            this.txtFechaAltaSocio.Name = "txtFechaAltaSocio";
-            this.txtFechaAltaSocio.ReadOnly = true;
-            this.txtFechaAltaSocio.Size = new System.Drawing.Size(303, 22);
-            this.txtFechaAltaSocio.TabIndex = 23;
-            // 
-            // lblEmailSocio
-            // 
-            this.lblEmailSocio.AutoSize = true;
-            this.lblEmailSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailSocio.Location = new System.Drawing.Point(72, 224);
-            this.lblEmailSocio.Name = "lblEmailSocio";
-            this.lblEmailSocio.Size = new System.Drawing.Size(65, 19);
-            this.lblEmailSocio.TabIndex = 27;
-            this.lblEmailSocio.Text = "E-mail:";
+            this.txtFechaPago.BackColor = System.Drawing.Color.White;
+            this.txtFechaPago.Location = new System.Drawing.Point(272, 347);
+            this.txtFechaPago.Name = "txtFechaPago";
+            this.txtFechaPago.ReadOnly = true;
+            this.txtFechaPago.Size = new System.Drawing.Size(303, 22);
+            this.txtFechaPago.TabIndex = 23;
             // 
             // lblClaseSocio
             // 
             this.lblClaseSocio.AutoSize = true;
-            this.lblClaseSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClaseSocio.Location = new System.Drawing.Point(72, 285);
+            this.lblClaseSocio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaseSocio.Location = new System.Drawing.Point(72, 232);
             this.lblClaseSocio.Name = "lblClaseSocio";
-            this.lblClaseSocio.Size = new System.Drawing.Size(61, 19);
+            this.lblClaseSocio.Size = new System.Drawing.Size(62, 21);
             this.lblClaseSocio.TabIndex = 28;
             this.lblClaseSocio.Text = "Clase:";
-            // 
-            // pbImagenSocioPersonal
-            // 
-            this.pbImagenSocioPersonal.Location = new System.Drawing.Point(704, 148);
-            this.pbImagenSocioPersonal.Name = "pbImagenSocioPersonal";
-            this.pbImagenSocioPersonal.Size = new System.Drawing.Size(257, 254);
-            this.pbImagenSocioPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagenSocioPersonal.TabIndex = 26;
-            this.pbImagenSocioPersonal.TabStop = false;
             // 
             // btnPDFSocio
             // 
@@ -195,33 +165,49 @@
             this.btnPDFSocio.UseVisualStyleBackColor = true;
             this.btnPDFSocio.Click += new System.EventHandler(this.btnPDFSocio_Click);
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(72, 291);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(73, 21);
+            this.lblEstado.TabIndex = 30;
+            this.lblEstado.Text = "Estado:";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.Color.White;
+            this.txtEstado.Location = new System.Drawing.Point(272, 290);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(303, 22);
+            this.txtEstado.TabIndex = 31;
+            // 
             // VerDetalleSocioJefe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MintCream;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.btnPDFSocio);
             this.Controls.Add(this.lblClaseSocio);
-            this.Controls.Add(this.lblEmailSocio);
-            this.Controls.Add(this.pbImagenSocioPersonal);
             this.Controls.Add(this.lblNombreCompletoSocio);
             this.Controls.Add(this.txtClaseSocio);
             this.Controls.Add(this.lblDocumentoSocio);
-            this.Controls.Add(this.lblFechaAltaSocio);
+            this.Controls.Add(this.lblFechaPago);
             this.Controls.Add(this.txtDocumentoSocio);
-            this.Controls.Add(this.txtProximoVencimientoSocio);
-            this.Controls.Add(this.txtEmailSocio);
-            this.Controls.Add(this.lblProximoVencimientoSocio);
+            this.Controls.Add(this.txtResto);
+            this.Controls.Add(this.lblResto);
             this.Controls.Add(this.txtNombreCompletoSocio);
-            this.Controls.Add(this.txtFechaAltaSocio);
+            this.Controls.Add(this.txtFechaPago);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerDetalleSocioJefe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerDetalleSocioJefe";
-         
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenSocioPersonal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,19 +216,18 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.PictureBox pbImagenSocioPersonal;
         private System.Windows.Forms.Label lblNombreCompletoSocio;
         private System.Windows.Forms.TextBox txtClaseSocio;
         private System.Windows.Forms.Label lblDocumentoSocio;
-        private System.Windows.Forms.Label lblFechaAltaSocio;
+        private System.Windows.Forms.Label lblFechaPago;
         private System.Windows.Forms.TextBox txtDocumentoSocio;
-        private System.Windows.Forms.TextBox txtProximoVencimientoSocio;
-        private System.Windows.Forms.TextBox txtEmailSocio;
-        private System.Windows.Forms.Label lblProximoVencimientoSocio;
+        private System.Windows.Forms.TextBox txtResto;
+        private System.Windows.Forms.Label lblResto;
         private System.Windows.Forms.TextBox txtNombreCompletoSocio;
-        private System.Windows.Forms.TextBox txtFechaAltaSocio;
-        private System.Windows.Forms.Label lblEmailSocio;
+        private System.Windows.Forms.TextBox txtFechaPago;
         private System.Windows.Forms.Label lblClaseSocio;
         private System.Windows.Forms.Button btnPDFSocio;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }

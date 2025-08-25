@@ -74,6 +74,7 @@ namespace _01_CapaPresentacion
                     frm_login login = new frm_login();
                     //login.ShowDialog();
 
+              
                     if (login.DialogResult == DialogResult.OK)
                     {
                         Application.Run(new VentanaPrincipalJefe());
@@ -81,12 +82,13 @@ namespace _01_CapaPresentacion
                     if (id_logeo == "1")
                     {
                         this.Hide();
-
+                        nombre_login = tabla.Rows[0][3].ToString();
                         jefe.ShowDialog();
                     }
                     else if (id_logeo == "2" || id_logeo == "3")
                     {
                         this.Hide();
+                        nombre_login = tabla.Rows[0][3].ToString();
                         principalSecretario.ShowDialog();
                     }
                 }

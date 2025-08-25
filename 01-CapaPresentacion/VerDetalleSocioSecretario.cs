@@ -38,14 +38,6 @@ namespace _01_CapaPresentacion
             }
         }
 
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            VentanaPrincipalSecretarios V1 = new VentanaPrincipalSecretarios();
-            V1.ShowDialog();
-        }
-
         private void btnPDF_Click(object sender, EventArgs e)
         {
             SaveFileDialog UbicacionArchivo = new SaveFileDialog();
@@ -103,6 +95,6 @@ namespace _01_CapaPresentacion
             }
         }
 
-       
+
     }
 }

@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_ObtenerInfoSecretarios = new System.Windows.Forms.DataGridView();
             this.btn_EliminarSecretario = new System.Windows.Forms.Button();
             this.btnVerSecretario = new System.Windows.Forms.Button();
             this.btn_EditarSecretario = new System.Windows.Forms.Button();
             this.btnAgregarSecretario = new System.Windows.Forms.Button();
             this.gb_Secretarios = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTelefonoSecretario = new System.Windows.Forms.TextBox();
             this.txtDomicilioSecretario = new System.Windows.Forms.TextBox();
             this.lblDomicilioSecretario = new System.Windows.Forms.Label();
             this.lblTelefonoSecretario = new System.Windows.Forms.Label();
@@ -48,69 +50,72 @@
             this.lbl_DniSecretario = new System.Windows.Forms.Label();
             this.btn_ActualizarSecretario = new System.Windows.Forms.Button();
             this.lbl_NombreSecretario = new System.Windows.Forms.Label();
-            this.txtTelefonoSecretario = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBuscarSecretario = new System.Windows.Forms.Label();
+            this.txbBuscarSecretario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ObtenerInfoSecretarios)).BeginInit();
             this.gb_Secretarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_ObtenerInfoSecretarios
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_ObtenerInfoSecretarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgv_ObtenerInfoSecretarios.AllowUserToAddRows = false;
+            this.dgv_ObtenerInfoSecretarios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_ObtenerInfoSecretarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_ObtenerInfoSecretarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_ObtenerInfoSecretarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_ObtenerInfoSecretarios.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ObtenerInfoSecretarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ObtenerInfoSecretarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_ObtenerInfoSecretarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ObtenerInfoSecretarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ObtenerInfoSecretarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ObtenerInfoSecretarios.ColumnHeadersHeight = 30;
             this.dgv_ObtenerInfoSecretarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ObtenerInfoSecretarios.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ObtenerInfoSecretarios.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_ObtenerInfoSecretarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_ObtenerInfoSecretarios.EnableHeadersVisualStyles = false;
             this.dgv_ObtenerInfoSecretarios.GridColor = System.Drawing.Color.White;
-            this.dgv_ObtenerInfoSecretarios.Location = new System.Drawing.Point(128, 22);
+            this.dgv_ObtenerInfoSecretarios.Location = new System.Drawing.Point(0, 45);
             this.dgv_ObtenerInfoSecretarios.Name = "dgv_ObtenerInfoSecretarios";
             this.dgv_ObtenerInfoSecretarios.ReadOnly = true;
             this.dgv_ObtenerInfoSecretarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ObtenerInfoSecretarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ObtenerInfoSecretarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ObtenerInfoSecretarios.RowHeadersVisible = false;
             this.dgv_ObtenerInfoSecretarios.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_ObtenerInfoSecretarios.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_ObtenerInfoSecretarios.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_ObtenerInfoSecretarios.RowTemplate.Height = 24;
             this.dgv_ObtenerInfoSecretarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ObtenerInfoSecretarios.Size = new System.Drawing.Size(671, 433);
+            this.dgv_ObtenerInfoSecretarios.Size = new System.Drawing.Size(1050, 555);
             this.dgv_ObtenerInfoSecretarios.TabIndex = 1;
             // 
             // btn_EliminarSecretario
@@ -119,7 +124,7 @@
             this.btn_EliminarSecretario.FlatAppearance.BorderSize = 0;
             this.btn_EliminarSecretario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btn_EliminarSecretario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarSecretario.Location = new System.Drawing.Point(118, 501);
+            this.btn_EliminarSecretario.Location = new System.Drawing.Point(114, 526);
             this.btn_EliminarSecretario.Name = "btn_EliminarSecretario";
             this.btn_EliminarSecretario.Size = new System.Drawing.Size(101, 40);
             this.btn_EliminarSecretario.TabIndex = 3;
@@ -133,7 +138,7 @@
             this.btnVerSecretario.FlatAppearance.BorderSize = 0;
             this.btnVerSecretario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.btnVerSecretario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerSecretario.Location = new System.Drawing.Point(267, 501);
+            this.btnVerSecretario.Location = new System.Drawing.Point(270, 526);
             this.btnVerSecretario.Name = "btnVerSecretario";
             this.btnVerSecretario.Size = new System.Drawing.Size(58, 40);
             this.btnVerSecretario.TabIndex = 10;
@@ -146,7 +151,7 @@
             this.btn_EditarSecretario.FlatAppearance.BorderSize = 0;
             this.btn_EditarSecretario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_EditarSecretario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditarSecretario.Location = new System.Drawing.Point(411, 501);
+            this.btn_EditarSecretario.Location = new System.Drawing.Point(410, 526);
             this.btn_EditarSecretario.Name = "btn_EditarSecretario";
             this.btn_EditarSecretario.Size = new System.Drawing.Size(80, 40);
             this.btn_EditarSecretario.TabIndex = 11;
@@ -160,7 +165,7 @@
             this.btnAgregarSecretario.FlatAppearance.BorderSize = 0;
             this.btnAgregarSecretario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAgregarSecretario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarSecretario.Location = new System.Drawing.Point(563, 501);
+            this.btnAgregarSecretario.Location = new System.Drawing.Point(563, 526);
             this.btnAgregarSecretario.Name = "btnAgregarSecretario";
             this.btnAgregarSecretario.Size = new System.Drawing.Size(102, 40);
             this.btnAgregarSecretario.TabIndex = 13;
@@ -184,11 +189,29 @@
             this.gb_Secretarios.Controls.Add(this.lbl_NombreSecretario);
             this.gb_Secretarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Secretarios.ForeColor = System.Drawing.Color.White;
-            this.gb_Secretarios.Location = new System.Drawing.Point(332, 60);
+            this.gb_Secretarios.Location = new System.Drawing.Point(358, 66);
             this.gb_Secretarios.Name = "gb_Secretarios";
             this.gb_Secretarios.Size = new System.Drawing.Size(369, 433);
             this.gb_Secretarios.TabIndex = 15;
             this.gb_Secretarios.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 23);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Ingresa un nuevo secretario";
+            // 
+            // txtTelefonoSecretario
+            // 
+            this.txtTelefonoSecretario.Location = new System.Drawing.Point(204, 289);
+            this.txtTelefonoSecretario.Name = "txtTelefonoSecretario";
+            this.txtTelefonoSecretario.Size = new System.Drawing.Size(151, 32);
+            this.txtTelefonoSecretario.TabIndex = 19;
             // 
             // txtDomicilioSecretario
             // 
@@ -285,29 +308,33 @@
             this.lbl_NombreSecretario.TabIndex = 6;
             this.lbl_NombreSecretario.Text = "Nombre Completo:";
             // 
-            // txtTelefonoSecretario
+            // lblBuscarSecretario
             // 
-            this.txtTelefonoSecretario.Location = new System.Drawing.Point(204, 289);
-            this.txtTelefonoSecretario.Name = "txtTelefonoSecretario";
-            this.txtTelefonoSecretario.Size = new System.Drawing.Size(151, 32);
-            this.txtTelefonoSecretario.TabIndex = 19;
+            this.lblBuscarSecretario.AutoSize = true;
+            this.lblBuscarSecretario.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarSecretario.ForeColor = System.Drawing.Color.Black;
+            this.lblBuscarSecretario.Location = new System.Drawing.Point(143, 9);
+            this.lblBuscarSecretario.Name = "lblBuscarSecretario";
+            this.lblBuscarSecretario.Size = new System.Drawing.Size(72, 21);
+            this.lblBuscarSecretario.TabIndex = 16;
+            this.lblBuscarSecretario.Text = "Buscar:";
             // 
-            // label1
+            // txbBuscarSecretario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 23);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Ingresa un nuevo secretario";
+            this.txbBuscarSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBuscarSecretario.Location = new System.Drawing.Point(221, 2);
+            this.txbBuscarSecretario.Name = "txbBuscarSecretario";
+            this.txbBuscarSecretario.Size = new System.Drawing.Size(551, 28);
+            this.txbBuscarSecretario.TabIndex = 17;
+            this.txbBuscarSecretario.TextChanged += new System.EventHandler(this.txbBuscarSecretario_TextChanged);
             // 
             // FormSecretariosJefe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 553);
+            this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.Controls.Add(this.txbBuscarSecretario);
+            this.Controls.Add(this.lblBuscarSecretario);
             this.Controls.Add(this.gb_Secretarios);
             this.Controls.Add(this.btnAgregarSecretario);
             this.Controls.Add(this.btn_EditarSecretario);
@@ -322,6 +349,7 @@
             this.gb_Secretarios.ResumeLayout(false);
             this.gb_Secretarios.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -344,5 +372,7 @@
         private System.Windows.Forms.Label lbl_DniSecretario;
         private System.Windows.Forms.Button btn_ActualizarSecretario;
         private System.Windows.Forms.Label lbl_NombreSecretario;
+        private System.Windows.Forms.Label lblBuscarSecretario;
+        private System.Windows.Forms.TextBox txbBuscarSecretario;
     }
 }

@@ -37,7 +37,7 @@ UPDATE Socios set ImagenURL = 'C:\Users\lrmon\desktop\ImagenesSociosURL\TevezPNG
 
 SELECT Id_Socio, NombreCompleto, Dni, Email, Clase, FechaIngreso,ProximoVencimiento,Estado FROM Socios;
 
-DELETE from Socios where Estado = 'Inactivo' and Id_Socio = 72;
+DELETE from Socios where Estado != 'Activo' and Id_Socio = 81;
 
 DELETE FROM Socios WHERE (Estado IS NULL OR Estado = '') AND Id_Socio = 29;
 

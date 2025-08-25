@@ -21,22 +21,21 @@ namespace _01_CapaPresentacion
             InitializeComponent();
 
         }
-
-        public void CargarDatos(string id, string nombreCompleto, string dni, string email, string clase, DateTime FechaIngreso, DateTime ProximoVencimiento, string estado, string imagenURL)
+        //id, nombreCompleto, Dni, clase, clase, Estado, FechaPago, Resto
+        public void CargarDatos(string id, string nombreCompleto, string Dni, string clase, string Estado, DateTime FechaPago, int Resto)
         {
             txtNombreCompletoSocio.Text = nombreCompleto;
-            txtDocumentoSocio.Text = dni;
-            txtEmailSocio.Text = email;
+            txtDocumentoSocio.Text = Dni;
             txtClaseSocio.Text = clase;
-            txtFechaAltaSocio.Text = FechaIngreso.ToString("dd/MM/yyyy");
-            txtProximoVencimientoSocio.Text = ProximoVencimiento.ToString("dd/MM/yyyy");
+            txtEstado.Text = Estado;
+            txtFechaPago.Text = FechaPago.ToString(); 
+            txtResto.Text = Resto.ToString();
+          
 
-            if (!string.IsNullOrEmpty(imagenURL))
-            {
-                pbImagenSocioPersonal.ImageLocation = imagenURL; // O cargarla desde archivo o recurso
-            }
+
+            
         }
-
+  
         private void btnPDFSocio_Click(object sender, EventArgs e)
         {
             SaveFileDialog UbicacionArchivo = new SaveFileDialog();
@@ -68,17 +67,16 @@ namespace _01_CapaPresentacion
                     TablaPdf.AddCell("Documento");
                     TablaPdf.AddCell(txtDocumentoSocio.Text);
 
-                    TablaPdf.AddCell("E-mail");
-                    TablaPdf.AddCell(txtEmailSocio.Text);
+                   
 
                     TablaPdf.AddCell("Deporte");
                     TablaPdf.AddCell(txtClaseSocio.Text);
 
                     TablaPdf.AddCell("Fecha de alta");
-                    TablaPdf.AddCell(txtFechaAltaSocio.Text);
+                    TablaPdf.AddCell(txtFechaPago.Text);
 
                     TablaPdf.AddCell("Proximo Vencimiento");
-                    TablaPdf.AddCell(txtProximoVencimientoSocio.Text);
+                    TablaPdf.AddCell(txtResto.Text);
 
 
                     documento.Add(TablaPdf);
@@ -94,6 +92,6 @@ namespace _01_CapaPresentacion
             }
         }
 
-        
+    
     }
 }

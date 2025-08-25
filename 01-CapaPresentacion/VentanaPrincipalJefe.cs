@@ -15,12 +15,15 @@ namespace _01_CapaPresentacion
     public partial class VentanaPrincipalJefe : Form
     {   
        
+
         Inventario VentanaInventario = new Inventario();
     
         public VentanaPrincipalJefe()
         {
             InitializeComponent();
+            
         }
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -57,10 +60,22 @@ namespace _01_CapaPresentacion
             if (MenuVertical.Width == 250)
             {
                 MenuVertical.Width = 70;
+                lblHora.Enabled = false;
+                lblHora.Hide();
+                lblFecha.Enabled = false;
+                lblFecha.Hide();
+                LogoMorado.Enabled = false;
+                LogoMorado.Hide();
             }
             else
             {
                 MenuVertical.Width = 250;
+                lblHora.Enabled = true;
+                lblHora.Show();
+                lblFecha.Enabled = true;
+                lblFecha.Show();
+                LogoMorado.Enabled = true;
+                LogoMorado.Show();
             }
         }
 
@@ -103,8 +118,20 @@ namespace _01_CapaPresentacion
         }
         private void btnSocio_Click(object sender, EventArgs e)
         {
-            AbrirFormSociosJefe(new VisualizarSociosJefe());
+            AbrirFormSociosJefe(new Socios());
 
+        }
+
+        public void AbrirFormularioEnPanelDetallesSocioJefe(Form formHijo2)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+
+            formHijo2.TopLevel = false;
+            formHijo2.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(formHijo2);
+            this.panelContenedor.Tag = formHijo2;
+            formHijo2.Show();
         }
 
         public void AbrirFormularioEnPanel(Form formHijo)
@@ -148,5 +175,14 @@ namespace _01_CapaPresentacion
 
             AbrirFormObtenerSecretarios(new FormSecretariosJefe());
         }
+
+        private void timeFechaHora_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+
+        }
+
+        
     }
 }
